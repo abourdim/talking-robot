@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talking Robot</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="app">
+    <div class="header">
+      <div class="title-block">
+        <img src="logo.svg" class="site-logo animated-logo" alt="Logo">
+
+        <h1>TALKING ROBOT</h1>
+        <div class="subtitle">Speech · Listen · Animate · BLE micro:bit</div>
+      </div>
+
+      <div class="chip">
+        <span class="chip-dot" id="chipDot"></span>
+        <span id="status">Idle</span>
+      </div>
+    </div>
+
+    <div class="rows-container">
+      <div class="row row-top">
+        <!-- LEFT: CONTROLS -->
+        <div class="col-left">
+<!-- SPEECH CONTROLS -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title"><span class="icon">🗣️</span> Speech Controls</div>
+                <div class="card-subtitle">Type, listen, and speak with a selected voice.</div>
+              </div>
+              
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
+                <span class="status-pill" id="micPill">
+                  <span class="status-dot" id="micDot"></span>
+                  <span id="micText">Mic Off</span>
+                </span>
+                <span class="badge"><strong id="voiceCount">0</strong> voices</span>
+              </div>
+            </div>
+
+            <textarea id="text">Hello! I am a robot that can talk, listen, and send words to a microbit. Powered by Workshop-Diy</textarea>
+
+            <div class="button-row">
+              <button class="primary" id="speakBtn"><span class="btn-icon">▶</span> Speak</button>
+              <button class="secondary" id="stopBtn"><span class="btn-icon">■</span> Stop</button>
+              <button class="secondary" id="listenBtn"><span class="btn-icon">🎤</span> Listen</button>
+              <button class="secondary small" id="clearBtn"><span class="btn-icon">🧹</span> Clear</button>
+            </div>
+
+            <div class="hint">
+              If “Listen” fails: open via <b>http://localhost</b> or <b>https</b> (not <b>file:///</b>).
+            </div>
+          </div>
+ <!-- BLE MICRO:BIT -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title"><span class="icon">📡</span> BLE micro:bit (UART)</div>
+                <div class="card-subtitle">
+                  Sends <b>one token per line</b>: <i>3_elephant</i><br/>
+                  micro:bit replies with <b>ACK</b>: <i>OK 3_elephant</i>
+                </div>
+              </div>
+              <span class="status-pill" id="blePill">
+                <span class="status-dot" id="bleDot"></span>
+                <span id="bleText">Disconnected</span>
+              </span>
+            </div>
+
+            <div class="button-row">
+              <button class="primary" id="bleConnectBtn"><span class="btn-icon">🔗</span> Connect</button>
+              <button class="secondary" id="bleDisconnectBtn" disabled><span class="btn-icon">✖</span> Disconnect</button>
+              <button class="secondary" id="bleSendBtn" disabled><span class="btn-icon">📨</span> Send</button>
+            </div>
+
+            <div class="hint">
+              Tip: If you type many words, they will be sent line-by-line with a small delay.
+            </div>
+          </div>
+          
+          <!-- OPTIONS -->
+          <details class="card" open>
+            <summary class="card-header foldable kid-fold">
+            <div class="fold-left">
+              <div class="card-title"><span class="icon">✨</span> Options</div>
+              <div class="card-subtitle">Tap to open fun robot settings.</div>
+            </div>
+            <div class="fold-right" aria-hidden="true">
+              <span class="fold-open">TAP TO OPEN</span>
+              <span class="fold-close">TAP TO CLOSE</span>
+              <span class="fold-emoji fold-emoji-open">🎮</span>
+              <span class="fold-emoji fold-emoji-close">✅</span>
+            </div>
+          </summary>
+
+            <div class="controls-grid">
+              <div class="control-section">
+                <div class="form-row">
+                  <label style="display:flex;align-items:center;gap:8px;">
+                    <input type="checkbox" id="autoSpeak" checked> Auto speak after listening
+                  </label>
+                </div>
+              </div>
+
+              <!-- ✅ NEW: Auto-send to micro:bit -->
+              <div class="control-section">
+                <div class="form-row">
+                  <label style="display:flex;align-items:center;gap:8px;">
+                    <input type="checkbox" id="autoBleSend" checked> Auto send to micro:bit (listen / speak / typing)
+                  </label>
+                </div>
+              </div>
+
+              <!-- ✅ NEW: Continuous listening -->
+              <div class="control-section">
+                <div class="form-row">
+                  <label style="display:flex;align-items:center;gap:8px;">
+                    <input type="checkbox" id="continuousListen"> Continuous listening (hands-free)
+                  </label>
+                </div>
+              </div>
+
+
+              <div class="control-section">
+                <div class="form-row">
+                  <label style="display:flex;align-items:center;gap:8px;">
+                    <input type="checkbox" id="randomVoice"> Random voice each speak
+                  </label>
+                </div>
+              </div>
+
+              <div class="control-section">
+                <div class="form-row">
+                  <label style="display:flex;align-items:center;gap:8px;">
+                    <input type="checkbox" id="eyesFollow" checked> Eyes follow mouse
+                  </label>
+                </div>
+              </div>
+
+              <div class="control-section">
+                <div class="section-header">
+                  <div class="section-title"><span class="section-icon">🫦</span> Mouth Sensitivity</div>
+                </div>
+                <div class="form-row">
+                  <input type="range" id="mouthSens" min="0.4" max="1.6" step="0.05" value="1.0">
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- VOICE & LANGUAGE -->
+          <details class="card" >
+            <summary class="card-header foldable kid-fold">
+              <div class="fold-left">
+                <div class="card-title"><span class="icon">🌍</span> Voice & Language</div>
+                <div class="card-subtitle">Tap to open voice & language settings.</div>
+              </div>
+              <div class="fold-right" aria-hidden="true">
+                <span class="fold-open">TAP TO OPEN</span>
+                <span class="fold-close">TAP TO CLOSE</span>
+                <span class="fold-emoji fold-emoji-open">📂</span>
+                <span class="fold-emoji fold-emoji-close">📖</span>
+              </div>
+            </summary>
+
+            <div class="controls-grid">
+              <div class="control-section">
+                <div class="section-header">
+                  <div class="section-title"><span class="section-icon">🈯</span> Language</div>
+                  <div class="section-subtitle">Choose recognition + speech language.</div>
+                </div>
+                <div class="form-row">
+                  <select id="lang">
+                    <option value="en-US" selected>English (US)</option>
+                    <option value="en-GB">English (UK)</option>
+                    <option value="fr-FR">Français</option>
+                    <option value="es-ES">Español</option>
+                    <option value="de-DE">Deutsch</option>
+                    <option value="it-IT">Italiano</option>
+
+                    <!-- Arabic (multiple locales) -->
+                    <option value="ar-SA">العربية (Saudi)</option>
+                    <option value="ar-EG">العربية (Egypt)</option>
+                    <option value="ar-AE">العربية (UAE)</option>
+                    <option value="ar-MA">العربية (Morocco)</option>
+                    <option value="ar-DZ">العربية (Algeria)</option>
+                    <option value="ar-TN">العربية (Tunisia)</option>
+                    <option value="ar-JO">العربية (Jordan)</option>
+                    <option value="ar-LB">العربية (Lebanon)</option>
+
+                    <option value="ja-JP">日本語</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="control-section">
+                <div class="section-header">
+                  <div class="section-title"><span class="section-icon">🧠</span> Voice</div>
+                  <div class="section-subtitle">Shows voices matching language; falls back to all.</div>
+                </div>
+                <div class="form-row">
+                  <select id="voice"></select>
+                </div>
+              </div>
+
+              <div class="control-section">
+                <div class="section-header">
+                  <div class="section-title"><span class="section-icon">⏩</span> Rate</div>
+                  <div class="section-subtitle">Speaking speed.</div>
+                </div>
+                <div class="form-row">
+                  <input type="range" id="rate" min="0.5" max="1.6" step="0.05" value="1">
+                </div>
+              </div>
+
+              <div class="control-section">
+                <div class="section-header">
+                  <div class="section-title"><span class="section-icon">🎚️</span> Pitch</div>
+                  <div class="section-subtitle">Voice tone.</div>
+                </div>
+                <div class="form-row">
+                  <input type="range" id="pitch" min="0.5" max="1.9" step="0.05" value="1">
+                </div>
+              </div>
+            </div>
+          </details>
+
+          
+         
+        
+<!-- === PROJECT LINKS BUTTONS (horizontal aligned) === -->
+<div class="card">
+  <div class="card-header">
+    <div>
+      <div class="card-title"><span class="icon">🔗</span> Project Links</div>
+      <div class="card-subtitle">Open the code or the micro:bit editor</div>
+    </div>
+  </div>
+
+  <div style="
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-top:6px;
+  ">
+    <a href="https://github.com/abourdim/talking-robot/" target="_blank">
+      <button class="primary">
+        🐙 GitHub
+      </button>
+    </a>
+
+    <a href="https://makecode.microbit.org/_Hmt5d08A4W0b" target="_blank">
+      <button class="secondary">
+        ⚡ MakeCode
+      </button>
+    </a>
+  </div>
+</div>
+
+        </div>
+
+        <!-- RIGHT: ROBOT + LOG -->
+        <div class="col-right">
+<div class="card">
+            <div class="robot-wrap">
+              <div class="robot-head emo-neutral" id="robotHead">
+                <!-- antenna -->
+                <div class="antenna">
+                  <div class="antenna-stick"></div>
+                  <div class="antenna-bulb"></div>
+                </div>
+
+                <!-- eyebrows -->
+                <div class="brows" aria-hidden="true">
+                  <div class="brow"></div>
+                  <div class="brow"></div>
+                </div>
+
+                <!-- geek glasses -->
+                <div class="glasses" aria-hidden="true">
+                  <div class="lens"></div>
+                  <div class="bridge"></div>
+                  <div class="lens"></div>
+                </div>
+
+                <div class="eyes">
+                  <div class="eye"><div class="pupil"></div></div>
+                  <div class="eye"><div class="pupil"></div></div>
+                </div>
+
+                <!-- cheeks / blush -->
+                <div class="cheeks" aria-hidden="true">
+                  <div class="cheek"></div>
+                  <div class="cheek"></div>
+                </div>
+
+                <!-- tears (sad mode) -->
+                <div class="tears" aria-hidden="true">
+                  <div class="tear"></div>
+                  <div class="tear"></div>
+                </div>
+
+                <div class="mouth-zone">
+                  <div class="mouth" id="mouth"></div>
+                  <div class="tooth" aria-hidden="true"></div>
+                  <div class="tongue" aria-hidden="true"></div>
+                </div>
+                <div class="robot-chin"></div>
+              </div>
+
+              <!-- emotion buttons -->
+              <div class="emotion-bar" id="emotionBar">
+                <button class="secondary small emo active" data-emo="neutral">😐 Neutral</button>
+                <button class="secondary small emo" data-emo="happy">😄 Happy</button>
+                <button class="secondary small emo" data-emo="sad">🥺 Sad</button>
+                <button class="secondary small emo" data-emo="angry">😠 Angry</button>
+                <button class="secondary small emo" data-emo="angryplus">🤬 Angry+</button>
+                <button class="secondary small emo" data-emo="surprised">😲 Surprised</button>
+                <button class="secondary small emo" data-emo="laugh">😂 Laugh</button>
+                <button class="secondary small emo" data-emo="silly">😜 Silly</button>
+                <button class="secondary small emo" data-emo="scared">😱 Scared</button>
+                <button class="secondary small emo" data-emo="party">🥳 Party</button>
+                <button class="secondary small emo" data-emo="robot">🤖 Robot</button>
+                <button class="secondary small emo" data-emo="nerdy">🤓 Nerdy</button>
+                <button class="secondary small emo" data-emo="sleepy">😴 Sleepy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card log-card">
+                      <div class="card-header">
+                        <div class="card-title"><span class="icon">📜</span> LOG</div>
+                        <div class="log-controls">
+                          <button class="secondary small" id="clearLogBtn"><span class="btn-icon">🧹</span> Clear</button>
+                        </div>
+                      </div>
+          
+                      <div class="log" id="log"></div>
+          
+                      <div class="log-footer">
+                        <span>Tip: Ctrl/Cmd + Enter = Speak</span>
+                        <span id="envInfo"></span>
+                      </div>
+                    </div>
+        </div>
+      </div>
+
+      <!-- LOG -->
+    </div>
+  </div>
+
+<script>
+(() => {
+  // ---------- Elements
+  const mouth = document.getElementById("mouth");
+  const statusText = document.getElementById("status");
+  const chipDot = document.getElementById("chipDot");
+  const logEl = document.getElementById("log");
+
+  const textEl = document.getElementById("text");
+  const speakBtn = document.getElementById("speakBtn");
+  const stopBtn  = document.getElementById("stopBtn");
+  const listenBtn = document.getElementById("listenBtn");
+  const clearBtn = document.getElementById("clearBtn");
+  const clearLogBtn = document.getElementById("clearLogBtn");
+
+  const langSelect = document.getElementById("lang");
+  const voiceSelect = document.getElementById("voice");
+  const rateInput = document.getElementById("rate");
+  const pitchInput = document.getElementById("pitch");
+
+  const autoSpeak = document.getElementById("autoSpeak");
+  const autoBleSend = document.getElementById("autoBleSend");
+  const continuousListen = document.getElementById("continuousListen");
+  const randomVoice = document.getElementById("randomVoice");
+  const eyesFollow = document.getElementById("eyesFollow");
+  const mouthSens = document.getElementById("mouthSens");
+
+  const voiceCount = document.getElementById("voiceCount");
+  const micPill = document.getElementById("micPill");
+  const micText = document.getElementById("micText");
+  const envInfo = document.getElementById("envInfo");
+
+  const bleText = document.getElementById("bleText");
+  const bleConnectBtn = document.getElementById("bleConnectBtn");
+  const bleDisconnectBtn = document.getElementById("bleDisconnectBtn");
+  const bleSendBtn = document.getElementById("bleSendBtn");
+
+  // ---------- Emotion UI
+  const emotionBar = document.getElementById("emotionBar");
+
+  function setEmotion(emo){
+    const head = document.getElementById("robotHead");
+    if(!head) return;
+
+    // remove old emo-* classes
+    [...head.classList].forEach(c=>{
+      if(c.startsWith("emo-")) head.classList.remove(c);
+    });
+
+    head.classList.add("emo-" + emo);
+
+    // button highlight
+    if(emotionBar){
+      emotionBar.querySelectorAll("button[data-emo]").forEach(btn=>{
+        btn.classList.toggle("active", btn.dataset.emo === emo);
+      });
+    }
+  }
+
+  if(emotionBar){
+    emotionBar.addEventListener("click", (e)=>{
+      const btn = e.target.closest("button[data-emo]");
+      if(!btn) return;
+      setEmotion(btn.dataset.emo);
+      logLine(`Emotion → ${btn.dataset.emo}`, "info");
+      bleSendEmotion(btn.dataset.emo, "tap");
+    });
+  }
+
+
+  // ---------- Utils
+  const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+  // ---------- Logging
+  function now(){ return new Date().toLocaleTimeString(); }
+  function logLine(message, type="info"){
+    const div = document.createElement("div");
+    div.className = `log-line ${type}`;
+    div.textContent = `[${now()}] ${message}`;
+    logEl.appendChild(div);
+    logEl.scrollTop = logEl.scrollHeight;
+    if (logEl.children.length > 350) logEl.removeChild(logEl.firstChild);
+  }
+
+  // ---------- Status
+  function setStatus(s){
+    statusText.textContent = s;
+    const glow = (c)=> chipDot.style.boxShadow = `0 0 14px ${c}`;
+    if (s==="Talking") glow("rgba(34,197,94,0.9)");
+    else if (s==="Listening") glow("rgba(56,189,248,0.9)");
+    else if (s==="Error") glow("rgba(248,113,113,0.9)");
+    else glow("rgba(34,197,94,0.6)");
+  }
+
+
+  // ---------- Mic UI (pill + button)
+  let micActive = false;
+  function setMicUI(active, mode=""){
+    micActive = !!active;
+    if(!micPill || !micText) return;
+    if(micActive){
+      micPill.classList.add("connected");
+      micText.textContent = mode ? `Mic On (${mode})` : "Mic On";
+    } else {
+      micPill.classList.remove("connected");
+      micText.textContent = "Mic Off";
+    }
+  }
+
+  function setListenButton(active){
+    if(!listenBtn) return;
+    if(active){
+      listenBtn.innerHTML = '<span class="btn-icon">🛑</span> Stop Mic';
+    } else {
+      listenBtn.innerHTML = '<span class="btn-icon">🎤</span> Listen';
+    }
+  }
+
+  // ---------- Mouth animation
+  let speaking = false;
+  function animateMouth(){
+    if(!speaking) return;
+    const sens = parseFloat(mouthSens.value);
+    mouth.style.height = `${16 + Math.random()*(34*sens)}px`;
+    mouth.style.transform = `scaleX(${1 + Math.random()*0.06})`;
+    requestAnimationFrame(animateMouth);
+  }
+  function resetMouth(){
+    mouth.style.height = "16px";
+    mouth.style.transform = "scaleX(1)";
+  }
+
+  // ---------- Voices (Arabic-aware)
+  let voices = [];
+
+  function baseLang(code){
+    return (code || "").split("-")[0].toLowerCase();
+  }
+
+  function hasVoiceFor(langCode){
+    const base = baseLang(langCode);
+    return voices.some(v => (v.lang || "").toLowerCase().startsWith(base));
+  }
+
+  function refreshVoiceList(){
+    voiceSelect.innerHTML = "";
+
+    const wantBase = baseLang(langSelect.value);
+    const matching = voices.filter(v => (v.lang || "").toLowerCase().startsWith(wantBase));
+
+    // If none match, show all (so user can still pick something)
+    const list = matching.length ? matching : voices;
+
+    voiceCount.textContent = String(list.length);
+
+    if (!list.length) {
+      const opt = document.createElement("option");
+      opt.value = "";
+      opt.textContent = "No voices available";
+      voiceSelect.appendChild(opt);
+      return;
+    }
+
+    list.forEach((v, i) => {
+      const opt = document.createElement("option");
+      opt.value = String(voices.indexOf(v));
+      opt.textContent = `${v.name} — ${v.lang}${v.localService ? " (local)" : ""}`;
+      voiceSelect.appendChild(opt);
+      if (i === 0) voiceSelect.value = opt.value;
+    });
+
+    // Arabic warning
+    if (wantBase === "ar" && !matching.length) {
+      logLine("No Arabic TTS voice found on this device. Install Arabic voice in OS settings.", "error");
+    }
+  }
+
+  function loadVoices(){
+    voices = (window.speechSynthesis ? speechSynthesis.getVoices() : []) || [];
+    refreshVoiceList();
+    logLine(`Loaded ${voices.length} voices`, voices.length ? "success" : "error");
+  }
+
+  // ---------- Speak (forces Arabic voice if available)
+  function speak(){
+    const text = textEl.value.trim();
+    if(!text){ logLine("Nothing to speak.", "error"); return; }
+    if(!("speechSynthesis" in window)){ setStatus("Error"); logLine("SpeechSynthesis not supported.", "error"); return; }
+
+    speechSynthesis.cancel();
+
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = langSelect.value;
+    u.rate = parseFloat(rateInput.value);
+    u.pitch = parseFloat(pitchInput.value);
+
+    const wantBase = baseLang(langSelect.value);
+
+    // If random voice enabled, use any voice (but prefer correct language)
+    if (randomVoice.checked && voices.length) {
+      const correct = voices.filter(v => (v.lang || "").toLowerCase().startsWith(wantBase));
+      const pool = correct.length ? correct : voices;
+      u.voice = pool[Math.floor(Math.random() * pool.length)];
+      logLine(`Random voice: ${u.voice?.name || "unknown"} (${u.voice?.lang || ""})`, "info");
+    } else {
+      // Selected voice
+      const idx = parseInt(voiceSelect.value, 10);
+      if (!Number.isNaN(idx) && voices[idx]) {
+        u.voice = voices[idx];
+        logLine(`Voice: ${u.voice.name} (${u.voice.lang})`, "info");
+      } else {
+        // If Arabic, force first Arabic voice if exists
+        if (wantBase === "ar") {
+          const arVoice = voices.find(v => (v.lang || "").toLowerCase().startsWith("ar"));
+          if (arVoice) {
+            u.voice = arVoice;
+            logLine(`Forced Arabic voice: ${arVoice.name} (${arVoice.lang})`, "info");
+          } else {
+            logLine("No Arabic voice available -> install Arabic speech voice in OS settings.", "error");
+          }
+        }
+      }
+    }
+
+    u.onstart = ()=>{ speaking=true; setStatus("Talking"); logLine("TTS started","tx"); animateMouth(); };
+    u.onend = ()=>{ speaking=false; resetMouth(); setStatus("Idle"); logLine("TTS finished","success"); autoSendToMicrobit("speak"); };
+    u.onerror = (e)=>{ speaking=false; resetMouth(); setStatus("Error"); logLine("TTS error: "+(e.error||"unknown"),"error"); setStatus("Idle"); };
+
+    speechSynthesis.speak(u);
+  }
+
+  function stopSpeak(){
+    if("speechSynthesis" in window) speechSynthesis.cancel();
+    speaking=false; resetMouth(); setStatus("Idle");
+    logLine("Stopped by user","info");
+  }
+
+
+  // ---------- Listen (single-shot or continuous)
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  let rec = null;
+  let keepListening = false;
+
+  function stopListening(){
+    keepListening = false;
+    try{ rec && rec.stop(); } catch {}
+    setMicUI(false);
+    setListenButton(false);
+    if(statusText.textContent==="Listening") setStatus("Idle");
+  }
+
+  function listen(){
+    if(!SpeechRecognition){
+      setStatus("Error");
+      logLine("SpeechRecognition not supported (try Chrome/Edge).", "error");
+      return;
+    }
+
+    // Toggle off if already running
+    if(keepListening){
+      logLine("Mic stopped by user", "info");
+      stopListening();
+      return;
+    }
+
+    stopSpeak();
+
+    keepListening = true;
+
+    rec = new SpeechRecognition();
+    rec.lang = langSelect.value;
+
+    const isContinuous = !!(continuousListen && continuousListen.checked);
+    rec.continuous = isContinuous;
+    rec.interimResults = isContinuous; // show live text while talking
+    rec.maxAlternatives = 1;
+
+    setStatus("Listening");
+    setMicUI(true, isContinuous ? "continuous" : "single");
+    setListenButton(true);
+    logLine(`Listening… (${rec.lang}) ${isContinuous ? "[continuous]" : ""}`, "rx");
+
+    rec.onresult = (e)=>{
+      // Build transcript from results; for continuous mode, only trigger actions on FINAL results.
+      let latest = "";
+      let finalText = "";
+
+      for(let i=e.resultIndex; i<e.results.length; i++){
+        const res = e.results[i];
+        const t = (res?.[0]?.transcript || "").trim();
+        if(!t) continue;
+
+        latest = t;
+        if(res.isFinal) finalText = t;
+      }
+
+      if(latest){
+        textEl.value = latest;
+        logLine(`Heard${finalText ? " (final)" : ""}: "${latest}"`, "rx");
+      }
+
+      // Only trigger actions on final in continuous mode; in single mode we effectively only get final.
+      const triggerText = isContinuous ? finalText : latest;
+      if(triggerText){
+        if(autoSpeak.checked){
+          logLine("AutoSpeak → speaking", "info");
+          speak();
+          // If AutoSpeak is on, we send after TTS ends (see speak onend).
+        } else {
+          autoSendToMicrobit("listen");
+        }
+      }
+    };
+
+    rec.onerror = (e)=>{
+      logLine("Listen error: " + (e.error || "unknown"), "error");
+      // Keep the UI in "on" state; some errors (like 'no-speech') can happen in continuous mode.
+      if(!isContinuous){
+        stopListening();
+        setStatus("Idle");
+      }
+    };
+
+    rec.onend = ()=>{
+      // Browsers often stop even when continuous=true. If user wants continuous, restart.
+      if(keepListening && isContinuous){
+        logLine("Listening ended → restarting (continuous)", "info");
+        try{ rec.start(); }
+        catch(err){
+          logLine("Restart failed: " + (err.message || err), "error");
+          stopListening();
+          setStatus("Idle");
+        }
+      } else {
+        stopListening();
+        logLine("Listening ended", "info");
+      }
+    };
+
+    try{ rec.start(); }
+    catch(err){
+      logLine("Could not start listening: " + err.message, "error");
+      stopListening();
+      setStatus("Idle");
+    }
+  }
+
+  // ---------- Eyes follow
+  document.addEventListener("mousemove",(e)=>{
+    if(!eyesFollow.checked) return;
+    const pupils = document.querySelectorAll(".pupil");
+    const dx = (e.clientX / window.innerWidth - 0.5) * 12;
+    const dy = (e.clientY / window.innerHeight - 0.5) * 8;
+    pupils.forEach(p => p.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))`);
+  });
+
+  // ---------- Syllables (English heuristic; Arabic not accurate but used for English BLE demo)
+  function countSyllables(word){
+    if(!word) return 0;
+    let w = word.toLowerCase().replace(/[^a-z]/g,"");
+    if(!w) return 0;
+    if(w.length<=3) return 1;
+    w = w.replace(/(?:[^laeiouy]e)$/,"");
+    w = w.replace(/ed$/,"");
+    const groups = w.match(/[aeiouy]+/g);
+    let count = groups ? groups.length : 0;
+    if (/[aeiouy][^aeiouy]le$/.test(word.toLowerCase())) count += 1;
+    return Math.max(1,count);
+  }
+
+  function tokensFromInput(input){
+    const words = input.match(/[A-Za-z']+/g) || [];
+    return words.map(w => `${countSyllables(w)}_${w.toLowerCase()}`);
+  }
+
+  // ============================================================
+  // BLE micro:bit UART (dynamic characteristic selection)
+  // ============================================================
+  const UART_SERVICE = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
+
+  let bleDevice=null, bleServer=null;
+  let bleWriteChar=null;
+  let bleNotifyChar=null;
+
+  // ---------- Auto BLE send (listen / speak / typing)
+  let autoBleTimer = null;
+  function autoSendToMicrobit(reason=""){
+    if(!autoBleSend || !autoBleSend.checked) return;
+
+    const hasText = (textEl.value || "").trim().length > 0;
+    if(!hasText) return;
+
+    if(!bleWriteChar){
+      logLine(`AutoBLE (${reason}): micro:bit not connected`, "error");
+      return;
+    }
+
+    clearTimeout(autoBleTimer);
+    autoBleTimer = setTimeout(()=>{
+      logLine(`AutoBLE (${reason}) → sending`, "tx");
+      bleSendSyllables_LineByLine();
+    }, 250);
+  }
+
+  function setBleUI(connected){
+    if(connected){
+      bleText.textContent="Connected";
+      bleDisconnectBtn.disabled=false;
+      bleSendBtn.disabled=false;
+      bleConnectBtn.disabled=true;
+    } else {
+      bleText.textContent="Disconnected";
+      bleDisconnectBtn.disabled=true;
+      bleSendBtn.disabled=true;
+      bleConnectBtn.disabled=false;
+    }
+  }
+
+  function propsToString(c){
+    const p=c.properties;
+    return `read=${!!p.read} write=${!!p.write} wNR=${!!p.writeWithoutResponse} notify=${!!p.notify} indicate=${!!p.indicate}`;
+  }
+
+  async function bleConnect(){
+    if(!navigator.bluetooth){
+      logLine("Web Bluetooth not supported in this browser.","error");
+      return;
+    }
+
+    try{
+      logLine("BLE: requesting micro:bit…","info");
+
+      bleDevice = await navigator.bluetooth.requestDevice({
+        filters: [{ namePrefix: "BBC micro:bit" }],
+        optionalServices: [UART_SERVICE]
+      });
+
+      bleDevice.addEventListener("gattserverdisconnected", ()=>{
+        logLine("BLE: disconnected","error");
+        bleDevice=null; bleServer=null; bleWriteChar=null; bleNotifyChar=null;
+        setBleUI(false);
+      });
+
+      bleServer = await bleDevice.gatt.connect();
+      const service = await bleServer.getPrimaryService(UART_SERVICE);
+
+      const chars = await service.getCharacteristics();
+      logLine(`BLE: found ${chars.length} characteristics on UART service`, "info");
+      chars.forEach(c => logLine(`BLE char ${c.uuid} props: ${propsToString(c)}`, "info"));
+
+      bleWriteChar = chars.find(c => c.properties.writeWithoutResponse) ||
+                     chars.find(c => c.properties.write);
+
+      bleNotifyChar = chars.find(c => c.properties.notify) ||
+                      chars.find(c => c.properties.indicate);
+
+      if(!bleWriteChar){
+        logLine("BLE: No writable characteristic found (pairing/security or UART not active).", "error");
+      } else {
+        logLine(`BLE: selected WRITE char ${bleWriteChar.uuid} (${propsToString(bleWriteChar)})`, "success");
+      }
+
+      if(bleNotifyChar){
+        try{
+          await bleNotifyChar.startNotifications();
+          bleNotifyChar.addEventListener("characteristicvaluechanged",(e)=>{
+            const text = new TextDecoder().decode(e.target.value).trim();
+            logLine("micro:bit: " + text, "rx");
+          });
+          logLine(`BLE: notifications enabled on ${bleNotifyChar.uuid}`, "success");
+        } catch {
+          logLine("BLE: could not enable notifications (ACK may not show).", "info");
+        }
+      } else {
+        logLine("BLE: No notify characteristic found (ACK may not show).", "info");
+      }
+
+      setBleUI(true);
+      logLine("BLE: connected to " + (bleDevice.name || "micro:bit"), "success");
+    } catch(e){
+      logLine("BLE connect error: " + (e.message || e), "error");
+      setBleUI(false);
+    }
+  }
+
+  async function bleDisconnect(){
+    try{
+      if(bleDevice?.gatt?.connected) bleDevice.gatt.disconnect();
+    } finally {
+      bleDevice=null; bleServer=null; bleWriteChar=null; bleNotifyChar=null;
+      setBleUI(false);
+      logLine("BLE: disconnected by user","info");
+    }
+  }
+
+  async function bleWriteLine(line){
+    if(!bleWriteChar) throw new Error("No writable BLE characteristic selected.");
+
+    const msg = (line.endsWith("\n") ? line : (line + "\n"));
+    const data = new TextEncoder().encode(msg);
+
+    const CHUNK = 20;
+    const canWNR = !!bleWriteChar.properties.writeWithoutResponse;
+    const canW   = !!bleWriteChar.properties.write;
+
+    for(let i=0; i<data.length; i+=CHUNK){
+      const chunk = data.slice(i, i+CHUNK);
+
+      if(canWNR && bleWriteChar.writeValueWithoutResponse){
+        await bleWriteChar.writeValueWithoutResponse(chunk);
+      } else if (canW){
+        await bleWriteChar.writeValue(chunk);
+      } else {
+        throw new Error("Selected characteristic became non-writable.");
+      }
+
+      await sleep(15);
+    }
+  }
+
+
+  // Send an emotion command (one line) to micro:bit: EMO:happy
+  async function bleSendEmotion(emo, source="ui"){
+    if(!bleWriteChar){
+      logLine(`Emotion (${source}): micro:bit not connected`, "error");
+      return;
+    }
+    const cmd = `EMO:${emo}`;
+    try{
+      logLine(`BLE TX → ${cmd}`, "tx");
+      await bleWriteLine(cmd);
+    } catch(e){
+      logLine("BLE emotion send error: " + (e.message || e), "error");
+    }
+  }
+
+  // Send one token per line
+  async function bleSendSyllables_LineByLine(){
+    const tokens = tokensFromInput(textEl.value || "");
+    if(!tokens.length){
+      logLine("BLE: nothing to send (no English words found).", "error");
+      return;
+    }
+
+    logLine(`BLE TX: sending ${tokens.length} token(s) line-by-line`, "tx");
+
+    try{
+      for (let i = 0; i < tokens.length; i++){
+        const token = tokens[i];
+        logLine(`BLE TX → ${token}`, "tx");
+        await bleWriteLine(token);
+        await sleep(60);
+      }
+      logLine("BLE: all tokens sent", "success");
+    } catch(e){
+      logLine("BLE send error: " + (e.message || e), "error");
+    }
+  }
+
+  // ---------- Wiring
+  speakBtn.addEventListener("click", speak);
+  stopBtn.addEventListener("click", stopSpeak);
+  listenBtn.addEventListener("click", listen);
+
+  clearBtn.addEventListener("click", ()=>{ textEl.value=""; logLine("Cleared text","info"); });
+  clearLogBtn.addEventListener("click", ()=>{ logEl.innerHTML=""; logLine("Log cleared","info"); });
+
+  langSelect.addEventListener("change", ()=>{
+    refreshVoiceList();
+    logLine("Language set to "+langSelect.value, "info");
+
+    // extra hint for Arabic
+    if (baseLang(langSelect.value) === "ar" && voices.length && !hasVoiceFor(langSelect.value)) {
+      logLine("Arabic selected but no Arabic voice detected. Install Arabic Speech voice in OS settings.", "error");
+    }
+  });
+
+  textEl.addEventListener("keydown",(e)=>{
+    if((e.ctrlKey||e.metaKey) && e.key==="Enter"){ e.preventDefault(); speak(); }
+  });
+
+  // Auto-send while typing (debounced via autoSendToMicrobit)
+  textEl.addEventListener("input", ()=>{
+    autoSendToMicrobit("typing");
+  });
+
+  bleConnectBtn.addEventListener("click", bleConnect);
+  bleDisconnectBtn.addEventListener("click", bleDisconnect);
+  bleSendBtn.addEventListener("click", bleSendSyllables_LineByLine);
+
+  // ---------- Init
+  setStatus("Idle");
+  setBleUI(false);
+
+  setMicUI(false);
+  setListenButton(false);
+
+  logLine("App loaded","success");
+
+  if("speechSynthesis" in window){
+    speechSynthesis.onvoiceschanged = loadVoices;
+    loadVoices();
+    logLine("SpeechSynthesis supported","success");
+  } else logLine("SpeechSynthesis NOT supported","error");
+
+  if(SpeechRecognition) logLine("SpeechRecognition supported","success");
+  else logLine("SpeechRecognition NOT supported","error");
+
+  if(navigator.bluetooth) logLine("Web Bluetooth supported","success");
+  else logLine("Web Bluetooth NOT supported (use Chrome/Edge).","error");
+
+  envInfo.textContent = (location.protocol === "file:")
+    ? "Use http://localhost for Listen/BLE"
+    : (location.protocol.replace(":","") + " mode");
+
+  // Show Arabic voices available (debug)
+  setTimeout(() => {
+    const arVoices = voices.filter(v => (v.lang || "").toLowerCase().startsWith("ar"));
+    logLine(`Arabic voices detected: ${arVoices.length}`, arVoices.length ? "success" : "error");
+    if (!arVoices.length) logLine("Fix: Install Arabic Speech voice in OS settings, then restart browser.", "error");
+  }, 500);
+})();
+</script>
+</body>
+</html>
