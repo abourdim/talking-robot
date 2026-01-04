@@ -1,61 +1,58 @@
-# 🤖 Talking Robot  
-**Talk · Listen · Emotions · micro:bit BLE**
+# 🤖 TALKING ROBOT  
+### 🗣️ Talk · 🎤 Listen · 😄 Emotions · 📡 micro:bit Bluetooth
 
 Welcome to **Talking Robot**! 🎉  
-A fun web robot for kids that can **talk**, **listen**, **show emotions**, and **send messages to a micro:bit** using Bluetooth.
+This is a fun **web robot** that can **talk**, **listen**, **show emotions**, and **send messages to a micro:bit** using Bluetooth.
+
+This project is made for:
+- 👧🧒 Kids & beginners  
+- 🏫 Schools & teachers  
+- 🔬 STEM & coding workshops  
+- 🤖 Learning robotics + web tech  
 
 ---
 
-## 🌟 Features
-- 🗣️ Text-to-speech  
-- 🎤 Speech recognition  
-- 😄 Robot emotions  
-- 🤖 Animated mouth & face  
-- 📡 micro:bit BLE UART  
-- 🎨 Kid-friendly UI  
+## 🌟 WHAT CAN THIS ROBOT DO?
+
+- 🗣️ Talk using text-to-speech  
+- 🎤 Listen using your microphone  
+- 😄 Show emotions  
+- 🤖 Animate face and mouth  
+- 📡 Send data to a micro:bit  
 
 ---
 
-## 🚀 How to Run
-⚠️ Do NOT open with `file:///`
+## 🚀 HOW TO START
+
+⚠️ Do **NOT** open with:
+file:///index.html
 
 Use:
-- `http://localhost`
-- or **GitHub Pages (https://)**
+- http://localhost  
+- https:// (GitHub Pages)
 
-Browser: **Chrome or Edge**
-
----
-
-## 📁 Files
-```
-index.html
-styles.css
-app.js
-ble-uart.js
-makecode.ts
-logo.svg
-README.md
-```
+Browser: Chrome or Edge
 
 ---
 
-## 🔗 Project Links
+## 📂 PROJECT FILES
 
-<p align="center">
-
-<a href="https://github.com/YOUR-USERNAME/YOUR-REPO" target="_blank">
-  <img src="https://img.shields.io/badge/🐙%20View%20on%20GitHub-000000?style=for-the-badge&logo=github&logoColor=white">
-</a>
-
-<br><br>
-
-<a href="https://makecode.microbit.org/" target="_blank">
-  <img src="https://img.shields.io/badge/⚡%20Open%20in%20MakeCode-00ADEF?style=for-the-badge&logo=microbit&logoColor=white">
-</a>
-
-</p>
+index.html  
+styles.css  
+app.js  
+ble-uart.js  
+makecode.ts  
+logo.svg  
+README.md  
 
 ---
 
-Made with ❤️ for kids, schools, and learning 🤖✨
+## 🧒 MADE FOR LEARNING
+
+This project helps kids learn:
+- Coding basics  
+- Speech technology  
+- Bluetooth & IoT  
+- Creativity  
+
+Have fun 🤖✨
