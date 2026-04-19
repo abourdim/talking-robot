@@ -1,0 +1,6 @@
+.DS_Store
+/node_modules/
+/package-lock.json
+etsy-package/output/
+etsy-package/TalkingRobot-v*/
+!etsy-package/TalkingRobot-v*.zip

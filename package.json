@@ -1,0 +1,9 @@
+{
+  "name": "talking-robot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Talking Robot — Talk • Listen • Emote",
+  "scripts": { "build:etsy": "node etsy-package/build-package.js" },
+  "devDependencies": { "@playwright/test": "^1.48.0" }
+}
