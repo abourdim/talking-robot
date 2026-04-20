@@ -1,0 +1,38 @@
+1
+00:00:00,000 --> 00:00:03,000
+A robot that talks, listens, and feels —
+right in your browser.
+
+2
+00:00:03,000 --> 00:00:10,000
+Type any sentence.
+Your robot speaks it out loud.
+
+3
+00:00:10,000 --> 00:00:20,000
+Watch — the mouth animates
+while it speaks.
+
+4
+00:00:20,000 --> 00:00:30,000
+Ten emotions, one click.
+Tap a face, the robot shows it.
+
+5
+00:00:30,000 --> 00:00:40,000
+Now it listens.
+Speak — your voice becomes text.
+
+6
+00:00:40,000 --> 00:00:50,000
+Optional: pair a micro:bit V2 and
+your typed words stream to its screen.
+
+7
+00:00:50,000 --> 00:00:55,000
+Link below — one page,
+Chrome and Edge, lifetime updates.
+
+8
+00:00:55,000 --> 00:01:00,000
+Talk. Listen. Emote.

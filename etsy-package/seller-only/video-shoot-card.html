@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Talking Robot — Etsy 60-sec Shoot Card (A4)</title>
+<style>
+  @page { size: A4; margin: 10mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #0a0e12;
+    background: #f5f7f5;
+    padding: 10mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  h1 {
+    font-size: 20pt;
+    font-weight: 900;
+    color: #00884a;
+    border-bottom: 3px solid #00884a;
+    padding-bottom: 2mm;
+    margin-bottom: 4mm;
+    letter-spacing: 0.02em;
+  }
+  h1 small {
+    font-size: 10pt;
+    font-weight: 400;
+    color: #6b7a85;
+    float: right;
+    margin-top: 10pt;
+  }
+  h2 {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #00884a;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 4mm 0 2mm;
+    padding: 1mm 2mm;
+    background: #e0f0e5;
+    border-left: 3px solid #00884a;
+  }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+  ul { list-style: none; }
+  li { padding: 0.8mm 0; padding-left: 6mm; position: relative; }
+  li::before {
+    content: '☐';
+    position: absolute;
+    left: 0;
+    color: #6b7a85;
+    font-size: 11pt;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+  th, td { text-align: left; padding: 1.5mm 2mm; border-bottom: 1px solid #d0d8d2; vertical-align: top; }
+  th { background: #0a0e12; color: #00ff88; font-weight: 700; text-transform: uppercase; font-size: 8pt; letter-spacing: 0.1em; }
+  td.t { font-family: 'Courier New', monospace; font-weight: 700; color: #00884a; white-space: nowrap; width: 14mm; }
+  td.say { font-style: italic; color: #0a0e12; }
+  td.do { color: #3a4a45; font-size: 8.5pt; }
+  .tight td { padding: 1mm 2mm; }
+  .cheat {
+    font-family: 'Courier New', monospace;
+    background: #0a0e12;
+    color: #00ff88;
+    padding: 3mm;
+    font-size: 9pt;
+    line-height: 1.5;
+    border-radius: 2mm;
+    white-space: pre;
+  }
+  .warn { color: #c44; font-weight: 700; }
+  .ok { color: #00884a; font-weight: 700; }
+  .footer { margin-top: 5mm; font-size: 8pt; color: #6b7a85; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>Etsy 60-sec Video Shoot Card <small>Talking Robot · Script A</small></h1>
+
+<div class="row">
+  <div>
+    <h2>Pre-flight (90s)</h2>
+    <ul>
+      <li>Laptop on, Chrome or Edge open</li>
+      <li><code>index.html</code> loaded, robot face idle</li>
+      <li>Microphone permission <span class="ok">granted</span></li>
+      <li>Speakers on, volume tested (one Speak click)</li>
+      <li>Language matches voiceover (EN / FR / AR)</li>
+      <li>Input field empty, ready to type</li>
+      <li>Optional: micro:bit V2 plugged in via USB, page paired</li>
+      <li>Phone in 9:16 on tripod, front-lit</li>
+      <li>Desk cleared — laptop + optional micro:bit only</li>
+      <li>Captions app ready OR overlay plan</li>
+      <li>Script read once, under 55s</li>
+      <li>Phone silenced, room quiet (Listen needs clean audio)</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Specs (memorise)</h2>
+    <table class="tight">
+      <tr><td><strong>Length</strong></td><td>≤ 60s (aim 55s)</td></tr>
+      <tr><td><strong>Aspect</strong></td><td><strong>9:16 portrait</strong></td></tr>
+      <tr><td><strong>Res</strong></td><td>1080 × 1920 min</td></tr>
+      <tr><td><strong>Codec</strong></td><td>MP4 / H.264 + AAC</td></tr>
+      <tr><td><strong>Size</strong></td><td>&lt; 100 MB</td></tr>
+      <tr><td><strong>Audio</strong></td><td>Muted by default → <span class="warn">captions mandatory</span></td></tr>
+      <tr><td><strong>Cover</strong></td><td>First frame = thumbnail</td></tr>
+      <tr><td><strong>Hook</strong></td><td>First 3s decides the scroll</td></tr>
+    </table>
+
+    <h2>Props &amp; on-screen overlays</h2>
+    <ul>
+      <li>Laptop (Chrome/Edge), microphone, speakers</li>
+      <li>Optional: BBC micro:bit V2 + USB cable</li>
+      <li>Overlay: "Ctrl/Cmd+Enter = Speak" at 3–10s</li>
+      <li>Overlay: "10 emotions" over the face grid at 20–30s</li>
+      <li>Overlay: transcript highlight at 30–40s</li>
+      <li>Price chip ($12.99 / $17.99 / $29.99) bottom corner</li>
+    </ul>
+
+    <h2>During recording</h2>
+    <ul>
+      <li>One scene per phase — don't cut every 2s</li>
+      <li>Switch on words, not mid-sentence</li>
+      <li>1s pause after clicking Speak / Listen</li>
+      <li>Eye contact with lens on CTA</li>
+      <li>Smile for final 3s — loop frame</li>
+      <li>If &gt; 55s, re-cut</li>
+    </ul>
+  </div>
+</div>
+
+<h2>The 60-second arc — Script A</h2>
+<table>
+  <thead>
+    <tr><th>Time</th><th>Say</th><th>Do / Click</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="t">0–3s</td>   <td class="say">"A robot that talks, listens, and shows how it feels — right in your browser."</td> <td class="do">Open page. Close-up of robot face blinking. No install.</td></tr>
+    <tr><td class="t">3–10s</td>  <td class="say">"Type any sentence. Your robot speaks it out loud."</td>                              <td class="do">Type "Hello class". Click <strong>Speak</strong> (or Ctrl/Cmd+Enter).</td></tr>
+    <tr><td class="t">10–20s</td> <td class="say">"Watch — the mouth animates while it speaks."</td>                                   <td class="do">Voice plays. Mouth animates in sync. Hold the frame.</td></tr>
+    <tr><td class="t">20–30s</td> <td class="say">"Ten emotions, one click. Tap a face and the robot shows it."</td>                   <td class="do">Click 😄. Face smiles. Cycle 🥺 → 😠 → 🥳. Land on 😄.</td></tr>
+    <tr><td class="t">30–40s</td> <td class="say">"Now it listens. Speak — your voice becomes text."</td>                              <td class="do">Click <strong>Listen</strong>. Say "goodbye". Transcript appears.</td></tr>
+    <tr><td class="t">40–50s</td> <td class="say">"Optional: pair a micro:bit V2 and your typed words stream to its LEDs."</td>        <td class="do">Click Connect micro:bit. Type a word → shows on real board.</td></tr>
+    <tr><td class="t">50–55s</td> <td class="say">"Link below — one page, Chrome and Edge, lifetime updates."</td>                     <td class="do">Face-cam. Eye contact with lens.</td></tr>
+    <tr><td class="t">55–60s</td> <td class="say">"Talk. Listen. Emote."</td>                                                           <td class="do">Hold still on 🤖. Logo + handle freeze. Loop frame.</td></tr>
+  </tbody>
+</table>
+
+<div class="row" style="margin-top: 4mm;">
+  <div>
+    <h2>After Stop</h2>
+    <ul>
+      <li>Watch once, eyes off script</li>
+      <li>Trim to 55s (iMovie / CapCut / DaVinci)</li>
+      <li>Burn in captions — centered below subject</li>
+      <li>Set first frame = strong still visual (robot face)</li>
+      <li>Export MP4/H.264, &lt; 100 MB</li>
+      <li>Upload · verify autoplay · phone + sound off</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Cheat card</h2>
+<div class="cheat">PRE     Chrome/Edge · mic OK · speakers on
+        9:16 phone · desk clean · quiet room
+LAUNCH  "talks, listens, feels" in first 3s
+DURING  type→Speak · face→emotion
+        Listen→transcript · (optional micro:bit)
+AFTER   Stop → trim 55s → burn captions
+        first frame = robot face thumbnail
+UPLOAD  echo "Talk · Listen · Emote" in title</div>
+  </div>
+</div>
+
+<div class="footer">Talking Robot v1.0.0 · Print A4 · Tape next to shoot rig · Companion to video-teleprompter.html</div>
+
+</body>
+</html>
