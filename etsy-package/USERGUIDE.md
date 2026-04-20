@@ -138,7 +138,7 @@ The HTML sources ship too, so teachers can tweak them.
   `output/etsy-mockup-1.png` … `etsy-mockup-7.png`.
 - **The seven mockups:**
   1. **Hero shot** — product name + tagline on Stealth background
-  2. **16-cell feature grid** — 8 tabs × features
+  2. **Feature grid** — Talk · Listen · 10 Emotions · Voice Settings · BLE bridge
   3. **Teacher pitch** — "For teachers" with quotes
   4. **Kid pitch** — big, playful, colorful
   5. **What's in the ZIP** — file manifest

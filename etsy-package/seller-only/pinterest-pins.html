@@ -37,8 +37,18 @@
   .p1 h1 { font-family: 'Righteous', sans-serif; font-size: 130px; color: #22c55e; text-shadow: 0 0 60px rgba(34,197,94,.3); letter-spacing: 3px; line-height: 0.95; margin-top: 60px; }
   .p1 .sub { font-size: 34px; color: #22d3ee; margin-top: 24px; font-family: 'Righteous', sans-serif; letter-spacing: 2px; }
   .p1 .tagline { font-size: 26px; color: #cbd5e1; margin-top: 40px; line-height: 1.4; }
-  .p1 .screenshot { margin-top: 55px; border-radius: 18px; overflow: hidden; border: 3px solid rgba(34,197,94,.4); box-shadow: 0 20px 60px rgba(0,0,0,.6); }
-  .p1 .screenshot img { display: block; width: 100%; height: auto; }
+
+  .p1 .robot {
+    margin: 55px auto 0; width: 620px; aspect-ratio: 1; border-radius: 38px;
+    background: radial-gradient(circle at 40% 35%, #1e293b, #020617 75%);
+    border: 4px solid rgba(34,197,94,.45);
+    box-shadow: 0 0 100px rgba(34,197,94,.25);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 60px;
+  }
+  .p1 .robot .eyes { display: flex; gap: 110px; }
+  .p1 .robot .eye { width: 90px; height: 90px; border-radius: 50%; background: #22d3ee; box-shadow: 0 0 60px rgba(34,211,238,.85); }
+  .p1 .robot .mouth { width: 260px; height: 70px; border-radius: 44px; background: #22c55e; box-shadow: 0 0 50px rgba(34,197,94,.75); }
+
   .p1 .pills { display: flex; gap: 12px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
   .p1 .pill { padding: 10px 22px; border-radius: 25px; font-size: 16px; font-weight: 800;
     background: rgba(34,197,94,.14); color: #22c55e; border: 2px solid rgba(34,197,94,.4); }
@@ -51,16 +61,16 @@
     padding: 110px 80px; text-align: center;
   }
   .p2 .apple { font-size: 130px; }
-  .p2 h1 { font-family: 'Righteous', sans-serif; font-size: 92px; color: #22c55e; margin-top: 30px; line-height: 0.95; letter-spacing: 2px; }
-  .p2 .sub { font-size: 32px; color: #22d3ee; margin-top: 24px; line-height: 1.3; font-weight: 600; }
-  .p2 .points { margin-top: 60px; display: grid; gap: 18px; text-align: left; }
+  .p2 h1 { font-family: 'Righteous', sans-serif; font-size: 82px; color: #22c55e; margin-top: 30px; line-height: 0.95; letter-spacing: 2px; }
+  .p2 .sub { font-size: 30px; color: #22d3ee; margin-top: 24px; line-height: 1.3; font-weight: 600; }
+  .p2 .points { margin-top: 56px; display: grid; gap: 18px; text-align: left; }
   .p2 .point { background: rgba(34,197,94,.06); border: 2px solid rgba(34,197,94,.2); border-radius: 14px; padding: 22px 26px; font-size: 22px; color: #e2e8f0; display: flex; align-items: center; gap: 18px; }
   .p2 .point .ic { font-size: 40px; }
   .p2 .point b { color: #22c55e; }
 
-  /* ====== PIN 3 — What's in the ZIP ====== */
+  /* ====== PIN 3 — Feature list ====== */
   .p3 { background: #020617; padding: 90px 70px; }
-  .p3 h1 { font-family: 'Righteous', sans-serif; font-size: 86px; color: #22c55e; text-align: center; letter-spacing: 2px; }
+  .p3 h1 { font-family: 'Righteous', sans-serif; font-size: 82px; color: #22c55e; text-align: center; letter-spacing: 2px; }
   .p3 .sub { font-size: 26px; color: #94a3b8; text-align: center; margin-top: 14px; }
   .p3 .grid { margin-top: 50px; display: grid; gap: 14px; }
   .p3 .item { background: rgba(15,23,42,.7); border: 1px solid rgba(34,197,94,.15); border-radius: 14px; padding: 20px 24px; display: flex; align-items: center; gap: 18px; }
@@ -68,7 +78,7 @@
   .p3 .item h3 { font-family: 'Righteous', sans-serif; font-size: 22px; color: #22c55e; }
   .p3 .item p { font-size: 15px; color: #94a3b8; margin-top: 2px; }
 
-  /* ====== PIN 4 — Languages / Themes ====== */
+  /* ====== PIN 4 — Emotions ====== */
   .p4 {
     background: linear-gradient(180deg, #0f172a, #020617 70%);
     padding: 90px 70px; text-align: center;
@@ -77,19 +87,11 @@
   .p4 .sub { font-size: 26px; color: #22d3ee; margin-top: 18px; font-family: 'Righteous', sans-serif; }
 
   .p4 .section-label { margin-top: 50px; font-size: 18px; color: #64748b; text-transform: uppercase; letter-spacing: 4px; font-weight: 700; }
-  .p4 .themes { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .p4 .theme { padding: 30px 20px; border-radius: 14px; font-family: 'Righteous', sans-serif; font-size: 26px; }
-  .p4 .t-stealth { background: #020617; color: #22c55e; border: 2px solid rgba(34,197,94,.35); }
-  .p4 .t-neon    { background: #0f0f1a; color: #22d3ee; border: 2px solid rgba(34,211,238,.45); }
-  .p4 .t-arctic  { background: #f1f5f9; color: #0ea5e9; }
-  .p4 .t-blaze   { background: #fff7ed; color: #ea580c; }
-  .p4 .theme .ic { font-size: 50px; display: block; margin-bottom: 10px; }
 
-  .p4 .langs { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
-  .p4 .lang { background: rgba(15,23,42,.7); border: 1px solid rgba(34,197,94,.15); border-radius: 14px; padding: 26px 14px; }
-  .p4 .lang .flag { font-size: 50px; }
-  .p4 .lang h3 { font-family: 'Righteous', sans-serif; font-size: 22px; color: #22c55e; margin-top: 10px; }
-  .p4 .lang.rtl { direction: rtl; }
+  .p4 .emotions { margin-top: 26px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .p4 .em { background: rgba(15,23,42,.7); border: 1px solid rgba(34,197,94,.18); border-radius: 16px; padding: 20px 10px; }
+  .p4 .em .e { font-size: 58px; }
+  .p4 .em .n { font-size: 14px; color: #94a3b8; margin-top: 6px; font-family: 'Righteous', sans-serif; }
 </style>
 </head>
 <body>
@@ -97,16 +99,17 @@
 <!-- PIN 1 — Hero -->
 <div class="pin p1">
   <div class="badge">Chrome & Edge<small>(not Safari / iPhone)</small></div>
-  <h1>micro:bit<br>Playground</h1>
+  <h1>Talking<br>Robot</h1>
   <div class="sub">Talk • Listen • Emote</div>
-  <div class="tagline">Browser Bluetooth control panel for the<br>BBC micro:bit V2 (optional). No install. No account.</div>
-  <div class="screenshot">
-    <img src="../../assets/app-screenshot.png" alt="Talking Robot — Sensors tab">
+  <div class="tagline">A browser robot that speaks out loud, listens to your mic,<br>and reacts with 10 emotions. Optional Bluetooth to micro:bit V2.</div>
+  <div class="robot">
+    <div class="eyes"><div class="eye"></div><div class="eye"></div></div>
+    <div class="mouth"></div>
   </div>
   <div class="pills">
     <div class="pill">Zero Install</div>
     <div class="pill cyan">100% Local</div>
-    <div class="pill yellow">Kid-Friendly</div>
+    <div class="pill yellow">Kid-First</div>
   </div>
   <div class="brand"><b>Talking Robot</b><span class="url">your-etsy-shop/on-etsy</span></div>
 </div>
@@ -114,13 +117,14 @@
 <!-- PIN 2 — Teacher angle -->
 <div class="pin p2">
   <div class="apple">🍎</div>
-  <h1>Turn one $20<br>micro:bit into a<br>classroom lab.</h1>
-  <div class="sub">No install day. No student accounts.<br>Pair, play, graph, export. Done.</div>
+  <h1>Teach a robot<br>to talk, listen,<br>and feel.</h1>
+  <div class="sub">45-minute lesson. Zero install.<br>Every student becomes a roboticist.</div>
   <div class="points">
-    <div class="point"><span class="ic">⚡</span><div><b>5-minute setup</b> &mdash; flash firmware once, open in Chrome</div></div>
-    <div class="point"><span class="ic">🔒</span><div><b>Privacy-first</b> &mdash; 100% local, no cloud, no accounts</div></div>
-    <div class="point"><span class="ic">📊</span><div><b>Live sensor graphs</b> &mdash; project &amp; teach in real time</div></div>
-    <div class="point"><span class="ic">📋</span><div><b>Ready-to-teach</b> 45-min lesson plan included</div></div>
+    <div class="point"><span class="ic">🗣️</span><div><b>Type → Speak</b> &mdash; browser reads text out loud, mouth animates</div></div>
+    <div class="point"><span class="ic">🎤</span><div><b>Listen → Transcript</b> &mdash; speech becomes text in real time</div></div>
+    <div class="point"><span class="ic">😄</span><div><b>10 Emotion Faces</b> &mdash; one click changes the mood</div></div>
+    <div class="point"><span class="ic">📡</span><div><b>Optional BLE bridge</b> &mdash; stream words to a BBC micro:bit V2</div></div>
+    <div class="point"><span class="ic">🔒</span><div><b>Privacy-first</b> &mdash; 100% local, no accounts, no cloud</div></div>
   </div>
   <div class="brand"><b>Talking Robot</b><span class="url">your-etsy-shop/on-etsy</span></div>
 </div>
@@ -128,38 +132,37 @@
 <!-- PIN 3 — What's in the ZIP -->
 <div class="pin p3">
   <h1>What's In The ZIP</h1>
-  <div class="sub">Instant download &bull; ~5 MB</div>
+  <div class="sub">Instant download &bull; runs offline in Chrome / Edge</div>
   <div class="grid">
-    <div class="item"><span class="ic">🌐</span><div><h3>The Playground App</h3><p>Single-page web app, opens in Chrome/Edge, PWA-ready offline</p></div></div>
-    <div class="item"><span class="ic">🤖</span><div><h3>makecode.ts Firmware</h3><p>Drop into MakeCode, flash to your micro:bit V2</p></div></div>
-    <div class="item"><span class="ic">📖</span><div><h3>Trilingual User Guide</h3><p>EN / FR / AR with full RTL</p></div></div>
-    <div class="item"><span class="ic">🗺️</span><div><h3>Printable Quick-Start</h3><p>A4 &mdash; flash, open, pair, play</p></div></div>
-    <div class="item"><span class="ic">🎨</span><div><h3>A3 Classroom Poster</h3><p>"We Control Robots with Code!"</p></div></div>
-    <div class="item"><span class="ic">📋</span><div><h3>45-min Lesson Plan</h3><p>Ready-to-teach with rubric</p></div></div>
-    <div class="item"><span class="ic">⭐</span><div><h3>30 Achievement Stickers</h3><p>"I Connected BLE!" and more</p></div></div>
-    <div class="item"><span class="ic">📜</span><div><h3>Classroom License</h3><p>Use across your school. Lifetime for v1.x.</p></div></div>
+    <div class="item"><span class="ic">🌐</span><div><h3>The Talking Robot App</h3><p>Single index.html &mdash; opens in Chrome or Edge, no install</p></div></div>
+    <div class="item"><span class="ic">🗣️</span><div><h3>Speech Synthesis (TALK)</h3><p>Pick any system voice, type, click Speak, mouth animates</p></div></div>
+    <div class="item"><span class="ic">🎤</span><div><h3>Speech Recognition (LISTEN)</h3><p>Microphone in, live transcript out, optional auto-reply</p></div></div>
+    <div class="item"><span class="ic">😄</span><div><h3>10 Emotion Faces</h3><p>😐 😄 🥺 😠 😂 😜 😱 🥳 🤖 😴 — one click each</p></div></div>
+    <div class="item"><span class="ic">📡</span><div><h3>Optional BLE bridge</h3><p>makecode.ts &amp; ble-uart.js to stream text to micro:bit V2</p></div></div>
+    <div class="item"><span class="ic">📖</span><div><h3>User Guide</h3><p>HTML + Markdown walkthrough with troubleshooting</p></div></div>
+    <div class="item"><span class="ic">🗺️</span><div><h3>Printable Quick-Start</h3><p>A4 &mdash; open, pick voice, Speak, Listen, BLE</p></div></div>
+    <div class="item"><span class="ic">⭐</span><div><h3>30 Achievement Stickers</h3><p>"First Speech", "Mouth Mover", "Emotion Master" ×10</p></div></div>
   </div>
   <div class="brand"><b>Talking Robot</b><span class="url">your-etsy-shop/on-etsy</span></div>
 </div>
 
-<!-- PIN 4 — Themes + Languages -->
+<!-- PIN 4 — Emotions -->
 <div class="pin p4">
-  <h1>4 Themes<br>3 Languages<br>1 App</h1>
-  <div class="sub">Stealth • Neon • Arctic • Blaze &nbsp;&mdash;&nbsp; EN / FR / AR</div>
+  <h1>10 Emotions<br>One Click</h1>
+  <div class="sub">Talk • Listen • Emote</div>
 
-  <div class="section-label">Themes</div>
-  <div class="themes">
-    <div class="theme t-stealth"><span class="ic">🥷</span>Stealth</div>
-    <div class="theme t-neon"><span class="ic">💠</span>Neon</div>
-    <div class="theme t-arctic"><span class="ic">❄️</span>Arctic</div>
-    <div class="theme t-blaze"><span class="ic">🔥</span>Blaze</div>
-  </div>
-
-  <div class="section-label">Languages</div>
-  <div class="langs">
-    <div class="lang"><div class="flag">🇬🇧</div><h3>English</h3></div>
-    <div class="lang"><div class="flag">🇫🇷</div><h3>Français</h3></div>
-    <div class="lang rtl"><div class="flag">🇩🇿</div><h3>العربية</h3></div>
+  <div class="section-label">Pick a face — the robot changes mood instantly</div>
+  <div class="emotions">
+    <div class="em"><div class="e">😐</div><div class="n">Neutral</div></div>
+    <div class="em"><div class="e">😄</div><div class="n">Happy</div></div>
+    <div class="em"><div class="e">🥺</div><div class="n">Sad</div></div>
+    <div class="em"><div class="e">😠</div><div class="n">Angry</div></div>
+    <div class="em"><div class="e">😂</div><div class="n">Laughing</div></div>
+    <div class="em"><div class="e">😜</div><div class="n">Silly</div></div>
+    <div class="em"><div class="e">😱</div><div class="n">Shocked</div></div>
+    <div class="em"><div class="e">🥳</div><div class="n">Party</div></div>
+    <div class="em"><div class="e">🤖</div><div class="n">Robot</div></div>
+    <div class="em"><div class="e">😴</div><div class="n">Sleepy</div></div>
   </div>
   <div class="brand"><b>Talking Robot</b><span class="url">your-etsy-shop/on-etsy</span></div>
 </div>

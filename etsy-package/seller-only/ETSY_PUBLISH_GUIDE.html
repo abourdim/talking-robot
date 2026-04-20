@@ -140,8 +140,8 @@
       <ul class="check" data-key="preflight">
         <li><input type="checkbox" id="p1"><label for="p1">Replaced <code>Besma</code> in <code>LICENSE</code> with your shop's legal name.</label></li>
         <li><input type="checkbox" id="p2"><label for="p2">Replaced <code>[Your name]</code> in the auto-reply template.</label></li>
-        <li><input type="checkbox" id="p3"><label for="p3">Confirmed <code>~/Desktop/microtalking-robot-v1.0.zip</code> exists (155 KB) and contains <code>SETUP.md</code>, <code>LICENSE</code>, <code>index.html</code>.</label></li>
-        <li><input type="checkbox" id="p4"><label for="p4">Tested the ZIP on a clean folder: unzipped, opened <code>index.html</code> in Chrome, connected to a real micro:bit V2 successfully.</label></li>
+        <li><input type="checkbox" id="p3"><label for="p3">Confirmed <code>~/Desktop/talking-robot-v1.0.zip</code> exists (155 KB) and contains <code>SETUP.md</code>, <code>LICENSE</code>, <code>index.html</code>.</label></li>
+        <li><input type="checkbox" id="p4"><label for="p4">Tested the ZIP on a clean folder: unzipped, opened <code>index.html</code> in Chrome, verified text-to-speech and speech-to-text both work with the microphone.</label></li>
         <li><input type="checkbox" id="p5"><label for="p5">PayPal or bank payout method connected to your Etsy account.</label></li>
         <li><input type="checkbox" id="p6"><label for="p6">Decided on shop name (if creating a new shop).</label></li>
       </ul>
@@ -177,26 +177,26 @@
       <h3>Capture setup</h3>
       <ul>
         <li>Open <code>index.html</code> in a fresh Chrome window at <b>1440×900</b>. Hide the bookmarks bar (<kbd>⌘⇧B</kbd>).</li>
-        <li>Connect a real micro:bit V2 — empty/disconnected screens look unfinished.</li>
-        <li>Toggle <b>Simulate Mode</b> ON before screenshotting graphs so the lines look alive.</li>
+        <li>Grant microphone permission when prompted — empty transcript screens look unfinished.</li>
+        <li>Type a sample sentence and press Speak before screenshotting — waveform / speaking state looks alive.</li>
         <li>Use <kbd>⌘⇧4</kbd> then <kbd>Space</kbd> then click the window for clean shadow-included PNGs.</li>
         <li>Save to <code>~/Desktop/etsy-photos/</code> as <code>01-hero.png</code> through <code>10-setup-preview.png</code>.</li>
       </ul>
 
       <h3>Photo plan</h3>
       <table>
-        <thead><tr><th>#</th><th>Subject</th><th>Theme</th><th>Overlay text</th></tr></thead>
+        <thead><tr><th>#</th><th>Subject</th><th>Overlay text</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td>Hero — LED Matrix tab + real micro:bit next to laptop (square crop)</td><td>Stealth</td><td>"micro:bit V2 Playground" + "Instant download"</td></tr>
-          <tr><td>2</td><td>Sensors tab, all sparklines populated, board in motion</td><td>Stealth</td><td>"Live sensor dashboard"</td></tr>
-          <tr><td>3</td><td>Graph tab in fullscreen, ~3 datasets plotting</td><td>Neon</td><td>"Real-time charts • record • export"</td></tr>
-          <tr><td>4</td><td>3D Board tab, Buggy model at 3/4 angle</td><td>Stealth</td><td>"5 interactive 3D models"</td></tr>
-          <tr><td>5</td><td>2×2 grid — same tab in each of the 4 themes</td><td>All four</td><td>"4 themes — pick your vibe"</td></tr>
-          <tr><td>6</td><td>Mobile width (414×896 in Chrome DevTools)</td><td>Stealth</td><td>"Works on Chromebooks &amp; Android"</td></tr>
-          <tr><td>7</td><td>Onboarding overlay (run <code>localStorage.clear()</code> first)</td><td>Stealth</td><td>"Friendly first-run guide"</td></tr>
-          <tr><td>8</td><td>Compatibility infographic (made in Canva)</td><td>—</td><td>"✅ Chrome / Edge / Android &nbsp; ❌ Safari / iPhone / iPad"</td></tr>
-          <tr><td>9</td><td>Feature wall — text-on-image of top 8 features</td><td>—</td><td>Bullet list of features</td></tr>
-          <tr><td>10</td><td><code>SETUP.md</code> rendered in a browser or PDF mockup</td><td>—</td><td>"Step-by-step setup included"</td></tr>
+          <tr><td>1</td><td>Hero — Robot face with happy 😄 emotion + speech bubble showing TTS text (square crop)</td><td>"Talking Robot" + "Instant download"</td></tr>
+          <tr><td>2</td><td>Emotion picker open, all 10 faces visible (😐 😄 🥺 😠 😂 😜 😱 🥳 🤖 😴)</td><td>"10 expressive emotions"</td></tr>
+          <tr><td>3</td><td>Speech-to-text live transcript on screen, mic indicator glowing</td><td>"Real-time speech recognition"</td></tr>
+          <tr><td>4</td><td>Robot Face Animator close-up, mouth mid-animation</td><td>"Animated talking face"</td></tr>
+          <tr><td>5</td><td>Voice Settings panel — pitch / rate / volume / voice picker</td><td>"Tune every voice parameter"</td></tr>
+          <tr><td>6</td><td>Mobile width (414×896 in Chrome DevTools)</td><td>"Works on Chromebooks &amp; Android"</td></tr>
+          <tr><td>7</td><td>Onboarding overlay (run <code>localStorage.clear()</code> first)</td><td>"Friendly first-run guide"</td></tr>
+          <tr><td>8</td><td>Compatibility infographic (made in Canva)</td><td>"✅ Chrome / Edge / Android &nbsp; ❌ Safari / iPhone / iPad"</td></tr>
+          <tr><td>9</td><td>Feature wall — "Talk · Listen · 10 Emotions · Bluetooth"</td><td>Bullet list of features</td></tr>
+          <tr><td>10</td><td><code>SETUP.md</code> rendered in a browser or PDF mockup</td><td>"Step-by-step setup included"</td></tr>
         </tbody>
       </table>
 
@@ -207,12 +207,12 @@
       <ul class="check" data-key="photos">
         <li><input type="checkbox" id="ph_a"><label for="ph_a"><code>~/Desktop/etsy-photos/</code> folder created</label></li>
         <li><input type="checkbox" id="ph_b"><label for="ph_b">Chrome opened at 1440×900, bookmarks bar hidden, bookmark bar cleared</label></li>
-        <li><input type="checkbox" id="ph_c"><label for="ph_c">Real micro:bit V2 connected, Simulate Mode ON</label></li>
-        <li><input type="checkbox" id="ph_1"><label for="ph_1"><b>01-hero.png</b> — LED Matrix tab + real micro:bit next to laptop, <i>square crop</i></label></li>
-        <li><input type="checkbox" id="ph_2"><label for="ph_2"><b>02-sensors.png</b> — Sensors tab with all sparklines populated, board in motion</label></li>
-        <li><input type="checkbox" id="ph_3"><label for="ph_3"><b>03-graph.png</b> — Graph tab in fullscreen, Neon theme, ~3 datasets plotting</label></li>
-        <li><input type="checkbox" id="ph_4"><label for="ph_4"><b>04-3d.png</b> — 3D Board tab, Buggy model at 3/4 angle</label></li>
-        <li><input type="checkbox" id="ph_5"><label for="ph_5"><b>05-themes.png</b> — 2×2 grid showing all four themes</label></li>
+        <li><input type="checkbox" id="ph_c"><label for="ph_c">Microphone permission granted; sample TTS phrase typed and spoken once before screenshotting</label></li>
+        <li><input type="checkbox" id="ph_1"><label for="ph_1"><b>01-hero.png</b> — Robot face 😄 + speech bubble with TTS text, <i>square crop</i></label></li>
+        <li><input type="checkbox" id="ph_2"><label for="ph_2"><b>02-emotions.png</b> — Emotion picker open, all 10 faces visible</label></li>
+        <li><input type="checkbox" id="ph_3"><label for="ph_3"><b>03-listen.png</b> — Speech-to-text transcript live, microphone indicator active</label></li>
+        <li><input type="checkbox" id="ph_4"><label for="ph_4"><b>04-face.png</b> — Robot Face Animator, mouth mid-animation close-up</label></li>
+        <li><input type="checkbox" id="ph_5"><label for="ph_5"><b>05-settings.png</b> — Voice Settings panel (pitch / rate / volume)</label></li>
         <li><input type="checkbox" id="ph_6"><label for="ph_6"><b>06-mobile.png</b> — Mobile width (414×896 via Chrome DevTools)</label></li>
         <li><input type="checkbox" id="ph_7"><label for="ph_7"><b>07-onboarding.png</b> — Onboarding overlay visible (run <code>localStorage.clear()</code> first)</label></li>
         <li><input type="checkbox" id="ph_8"><label for="ph_8"><b>08-compatibility.png</b> — Compatibility infographic (designed in <a href="https://www.canva.com" target="_blank" rel="noopener">Canva</a>)</label></li>
@@ -232,12 +232,12 @@
       <table>
         <thead><tr><th>Time</th><th>Shot</th></tr></thead>
         <tbody>
-          <tr><td>0:00–0:02</td><td>App home, "Connect" button pulsing → click → green "Connected" chip appears.</td></tr>
-          <tr><td>0:02–0:04</td><td>Finger draws on the 5×5 LED grid → cut to micro:bit hardware lighting up the same pattern.</td></tr>
-          <tr><td>0:04–0:06</td><td>Tilt the physical board → 3D Buggy on screen tilts in sync.</td></tr>
-          <tr><td>0:06–0:09</td><td>Live graph drawing a sine wave in fullscreen, Neon theme.</td></tr>
-          <tr><td>0:09–0:12</td><td>Cycle the 4 themes (Stealth → Neon → Arctic → Blaze, ~700ms each).</td></tr>
-          <tr><td>0:12–0:15</td><td>End card: logo + "Talking Robot — works in Chrome / Edge". This is the loop seam.</td></tr>
+          <tr><td>0:00–0:02</td><td>Type "Hello, I am a talking robot" → press Speak → face mouth animates.</td></tr>
+          <tr><td>0:02–0:04</td><td>Cycle through 4 emotion faces via the emotion picker, mouth moves with each.</td></tr>
+          <tr><td>0:04–0:06</td><td>Click microphone → say "I feel happy" → transcript appears, face turns 😄.</td></tr>
+          <tr><td>0:06–0:09</td><td>Voice Settings — drag pitch slider up → robot voice rises.</td></tr>
+          <tr><td>0:09–0:12</td><td>Optional: BLE pair → micro:bit V2 5×5 LED mirrors the face.</td></tr>
+          <tr><td>0:12–0:15</td><td>End card: logo + "Talking Robot — Talk · Listen · Emote". This is the loop seam.</td></tr>
         </tbody>
       </table>
 
@@ -245,12 +245,12 @@
       <ul class="check" data-key="video">
         <li><input type="checkbox" id="v1"><label for="v1">Screen recorder installed — <a href="https://obsproject.com" target="_blank" rel="noopener">OBS</a> or QuickTime (built-in on macOS)</label></li>
         <li><input type="checkbox" id="v2"><label for="v2">Video editor installed — <a href="https://www.capcut.com" target="_blank" rel="noopener">CapCut</a> or iMovie</label></li>
-        <li><input type="checkbox" id="v3"><label for="v3">Clip A recorded: Connect button pulse → click → green "Connected" chip</label></li>
-        <li><input type="checkbox" id="v4"><label for="v4">Clip B recorded: LED grid drawing → micro:bit mirrors the pattern (split screen if possible)</label></li>
-        <li><input type="checkbox" id="v5"><label for="v5">Clip C recorded: tilt physical board → 3D Buggy tilts on screen</label></li>
-        <li><input type="checkbox" id="v6"><label for="v6">Clip D recorded: Graph in fullscreen, Neon theme, sine wave plotting</label></li>
-        <li><input type="checkbox" id="v7"><label for="v7">Clip E recorded: cycle all 4 themes (~700ms each)</label></li>
-        <li><input type="checkbox" id="v8"><label for="v8">End-card designed in Canva (logo + "works in Chrome / Edge")</label></li>
+        <li><input type="checkbox" id="v3"><label for="v3">Clip A recorded: type a sentence → press Speak → robot mouth animates</label></li>
+        <li><input type="checkbox" id="v4"><label for="v4">Clip B recorded: emotion picker cycles 4 faces, each one animates</label></li>
+        <li><input type="checkbox" id="v5"><label for="v5">Clip C recorded: microphone listens → live transcript → face turns 😄</label></li>
+        <li><input type="checkbox" id="v6"><label for="v6">Clip D recorded: Voice Settings — pitch slider up → voice rises</label></li>
+        <li><input type="checkbox" id="v7"><label for="v7">Clip E recorded: optional BLE → micro:bit V2 mirrors the face on 5×5 LED</label></li>
+        <li><input type="checkbox" id="v8"><label for="v8">End-card designed in Canva (logo + "Talk · Listen · Emote — Chrome / Edge")</label></li>
         <li><input type="checkbox" id="v9"><label for="v9">All clips assembled in CapCut/iMovie, total runtime 15 seconds</label></li>
         <li><input type="checkbox" id="v10"><label for="v10">Audio stripped (Etsy plays muted — no point)</label></li>
         <li><input type="checkbox" id="v11"><label for="v11">Exported as <b>1:1 1080×1080</b> or <b>16:9 1920×1080</b> MP4</label></li>
@@ -280,7 +280,7 @@
       <div class="copy">
         <span class="label">Title</span>
         <button class="btn" data-copy>Copy</button>
-        <pre>micro:bit V2 Playground — Bluetooth Web App + Illustrated Guide | 8 Tabs, 5 Robots, Live Graphs | STEM Classroom | Digital Download</pre>
+        <pre>Talking Robot — Speech-to-Text Web App + 10 Emotion Faces | Talk · Listen · 10 Emotions · Bluetooth | STEM Classroom | Digital Download</pre>
       </div>
 
       <h3>Category</h3>
@@ -290,32 +290,29 @@
       <div class="copy long">
         <span class="label">Description</span>
         <button class="btn" data-copy>Copy</button>
-        <pre>🎮 Talking Robot — the all-in-one Bluetooth control panel for the BBC micro:bit V2 (optional)
+        <pre>🤖 Talking Robot — Talk • Listen • Emote. Your browser-based conversational robot.
 
-Turn your micro:bit into an interactive STEM lab — no installs, no accounts, no cloud. Just open it in your browser and connect.
+Type or speak, and your robot speaks back with voice and emotion. 10 expressive faces, natural text-to-speech, live speech recognition — all running locally in your browser. No installs, no accounts, no cloud.
 
 ✨ What you get (instant download):
 • A complete web app (HTML, CSS, JS) you run locally in Chrome or Edge
-• Ready-to-flash micro:bit firmware (makecode.ts)
-• ILLUSTRATED trilingual user guide (EN/FR/AR) with built-in diagrams:
-  — architecture diagram • micro:bit V2 pin-out • firmware flow storyboard
-  — interactive LED playground (click cells, copy hex commands)
-  — visual troubleshooting: decision tree, symptom picker, icon gallery, reset recipe
-• A printable Quick Setup guide (SETUP.md)
-• 4 themes (Stealth, Neon, Arctic, Blaze)
-• 8 tabs: LED Matrix, Sensors, Servos, GamePad, Graph, 3D Board, Bench, Settings
-• 5 interactive 3D models (micro:bit, Buggy, Robot Arm, Balance Game, Weather Station)
-• Session recording, live graphs, annotations, JSON export
-• Beginner &amp; Expert modes — grows with the learner
+• Text-to-Speech: type anything, hear the robot speak
+• Speech-to-Text: talk to the robot, see your words transcribed live
+• Emotion picker: 10 animated robot faces (😐 😄 🥺 😠 😂 😜 😱 🥳 🤖 😴)
+• Robot Face Animator with blink, smile, and talking-mouth motion
+• Voice Settings: pitch, rate, volume, voice picker
+• Optional BLE bridge to a BBC micro:bit V2 — mirror the robot's face on the 5×5 LED matrix
+• Printable Quick Setup guide (SETUP.md)
+• English interface, tuned for classroom use
 
-🧒 Perfect for: classrooms, homeschool, after-school clubs, makerspaces, STEM camps, robotics enthusiasts, parents teaching kids to code.
+🧒 Perfect for: classrooms, homeschool, speech-therapy warm-ups, after-school clubs, makerspaces, STEM camps, parents teaching kids about voice tech and AI basics.
 
 ⚙️ Requires:
-• BBC micro:bit V2 (optional) (sold separately)
-• Chrome or Edge browser on a desktop, laptop, or Android device
-• Bluetooth enabled
+• A computer with a microphone and speakers
+• Chrome or Edge browser (desktop, laptop, or Android)
+• Optional: BBC micro:bit V2 for the Bluetooth face-mirror bridge
 
-❌ Does NOT work on: Safari, Firefox, iPhone, iPad. (Web Bluetooth limitation — not the app.)
+❌ Does NOT work on: Safari, Firefox, iPhone, iPad. (Web Speech / Web Bluetooth limitation — not the app.)
 
 📦 Delivery: Instant download after purchase — a single ZIP file.
 
@@ -328,19 +325,19 @@ Turn your micro:bit into an interactive STEM lab — no installs, no accounts, n
       <div class="copy">
         <span class="label">Tags</span>
         <button class="btn" data-copy>Copy</button>
-        <pre>microbit
-microbit v2
+        <pre>talking robot
+text to speech
+speech to text
 stem
 coding for kids
-bbc microbit
-bluetooth app
-makecode
+voice app
+emotion faces
 classroom resource
 homeschool stem
-robotics
-web bluetooth
+web speech api
+chrome edge
 edtech
-sensor playground</pre>
+speaking robot</pre>
       </div>
 
       <h3>Materials (13 — boosts SEO)</h3>
@@ -350,10 +347,10 @@ sensor playground</pre>
         <pre>html
 css
 javascript
+web speech api
+speech synthesis
+speech recognition
 web bluetooth
-chartjs
-threejs
-makecode
 typescript
 pwa
 digital download
@@ -363,13 +360,13 @@ source code</pre>
       </div>
 
       <h3>Files</h3>
-      <p>Upload <code>~/Desktop/microtalking-robot-v1.0.zip</code> in the <b>Digital files</b> section. (155 KB, well under Etsy's 20 MB per file / 5 files limit.)</p>
+      <p>Upload <code>~/Desktop/talking-robot-v1.0.zip</code> in the <b>Digital files</b> section. (155 KB, well under Etsy's 20 MB per file / 5 files limit.)</p>
 
       <h3>Inventory &amp; pricing</h3>
       <ul>
         <li><b>Price:</b> see <a href="#s6">step 6</a></li>
         <li><b>Quantity:</b> <code>999</code> (digital, never runs out)</li>
-        <li><b>SKU:</b> <code>MBP-V1</code></li>
+        <li><b>SKU:</b> <code>TR-V1</code></li>
         <li><b>Personalization:</b> Off</li>
       </ul>
 
@@ -393,10 +390,10 @@ source code</pre>
       <table>
         <thead><tr><th>Tier</th><th>Price</th><th>When to use</th></tr></thead>
         <tbody>
-          <tr><td>Launch (post-V1.0.0)</td><td>$12.99</td><td>First 30 days. The illustrated guide justifies the bump vs a plain ZIP. Gather reviews fast.</td></tr>
+          <tr><td>Launch (post-V1.0.0)</td><td>$12.99 (or $7 with coupon <code>VOICELAUNCH</code>)</td><td>First 30 days. Coupon VOICELAUNCH runs early-bird price at $7 for first buyers. Gather reviews fast.</td></tr>
           <tr><td>Standard</td><td>$17.99</td><td>After 5+ five-star reviews, or after 30 days regardless.</td></tr>
-          <tr><td>With lesson plan</td><td>$29.99</td><td>Add a 1-page printable lesson plan PDF bundle.</td></tr>
-          <tr><td>Teacher's First-Workshop Pack</td><td>$29.99</td><td>App + 4 printable posters + lesson plan + workshop timing + parent handout. Same files, wrapped.</td></tr>
+          <tr><td>Classroom bundle</td><td>$29.99</td><td>Add printable emotion flashcards + 1-page lesson plan PDF.</td></tr>
+          <tr><td>Teacher's First-Workshop Pack</td><td>$29.99</td><td>App + emotion poster pack + lesson plan + workshop timing + parent handout. Same files, wrapped.</td></tr>
           <tr><td>School Site License</td><td>$149 → $499 district</td><td>Separate listing (see step 13).</td></tr>
         </tbody>
       </table>
@@ -419,7 +416,7 @@ source code</pre>
       <div class="copy">
         <span class="label">Shop announcement</span>
         <button class="btn" data-copy>Copy</button>
-        <pre>🎮 STEM tools for makers, teachers, and curious kids — instant digital downloads you can use the same day. Built and tested by a working educator. Questions before buying? Message me anytime — I usually reply within a few hours.</pre>
+        <pre>🤖 Voice-first STEM tools for makers, teachers, and curious kids — instant digital downloads you can use the same day. Built and tested by a working educator. Questions before buying? Message me anytime — I usually reply within a few hours.</pre>
       </div>
 
       <h3>Message to buyers (auto-sent on payment)</h3>
@@ -431,7 +428,7 @@ source code</pre>
 
 Your download is ready right now — Etsy has emailed you the link, and you can also grab it from You → Purchases &amp; Reviews.
 
-📘 Start here: unzip the file and open SETUP.md (5-minute guide). You'll need a BBC micro:bit V2 (optional) and Chrome or Edge — Safari and iPhones won't work (that's a Web Bluetooth limitation, not the app).
+📘 Start here: unzip the file and open SETUP.md (5-minute guide). You'll need Chrome or Edge with a microphone and speakers — Safari and iPhones won't work (that's a Web Speech API limitation, not the app). A BBC micro:bit V2 is optional for the Bluetooth face-mirror bridge.
 
 💬 Stuck? Reply to this message with your Etsy order number and a screenshot — I'll get back to you within 24 hours.
 
@@ -449,10 +446,11 @@ Happy hacking!
         <button class="btn" data-copy>Copy</button>
         <pre>Hi! Great question — quick check before you buy:
 
-1. Do you have a BBC micro:bit V2 (optional) (the one with the gold microphone)? V1 is missing the sound sensor and a couple of features.
-2. What browser will you be using? It must be Chrome or Edge on a desktop, laptop, Chromebook, or Android tablet. Safari, Firefox, iPhone, and iPad are not supported (Web Bluetooth limitation).
+1. What browser will you be using? It must be Chrome or Edge on a desktop, laptop, Chromebook, or Android tablet. Safari, Firefox, iPhone, and iPad are not supported (Web Speech API limitation).
+2. Do you have a working microphone and speakers? The app speaks out loud and listens to you.
+3. Optional: a BBC micro:bit V2 if you want the Bluetooth face-mirror bridge on the 5×5 LEDs.
 
-If both are a yes, you're good to go. Let me know if you'd like me to send a 30-second demo video before you decide.</pre>
+If yes to the first two, you're good to go. Let me know if you'd like me to send a 30-second demo video before you decide.</pre>
       </div>
 
       <h3>7-day follow-up (manual or via Etsy filters)</h3>
@@ -503,34 +501,34 @@ If both are a yes, you're good to go. Let me know if you'd like me to send a 30-
       <div class="copy">
         <span class="label">Pin titles</span>
         <button class="btn" data-copy>Copy</button>
-        <pre>Turn a micro:bit into a STEM lab — works in any browser
-The micro:bit Bluetooth app every STEM teacher wishes existed
-Homeschool STEM: 8 tabs, 5 robots, zero installs
-micro:bit V2 + Chrome = a $10 robotics classroom
-From "what's a micro:bit" to "I built a robot" in 5 minutes</pre>
+        <pre>Talking Robot: type, talk, emote — all in your browser
+The conversational robot every STEM teacher wishes existed
+Homeschool STEM: Talk · Listen · 10 Emotions · zero installs
+Chrome + a mic = your kid's first talking robot
+From "what's a text-to-speech app" to "my robot is talking" in 5 minutes</pre>
       </div>
 
       <p><b>Pin description (500 chars):</b></p>
       <div class="copy long">
         <span class="label">Pin description</span>
         <button class="btn" data-copy>Copy</button>
-        <pre>Looking for a micro:bit project that works straight from the browser? Talking Robot gives you 8 tabs of live control — LED matrix, sensors, servos, gamepad, real-time graphs, and 5 interactive 3D models — all over Bluetooth. Perfect for STEM teachers, homeschool parents, and after-school clubs. No installs, no accounts. Works on Chrome and Edge. One-time download. #microbit #STEM #homeschool #coding #edtech</pre>
+        <pre>Looking for a voice-first STEM project that works straight from the browser? Talking Robot gives you text-to-speech, live speech recognition, 10 animated emotion faces, and an optional Bluetooth bridge to a BBC micro:bit V2. Perfect for STEM teachers, homeschool parents, and after-school clubs. No installs, no accounts. Works on Chrome and Edge. One-time download. #talkingrobot #STEM #homeschool #coding #edtech</pre>
       </div>
 
       <p><b>Hashtag bank (rotate, don't reuse the same set):</b></p>
       <div class="copy">
         <span class="label">Hashtags</span>
         <button class="btn" data-copy>Copy</button>
-        <pre>#microbit #microbitV2 #STEM #STEAM #STEMforkids #STEMteacher #homeschoolSTEM #classroomresources #edtech #makered #codingforkids #learntoprogram #robotics #BBCmicrobit #chromebookclassroom #afterschoolclub</pre>
+        <pre>#talkingrobot #texttospeech #speechtotext #STEM #STEAM #STEMforkids #STEMteacher #homeschoolSTEM #classroomresources #edtech #makered #codingforkids #voicetech #emotionlearning #chromebookclassroom #afterschoolclub</pre>
       </div>
 
       <h3>Other channels</h3>
       <table>
         <thead><tr><th>Channel</th><th>Approach</th></tr></thead>
         <tbody>
-          <tr><td>TikTok / Reels</td><td>Reuse the 15-sec demo video. Hook in the first 1.5 seconds: tilt the board → 3D buggy tilts. Caption: <i>"Bought my class a $20 STEM lab"</i>. Drop the Etsy link in bio.</td></tr>
-          <tr><td>Reddit</td><td>Build karma in <a href="https://reddit.com/r/microbit" target="_blank" rel="noopener">r/microbit</a>, <a href="https://reddit.com/r/edtech" target="_blank" rel="noopener">r/edtech</a>, <a href="https://reddit.com/r/homeschool" target="_blank" rel="noopener">r/homeschool</a> for 2–3 weeks first. Then post a demo (no Etsy link). Say "DM me if you want it." Send the link privately.</td></tr>
-          <tr><td>Facebook groups</td><td>Highest conversion of all free channels. Search for: "micro:bit teachers", "BBC micro:bit Educators", "Homeschool STEM", "Coding with Kids". Most groups allow self-promo on Friday — read pinned rules.</td></tr>
+          <tr><td>TikTok / Reels</td><td>Reuse the 15-sec demo video. Hook in the first 1.5 seconds: kid speaks → robot face turns 😄 and speaks back. Caption: <i>"My kid built a talking robot in his browser"</i>. Drop the Etsy link in bio.</td></tr>
+          <tr><td>Reddit</td><td>Build karma in <a href="https://reddit.com/r/edtech" target="_blank" rel="noopener">r/edtech</a>, <a href="https://reddit.com/r/homeschool" target="_blank" rel="noopener">r/homeschool</a>, <a href="https://reddit.com/r/webdev" target="_blank" rel="noopener">r/webdev</a> for 2–3 weeks first. Then post a demo (no Etsy link). Say "DM me if you want it." Send the link privately.</td></tr>
+          <tr><td>Facebook groups</td><td>Highest conversion of all free channels. Search for: "STEM teachers", "Speech therapy ideas", "Homeschool STEM", "Coding with Kids". Most groups allow self-promo on Friday — read pinned rules.</td></tr>
           <tr><td>YouTube</td><td>Long-term play. Weekly 5-minute "what you can build with Talking Robot" videos. Compounds over 6+ months.</td></tr>
         </tbody>
       </table>
@@ -539,7 +537,7 @@ From "what's a micro:bit" to "I built a robot" in 5 minutes</pre>
       <h3>Weekly traffic habit</h3>
       <ul class="check" data-key="traffic">
         <li><input type="checkbox" id="tr1"><label for="tr1">Pinterest business account created + linked to Etsy</label></li>
-        <li><input type="checkbox" id="tr2"><label for="tr2">3 Pinterest boards created (STEM Activities, Homeschool Resources, micro:bit Projects)</label></li>
+        <li><input type="checkbox" id="tr2"><label for="tr2">3 Pinterest boards created (STEM Activities, Homeschool Resources, Voice Tech for Kids)</label></li>
         <li><input type="checkbox" id="tr3"><label for="tr3">First 3 pins designed in Canva (1000×1500)</label></li>
         <li><input type="checkbox" id="tr4"><label for="tr4">Pin #1 published with keyword title + 500-char description</label></li>
         <li><input type="checkbox" id="tr5"><label for="tr5">Pin #2 published (different angle, different hashtag set)</label></li>
@@ -548,7 +546,7 @@ From "what's a micro:bit" to "I built a robot" in 5 minutes</pre>
         <li><input type="checkbox" id="tr8"><label for="tr8">Posted in 1 FB group (on allowed promo day)</label></li>
         <li><input type="checkbox" id="tr9"><label for="tr9">TikTok / Reels account created, bio link set</label></li>
         <li><input type="checkbox" id="tr10"><label for="tr10">First demo clip posted on TikTok / Reels</label></li>
-        <li><input type="checkbox" id="tr11"><label for="tr11">Subscribed to 3 subreddits (r/microbit, r/edtech, r/homeschool) — start building karma</label></li>
+        <li><input type="checkbox" id="tr11"><label for="tr11">Subscribed to 3 subreddits (r/edtech, r/homeschool, r/webdev) — start building karma</label></li>
         <li><input type="checkbox" id="tr12"><label for="tr12">Daily habit set: 1 pin/day, answer 1 Reddit question/day</label></li>
       </ul>
     </section>
@@ -563,7 +561,7 @@ From "what's a micro:bit" to "I built a robot" in 5 minutes</pre>
         <li><input type="checkbox" id="tp3"><label for="tp3">Payout method connected</label></li>
         <li><input type="checkbox" id="tp4"><label for="tp4">Renamed <code>SETUP.md</code> to "Teacher Setup Guide" inside a TpT-specific ZIP</label></li>
         <li><input type="checkbox" id="tp5"><label for="tp5">Added a 1-page "Lesson Plan Idea" PDF to the TpT ZIP</label></li>
-        <li><input type="checkbox" id="tp6"><label for="tp6">New TpT ZIP built and saved as <code>~/Desktop/microtalking-robot-tpt.zip</code></label></li>
+        <li><input type="checkbox" id="tp6"><label for="tp6">New TpT ZIP built and saved as <code>~/Desktop/talking-robot-tpt.zip</code></label></li>
         <li><input type="checkbox" id="tp7"><label for="tp7">TpT listing created — title includes "Grades 4-8", "No Prep", keywords teachers search for</label></li>
         <li><input type="checkbox" id="tp8"><label for="tp8">Priced at <b>2× the Etsy price</b> ($19.99)</label></li>
         <li><input type="checkbox" id="tp9"><label for="tp9">Reused top 6 Etsy photos (TpT has a 6-image limit on some listing types)</label></li>
@@ -581,7 +579,7 @@ From "what's a micro:bit" to "I built a robot" in 5 minutes</pre>
       <ul class="check" data-key="pitfalls">
         <li><input type="checkbox" id="pt1"><label for="pt1"><b>Refund requests from iPhone/Safari users</b> — I will refer them to the description (I warned them). Etsy doesn't require refunds on instant downloads.</label></li>
         <li><input type="checkbox" id="pt2"><label for="pt2"><b>Bad first review</b> — I will reply publicly, calmly, with the fix. Future buyers read the reply more than the review itself.</label></li>
-        <li><input type="checkbox" id="pt3"><label for="pt3"><b>Tag-stuffing</b> — my 13 tags don't repeat the same word (no "microbit / microbit v2 / microbit playground" combo).</label></li>
+        <li><input type="checkbox" id="pt3"><label for="pt3"><b>Tag-stuffing</b> — my 13 tags don't repeat the same word (no "talking robot / talk robot / robot talker" combo).</label></li>
         <li><input type="checkbox" id="pt4"><label for="pt4"><b>Pricing too low forever</b> — $9.99 is a launch tactic. Calendar reminder is set to raise after 5 reviews or 30 days.</label></li>
         <li><input type="checkbox" id="pt5"><label for="pt5"><b>ZIP backup</b> — a copy is saved on Google Drive / Dropbox / external disk outside this Mac.</label></li>
         <li><input type="checkbox" id="pt6"><label for="pt6"><b>Response time</b> — Etsy ranks shops on this. I aim for &lt;24h, ideally &lt;4h on weekdays. Etsy notifications enabled on phone.</label></li>
@@ -614,13 +612,13 @@ From "what's a micro:bit" to "I built a robot" in 5 minutes</pre>
     <!-- 13 -->
     <section id="s13">
       <h2><span class="num">13</span> Second listing: School Site License ($149) <span class="pill-status">Not started</span></h2>
-      <p class="intro">One site-license sale ≈ 15 individual sales. Same ZIP contents — different LICENSE file. File is already built: <code>~/Desktop/microtalking-robot-v1.0-site-license.zip</code>.</p>
+      <p class="intro">One site-license sale ≈ 15 individual sales. Same ZIP contents — different LICENSE file. File is already built: <code>~/Desktop/talking-robot-v1.0-site-license.zip</code>.</p>
 
       <h3>Title</h3>
       <div class="copy">
         <span class="label">Site-license title</span>
         <button class="btn" data-copy>Copy</button>
-        <pre>micro:bit V2 Playground — SCHOOL SITE LICENSE | Up to 30 Teachers, Unlimited Students | STEM Classroom App | Instant Digital Download</pre>
+        <pre>Talking Robot — SCHOOL SITE LICENSE | Up to 30 Teachers, Unlimited Students | Voice-First STEM Classroom App | Instant Digital Download</pre>
       </div>
 
       <h3>Pricing ladder</h3>
@@ -637,9 +635,9 @@ From "what's a micro:bit" to "I built a robot" in 5 minutes</pre>
       <div class="copy long">
         <span class="label">Site-license description</span>
         <button class="btn" data-copy>Copy</button>
-        <pre>🏫 School Site License — micro:bit V2 Playground
+        <pre>🏫 School Site License — Talking Robot
 
-The browser-based micro:bit control panel, licensed for your whole school.
+The browser-based conversational robot, licensed for your whole school.
 
 ✅ What the license covers:
 • Up to 30 teachers / instructors at ONE physical school, library, or learning center
@@ -650,13 +648,14 @@ The browser-based micro:bit control panel, licensed for your whole school.
 
 🛠️ What you get (instant download):
 • The full Talking Robot web app (runs locally in any Chromebook / laptop)
-• Ready-to-flash firmware (makecode.ts) for BBC micro:bit V2 (optional)
+• Text-to-speech, speech-to-text, 10 emotion faces, Voice Settings
+• Optional BLE bridge firmware for BBC micro:bit V2 (face mirror on 5×5 LED)
 • Printable setup guide
 • Signed Site License certificate (fill in your school name and keep on file)
 
-👩‍🏫 Perfect for: STEM departments, robotics clubs, library maker corners, summer camps, after-school coding programs.
+👩‍🏫 Perfect for: STEM departments, speech-and-language teams, library maker corners, summer camps, after-school coding programs.
 
-⚙️ Requires: BBC micro:bit V2 (optional) (sold separately) + Chrome or Edge. Not supported: Safari, Firefox, iPhone, iPad (Web Bluetooth limitation).
+⚙️ Requires: Chrome or Edge with microphone and speakers. Optional: BBC micro:bit V2 (sold separately) for the Bluetooth bridge. Not supported: Safari, Firefox, iPhone, iPad (Web Speech API limitation).
 
 🏢 Need more than one site? Message me before buying — I offer discounted multi-site and district licenses.
 
@@ -667,7 +666,7 @@ The browser-based micro:bit control panel, licensed for your whole school.
       <div class="copy">
         <span class="label">Site-license tags</span>
         <button class="btn" data-copy>Copy</button>
-        <pre>microbit
+        <pre>talking robot
 school license
 site license
 stem classroom
@@ -675,15 +674,15 @@ bulk license
 district license
 teacher resource
 classroom software
-microbit v2
+text to speech
 coding curriculum
-robotics club
-bbc microbit
+voice tech
+speech therapy
 edtech bulk</pre>
       </div>
 
       <h3>Files to upload</h3>
-      <p>Upload <code>~/Desktop/microtalking-robot-v1.0-site-license.zip</code>. Re-use photos 1–10 from the single-user listing. Add <b>photo #11</b>: a filled-in preview of the <a href="SITE_LICENSE_CERTIFICATE.html" target="_blank" rel="noopener">Site License Certificate</a> — signals legitimacy to procurement officers.</p>
+      <p>Upload <code>~/Desktop/talking-robot-v1.0-site-license.zip</code>. Re-use photos 1–10 from the single-user listing. Add <b>photo #11</b>: a filled-in preview of the <a href="SITE_LICENSE_CERTIFICATE.html" target="_blank" rel="noopener">Site License Certificate</a> — signals legitimacy to procurement officers.</p>
 
       <h3>Auto-reply (override the standard one for this listing)</h3>
       <div class="copy long">
@@ -695,7 +694,7 @@ Your download is in You → Purchases &amp; Reviews. Inside the ZIP you'll find 
 
 I'll email you a personalized Site License Certificate (PDF) within 24 hours.
 
-📘 Start with SETUP.md. A good first step is to flash the firmware on 2–3 staff micro:bits, then share the unzipped folder on your school's shared drive.
+📘 Start with SETUP.md. A good first step is to share the unzipped folder on your school's shared drive so any teacher can open index.html in Chrome/Edge. If you want the optional BLE face-mirror bridge, flash the firmware on 2–3 staff micro:bits.
 
 🏢 Multiple sites? Reply here with how many — I offer a district discount starting at 3 sites.
 
@@ -718,36 +717,36 @@ I'll email you a personalized Site License Certificate (PDF) within 24 hours.
       <div class="copy">
         <span class="label">Arabic title</span>
         <button class="btn" data-copy>Copy</button>
-        <pre>لوحة تحكم مايكروبت V2 عبر البلوتوث — تطبيق STEM للمعلمين والأطفال | تحميل فوري | Microbit Playground Arabic</pre>
+        <pre>روبوت متكلم — تطبيق تحويل النص إلى كلام و10 وجوه تعبيرية | تعلم · استمع · تحدث | تحميل فوري | Talking Robot</pre>
       </div>
 
       <h3>Description (Arabic)</h3>
       <div class="copy long">
         <span class="label">Arabic description</span>
         <button class="btn" data-copy>Copy</button>
-        <pre>🎮 لوحة تحكم مايكروبت — تطبيق متكامل عبر البلوتوث للوحة BBC micro:bit V2 (optional)
+        <pre>🤖 روبوت متكلم — تحدث · استمع · عبّر. روبوت محادثة يعمل في متصفحك.
 
-حوّل المايكروبت إلى مختبر STEM تفاعلي — بدون تثبيت، بدون حساب، بدون إنترنت. فقط افتح المتصفح واتصل.
+اكتب أو تحدث، وسيرد الروبوت بصوت طبيعي و10 وجوه تعبيرية متحركة. تحويل نص إلى كلام، وتحويل كلام إلى نص مباشر — كل شيء يعمل محلياً في متصفحك. بدون تثبيت، بدون حساب، بدون إنترنت.
 
 ✨ ما ستحصل عليه (تحميل فوري):
 • تطبيق ويب كامل (HTML, CSS, JS) يعمل محلياً في متصفح Chrome أو Edge
-• برنامج جاهز للمايكروبت (makecode.ts)
+• تحويل النص إلى كلام: اكتب أي شيء واسمع الروبوت يتحدث
+• تحويل الكلام إلى نص: تحدث إلى الروبوت وشاهد كلماتك تظهر مباشرة
+• اختيار المشاعر: 10 وجوه روبوت متحركة (😐 😄 🥺 😠 😂 😜 😱 🥳 🤖 😴)
+• محرك وجه الروبوت مع حركة الرمش والابتسامة وفتح الفم
+• إعدادات الصوت: طبقة الصوت، السرعة، مستوى الصوت، اختيار الصوت
+• جسر بلوتوث اختياري إلى BBC micro:bit V2 — عرض وجه الروبوت على مصفوفة LED 5×5
 • دليل إعداد مطبوع
-• 4 ثيمات (ستيلث، نيون، أركتيك، بليز)
-• 8 تبويبات: مصفوفة LED، المستشعرات، المحركات، جويباد، الرسم البياني، عرض ثلاثي الأبعاد، البنش، الإعدادات
-• 5 نماذج ثلاثية الأبعاد تفاعلية (مايكروبت، روبوت، ذراع روبوتي، لعبة توازن، محطة طقس)
-• تسجيل الجلسات، رسوم بيانية حية، تصدير JSON
-• وضع المبتدئ ووضع الخبير — يتطور مع المتعلم
-• واجهة عربية كاملة مع دعم RTL (اليمين إلى اليسار)
+• واجهة إنجليزية مخصصة للاستخدام الدراسي
 
-🧒 مناسب لـ: الفصول الدراسية، التعليم المنزلي، النوادي المدرسية، ورش الصنع، معسكرات STEM، الأطفال المهتمين بالبرمجة والروبوتات.
+🧒 مناسب لـ: الفصول الدراسية، التعليم المنزلي، جلسات علاج النطق، النوادي المدرسية، ورش الصنع، معسكرات STEM، الأطفال المهتمين بالصوت والذكاء الاصطناعي.
 
 ⚙️ يتطلب:
-• لوحة BBC micro:bit V2 (optional) (تُشترى بشكل منفصل)
-• متصفح Chrome أو Edge على كمبيوتر أو لابتوب أو جهاز أندرويد
-• تفعيل البلوتوث
+• جهاز كمبيوتر مع ميكروفون وسماعات
+• متصفح Chrome أو Edge (كمبيوتر أو لابتوب أو أندرويد)
+• اختياري: لوحة BBC micro:bit V2 لجسر عرض الوجه عبر البلوتوث
 
-❌ لا يعمل على: Safari، Firefox، iPhone، iPad (قيود Web Bluetooth).
+❌ لا يعمل على: Safari، Firefox، iPhone، iPad (قيود Web Speech / Web Bluetooth).
 
 📦 التسليم: تحميل فوري بعد الشراء — ملف ZIP واحد.
 
@@ -760,19 +759,19 @@ I'll email you a personalized Site License Certificate (PDF) within 24 hours.
       <div class="copy">
         <span class="label">Arabic tags</span>
         <button class="btn" data-copy>Copy</button>
-        <pre>مايكروبت
+        <pre>روبوت متكلم
+تحويل نص إلى كلام
 STEM أطفال
 تعليم البرمجة
 روبوت للأطفال
 تحميل رقمي
 تعليم منزلي
-microbit arabic
+talking robot arabic
 arabic stem
 homeschool arabic
 coding arabic
 برمجة للأطفال
-علوم stem
-microbit v2</pre>
+علاج النطق</pre>
       </div>
 
       <h3>Auto-reply (Arabic)</h3>
@@ -783,7 +782,7 @@ microbit v2</pre>
 
 تم تجهيز التحميل فوراً — ستجد الرابط في بريدك الإلكتروني ومن خلال حسابك في Etsy → Purchases &amp; Reviews.
 
-📘 ابدأ من هنا: فك ضغط الملف وافتح SETUP.md (دليل 5 دقائق). تحتاج لوحة BBC micro:bit V2 (optional) ومتصفح Chrome أو Edge — لا يعمل على Safari أو iPhone (قيود Web Bluetooth).
+📘 ابدأ من هنا: فك ضغط الملف وافتح SETUP.md (دليل 5 دقائق). تحتاج متصفح Chrome أو Edge مع ميكروفون وسماعات — لا يعمل على Safari أو iPhone (قيود Web Speech API). لوحة BBC micro:bit V2 اختيارية لجسر عرض الوجه عبر البلوتوث.
 
 💬 واجهت مشكلة؟ راسلني برقم الطلب وصورة من الشاشة — سأرد خلال 24 ساعة.
 
@@ -799,7 +798,7 @@ microbit v2</pre>
       <ul>
         <li><b>Facebook groups:</b> "تعليم البرمجة للأطفال", "التعليم المنزلي", "ستيم للأطفال", "Algeria Homeschool Network"</li>
         <li><b>Telegram channels:</b> many Arabic homeschool communities live on Telegram, not Facebook. One post in a 5k-member channel = 30–50 visits.</li>
-        <li><b>TikTok:</b> Arabic-language micro:bit demos have near-zero saturation. Post 15-sec clips with Arabic on-screen text.</li>
+        <li><b>TikTok:</b> Arabic-language talking-robot demos have near-zero saturation. Post 15-sec clips with Arabic on-screen text.</li>
         <li><b>Instagram:</b> tag Arabic STEM influencers.</li>
       </ul>
       <div class="callout tip">Price at <b>$9.99 USD</b>, same as English. Diaspora buyers pay in USD comfortably; MENA buyers expect foreign digital goods to be priced internationally.</div>
@@ -807,7 +806,7 @@ microbit v2</pre>
       <ul class="check" data-key="arabiclisting">
         <li><input type="checkbox" id="ar1"><label for="ar1">Arabic listing published</label></li>
         <li><input type="checkbox" id="ar2"><label for="ar2">At least one Facebook/Telegram post in an Arabic STEM group</label></li>
-        <li><input type="checkbox" id="ar3"><label for="ar3">One TikTok clip in Arabic</label></li>
+        <li><input type="checkbox" id="ar3"><label for="ar3">One TikTok clip in Arabic (robot speaking Arabic TTS)</label></li>
       </ul>
     </section>
 
@@ -834,9 +833,9 @@ microbit v2</pre>
         <li><input type="checkbox" id="cw7"><label for="cw7">Filled <b>Order #</b></label></li>
         <li><input type="checkbox" id="cw8"><label for="cw8">Filled <b>Purchaser Email</b></label></li>
         <li><input type="checkbox" id="cw9"><label for="cw9">Filled <b>Date of Purchase</b> (YYYY-MM-DD)</label></li>
-        <li><input type="checkbox" id="cw10"><label for="cw10">Set <b>Certificate ID</b> — next in sequence (<code>MBP-SITE-0001</code>, <code>-0002</code>, …)</label></li>
+        <li><input type="checkbox" id="cw10"><label for="cw10">Set <b>Certificate ID</b> — next in sequence (<code>TR-SITE-0001</code>, <code>-0002</code>, …)</label></li>
         <li><input type="checkbox" id="cw11"><label for="cw11">Previewed — all fields correct, no typos, no leftover placeholders</label></li>
-        <li><input type="checkbox" id="cw12"><label for="cw12">Saved as PDF: File → Print → Save as PDF → A4 → filename <code>MBP-SITE-[ID]-[school-slug].pdf</code></label></li>
+        <li><input type="checkbox" id="cw12"><label for="cw12">Saved as PDF: File → Print → Save as PDF → A4 → filename <code>TR-SITE-[ID]-[school-slug].pdf</code></label></li>
         <li><input type="checkbox" id="cw13"><label for="cw13">Archived the PDF to <code>~/Dropbox/Workshop-DIY/Certificates/</code></label></li>
         <li><input type="checkbox" id="cw14"><label for="cw14">Appended a new row to <code>log.csv</code></label></li>
         <li><input type="checkbox" id="cw15"><label for="cw15">On Etsy: replied to the buyer's order message with PDF attached + the template below</label></li>
@@ -857,8 +856,8 @@ Please keep this PDF together with your Etsy order confirmation. It serves as vi
 
 A quick checklist for your team:
 ✓ Unzip the download and open SETUP.md first
-✓ Flash makecode.ts on 2–3 staff micro:bits before rolling out to students
 ✓ Share the unzipped folder on your school's shared drive (Google Drive, OneDrive, etc.) — internal distribution is covered by your license
+✓ Optional: flash the BLE bridge firmware on 2–3 staff micro:bits if you want the face mirror on 5×5 LEDs
 ✓ Need a starter lesson plan? Reply here and I'll send one
 
 If you have multiple sites or expect to expand beyond 30 teachers, let me know — I offer district pricing starting at 3 sites.
@@ -873,36 +872,36 @@ Workshop·DIY</pre>
 
     <!-- 16 -->
     <section id="s16">
-      <h2><span class="num">16</span> New sell ideas unlocked by V1.0.0's illustrated guide <span class="pill-status">Not started</span></h2>
-      <p class="intro">The visual helpers added in V1.0.0 (architecture SVG, pin-out, symptom picker, icon gallery, interactive LED) open product angles that weren't viable before. Pick the top 3 and you double your revenue without writing more code.</p>
+      <h2><span class="num">16</span> New sell ideas unlocked by Talking Robot V1.0.0 <span class="pill-status">Not started</span></h2>
+      <p class="intro">The voice and emotion features unlock product angles that weren't viable before. Pick the top 3 and you double your revenue without writing more code.</p>
 
       <h3>Ideas ranked by payoff ÷ effort</h3>
       <table>
         <thead><tr><th>#</th><th>Idea</th><th>Effort</th><th>Launch price</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td><b>Printable classroom poster pack</b> — extract 4 SVGs (pin-out, architecture, symptom chart, firmware storyboard) as standalone PDFs. New Etsy + TpT listings.</td><td>~3h</td><td>$14.99 (Etsy) / $24.99 (TpT)</td></tr>
-          <tr><td>2</td><td><b>Teacher's First-Workshop Pack</b> — app + 4 posters + lesson plan + workshop timing + parent handout. Same files, premium wrapper.</td><td>~2h</td><td>$29.99</td></tr>
-          <tr><td>3</td><td><b>"No-Tech-Anxiety" marketing pitch</b> — re-target FB groups with the illustrated-guide angle. Designed for non-technical teachers.</td><td>~1h</td><td>Free (traffic)</td></tr>
-          <tr><td>4</td><td><b>TikTok / Reels cut</b> using the firmware storyboard SVG — 15s, "literally all you need to get started".</td><td>~1h</td><td>Free (traffic)</td></tr>
-          <tr><td>5</td><td><b>Pinterest pin: "The pin-out every teacher should save"</b> — infographics save at ~4× the rate of photos.</td><td>~30min</td><td>Free (traffic)</td></tr>
-          <tr><td>6</td><td><b>Custom firmware add-on</b> — 1-hour paid firmware tweak ("I need a moisture sensor on P0"). Made-to-order digital service.</td><td>variable</td><td>$49/job</td></tr>
-          <tr><td>7</td><td><b>TpT "Interactive resource" badge</b> — the LED playground + symptom picker qualify. TpT surfaces interactive listings above static PDFs.</td><td>~10min</td><td>$24.99</td></tr>
-          <tr><td>8</td><td><b>Pre-order v9 "Lesson Book"</b> — announce now, deliver in a few months. Builds anticipation and cashflow.</td><td>~1h to launch</td><td>$39</td></tr>
+          <tr><td>1</td><td><b>Printable emotion-flashcard pack</b> — 10 emotion faces as standalone printable PDF cards. New Etsy + TpT listings.</td><td>~3h</td><td>$14.99 (Etsy) / $24.99 (TpT)</td></tr>
+          <tr><td>2</td><td><b>Teacher's First-Workshop Pack</b> — app + emotion posters + lesson plan + workshop timing + parent handout. Same files, premium wrapper.</td><td>~2h</td><td>$29.99</td></tr>
+          <tr><td>3</td><td><b>"No-Tech-Anxiety" marketing pitch</b> — re-target FB groups with the "zero-install voice app" angle. Designed for non-technical teachers.</td><td>~1h</td><td>Free (traffic)</td></tr>
+          <tr><td>4</td><td><b>TikTok / Reels cut</b> — 15s "kid types a sentence, robot speaks and emotes". Viral-friendly.</td><td>~1h</td><td>Free (traffic)</td></tr>
+          <tr><td>5</td><td><b>Pinterest pin: "Free emotion chart for your classroom"</b> — infographics save at ~4× the rate of photos.</td><td>~30min</td><td>Free (traffic)</td></tr>
+          <tr><td>6</td><td><b>Custom voice add-on</b> — 1-hour paid customization ("I need a French TTS voice default"). Made-to-order digital service.</td><td>variable</td><td>$49/job</td></tr>
+          <tr><td>7</td><td><b>TpT "Interactive resource" badge</b> — the emotion picker + live TTS qualify. TpT surfaces interactive listings above static PDFs.</td><td>~10min</td><td>$24.99</td></tr>
+          <tr><td>8</td><td><b>Pre-order v1.1 "Conversation Book"</b> — announce now, deliver in a few months. Builds anticipation and cashflow.</td><td>~1h to launch</td><td>$39</td></tr>
           <tr><td>9</td><td><b>Affiliate swap</b> with 3–5 non-competing STEM shops — "I link to you, you link to me."</td><td>~2h outreach</td><td>Free (traffic)</td></tr>
-          <tr><td>10</td><td><b>Spanish listing</b> — architecture is ready for i18n. ~3h translation for ~50% the Arabic market size.</td><td>~3h</td><td>$12.99</td></tr>
+          <tr><td>10</td><td><b>Spanish listing</b> — Web Speech API supports Spanish voices out of the box. ~3h translation.</td><td>~3h</td><td>$12.99</td></tr>
         </tbody>
       </table>
 
       <h3>This week — pick three</h3>
       <ul class="check" data-key="sellideas">
-        <li><input type="checkbox" id="si1"><label for="si1">Extracted <b>micro:bit V2 pin-out</b> SVG as a standalone 1-page PDF (Canva or print-to-PDF from guide.html)</label></li>
-        <li><input type="checkbox" id="si2"><label for="si2">Extracted the <b>architecture diagram</b> as a 1-page PDF</label></li>
-        <li><input type="checkbox" id="si3"><label for="si3">Extracted the <b>symptom-picker chart</b> as a 1-page PDF (laminatable)</label></li>
-        <li><input type="checkbox" id="si4"><label for="si4">Extracted the <b>firmware-flash storyboard</b> as a 1-page PDF</label></li>
-        <li><input type="checkbox" id="si5"><label for="si5">4-poster pack listed on Etsy ($14.99)</label></li>
-        <li><input type="checkbox" id="si6"><label for="si6">4-poster pack listed on Teachers Pay Teachers ($24.99)</label></li>
-        <li><input type="checkbox" id="si7"><label for="si7">Pinned the pin-out infographic to Pinterest</label></li>
-        <li><input type="checkbox" id="si8"><label for="si8">Recorded a 15-sec Reel showing the firmware-flash storyboard</label></li>
+        <li><input type="checkbox" id="si1"><label for="si1">Extracted <b>10 emotion faces</b> as a standalone 1-page PDF flashcard set</label></li>
+        <li><input type="checkbox" id="si2"><label for="si2">Extracted the <b>Voice Settings reference card</b> (pitch / rate / volume cheatsheet) as a 1-page PDF</label></li>
+        <li><input type="checkbox" id="si3"><label for="si3">Extracted the <b>classroom workflow poster</b> (mic → speak → face responds) as a 1-page PDF (laminatable)</label></li>
+        <li><input type="checkbox" id="si4"><label for="si4">Extracted the <b>BLE bridge storyboard</b> (optional micro:bit pairing steps) as a 1-page PDF</label></li>
+        <li><input type="checkbox" id="si5"><label for="si5">Emotion flashcard pack listed on Etsy ($14.99)</label></li>
+        <li><input type="checkbox" id="si6"><label for="si6">Emotion flashcard pack listed on Teachers Pay Teachers ($24.99)</label></li>
+        <li><input type="checkbox" id="si7"><label for="si7">Pinned the emotion-chart infographic to Pinterest</label></li>
+        <li><input type="checkbox" id="si8"><label for="si8">Recorded a 15-sec Reel showing kid speaking → robot emoting</label></li>
         <li><input type="checkbox" id="si9"><label for="si9">Rewrote one FB group post with the <b>"No-Tech-Anxiety"</b> angle</label></li>
         <li><input type="checkbox" id="si10"><label for="si10">Identified 3 non-competing STEM shops for an affiliate swap</label></li>
         <li><input type="checkbox" id="si11"><label for="si11">Decided whether to add the Spanish listing this month</label></li>
@@ -911,12 +910,12 @@ Workshop·DIY</pre>
       <h3>Print-to-PDF recipe for poster extraction</h3>
       <ol>
         <li>Open <a href="../../docs/guide.html" target="_blank" rel="noopener">docs/guide.html</a> in Chrome.</li>
-        <li>Right-click the target SVG → <b>Inspect</b> → find the <code>&lt;svg&gt;</code> element.</li>
-        <li>Copy the SVG markup, paste into a new blank HTML file with a white background and a title. Open it in Chrome.</li>
+        <li>Right-click the target section → <b>Inspect</b> → find the target element.</li>
+        <li>Copy the markup, paste into a new blank HTML file with a white background and a title. Open it in Chrome.</li>
         <li><kbd>⌘P</kbd> → <b>Save as PDF</b> → A4 or US Letter, margins None, background graphics ON.</li>
         <li>Drop the PDF into Canva if you want to add a header/footer with your shop URL — optional but adds polish.</li>
       </ol>
-      <div class="callout tip">Same extraction works on the <b>symptom picker</b> — expand all items first (<kbd>⌘F</kbd> "open", or in DevTools run <code>document.querySelectorAll('.symptom').forEach(d=&gt;d.open=true)</code>) and then print.</div>
+      <div class="callout tip">For the emotion faces, open the emotion picker in the app, expand any tooltip/label states, then print just that panel to PDF.</div>
     </section>
 
     <footer>Seller-only document — do not include in the buyer ZIP. Last updated 2026-04-18 (V1.0.0).</footer>

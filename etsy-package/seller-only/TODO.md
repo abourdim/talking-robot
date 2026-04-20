@@ -19,8 +19,8 @@ that require human hands. Don't hit Publish until they're done.
       `seller-only/etsy-playbook.html` (EN). Export ≤100 MB, 1080p+,
       upload as the listing video. Etsy algorithmically prefers listings
       with videos by ~30%.
-- [ ] **Create the LAUNCH10 Etsy promo code** (Shop Manager → Marketing
-      → Sales & coupons → new code `LAUNCH10`, $7 discount off $12.99,
+- [ ] **Create the VOICELAUNCH Etsy promo code** (Shop Manager → Marketing
+      → Sales & coupons → new code `VOICELAUNCH`, $7 discount off $12.99,
       10 uses, expires 14 days). Paste the review-request template from
       ETSY_LISTING.md to the first 10 buyers.
 
@@ -35,7 +35,7 @@ that require human hands. Don't hit Publish until they're done.
       Reviewers flagged that listings with *physical hardware + the
       app together* convert better. Retake the hero with a micro:bit
       V2 held next to (or propped on top of) a laptop showing the
-      Sensors tab. Good light, plain background, crop square.
+      robot face mid-speak. Good light, plain background, crop square.
 - [ ] **Test Etsy's square thumbnail crop** on mockup 1. The canvas
       is 2000×1500 (4:3). Etsy will center-crop to square for the
       search thumbnail — make sure the product name and the
@@ -95,7 +95,7 @@ that require human hands. Don't hit Publish until they're done.
       listing has 3 reviews. Drives buyers back for the full thing.
 - [ ] **Stand up the lead-magnet landing page** — free 3-lesson PDF
       behind an email opt-in. Builds a remarketing list.
-- [ ] **Create the LAUNCH10 promo code** (first 10 buyers: $12.99 → $7
+- [ ] **Create the VOICELAUNCH promo code** (first 10 buyers: $12.99 → $7
       with review request). Ships reviews fast.
 - [ ] **Duplicate listing in FR + AR** using `etsy-playbook-fr.html` +
       `etsy-playbook-ar.html` scripts. Same ZIP, localized copy.
