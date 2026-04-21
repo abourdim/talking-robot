@@ -1,91 +1,91 @@
 {
-  "_comment": "Per-language strings for the poster (A3 portrait) and flyer (A4 portrait). Used by generate-print.mjs. Screenshots referenced are resolved from output/<lang>/screenshots/.",
+  "_comment": "Print specs for Talking Robot. TTS + STT · 13 animated emotions · 16 voice locales (8 Arabic regionals) · optional micro:bit V2 BLE face mirror.",
 
   "common": {
     "url": "abourdim.github.io/talking-robot",
     "qrUrl": "https://abourdim.github.io/talking-robot/?utm_source=etsy&utm_medium=print&utm_campaign=poster",
     "screenshots": {
       "teacher": "screenshot-speech.png",
-      "kid": "screenshot-audience-kid-3d.png",
+      "kid": "screenshot-ble.png",
       "maker": "screenshot-audience-maker-3d.png"
     }
   },
 
   "en": {
     "brand": "talking-robot",
-    "posterTitle": "Every sensor.\nLive in every browser.",
-    "posterKicker": "WEB BLUETOOTH · MICRO:BIT V2",
-    "posterSubtitle": "Classroom-ready control panel. 30 laptops. Zero install.",
+    "posterTitle": "Make robots talk.\n13 emotions. 16 voices.",
+    "posterKicker": "TTS + STT · 8 ARABIC REGIONALS · PWA-INSTALLABLE",
+    "posterSubtitle": "Type, speak, change face. Optional 5×5 LED face mirror on a micro:bit.",
     "features": [
-      { "icon": "⚡", "h": "Live sensors", "p": "Temperature, sound, light, voice rate, mouth anim — all streaming in real time." },
-      { "icon": "🎛️", "h": "Full control", "p": "Paint LEDs, show emotion, drive motors. Record CSV sessions for lessons." },
-      { "icon": "🧊", "h": "Live 3D mirror", "p": "A photoreal board tilts with your micro:bit. Kids see the physics click." }
+      { "icon": "🎭", "h": "13 animated emotions", "p": "Happy, silly, scared, party, sleepy, robot, nerdy, love, cool, angry, sad, shy, wink — all face-animated." },
+      { "icon": "🌍", "h": "16 voice locales", "p": "English, French, Arabic — including 8 Arabic regionals (KSA, Egypt, Morocco, Tunisia, Algeria, Levant, Gulf, MSA). Rare." },
+      { "icon": "🤖", "h": "Optional BLE face mirror", "p": "Pair a micro:bit V2: EMO:name commands → 5×5 LED emotion mirror. Per-syllable N_word tokens." }
     ],
     "steps": [
-      "Plug in the micro:bit (USB or battery).",
       "Open Chrome or Edge on any laptop.",
-      "Visit the URL below — no install.",
-      "Click Connect, pick your board.",
-      "Dot goes green. You're live."
+      "Type or speak a sentence.",
+      "Pick an emotion from the grid.",
+      "The robot face animates and talks.",
+      "(Optional) pair a micro:bit for the LED mirror."
     ],
     "stepsHeader": "Get started in 60 seconds",
     "qrCaption": "Scan to try the live demo",
-    "audienceLine": "For teachers, kids, and makers.",
-    "footerLeft": "Chrome / Edge · Works offline · No account",
-    "footerRight": "MakeCode firmware · Open source friendly",
-    "flyerTagline": "The browser IS the IDE.",
-    "motto": "Every scientist started by asking \"what happens if I press this?\""
+    "audienceLine": "For teachers, kids, and speech therapists.",
+    "footerLeft": "Chrome / Edge · PWA-installable · Offline-capable",
+    "footerRight": "Web Speech API · MakeCode firmware · Open source friendly",
+    "flyerTagline": "The browser IS the robot face.",
+    "motto": "A kid who can make a robot smile will remember the code forever."
   },
 
   "fr": {
     "brand": "talking-robot",
-    "posterTitle": "Chaque capteur,\nen direct dans le navigateur.",
-    "posterKicker": "WEB BLUETOOTH · MICRO:BIT V2",
-    "posterSubtitle": "Panneau de contrôle prêt pour la classe. 30 ordinateurs. Zéro installation.",
+    "posterTitle": "Fais parler les robots.\n13 émotions. 16 voix.",
+    "posterKicker": "TTS + STT · 8 VARIANTES ARABES · PWA",
+    "posterSubtitle": "Tape, parle, change de visage. Miroir émotion 5×5 LEDs sur un micro:bit (option).",
     "features": [
-      { "icon": "⚡", "h": "Capteurs en direct", "p": "Fonctionnalités du produit — voir la description." },
-      { "icon": "🎛️", "h": "Contrôle complet", "p": "Peindre les LEDs, faire tourner les emotions, piloter les moteurs. Export CSV." },
-      { "icon": "🧊", "h": "Miroir 3D", "p": "Une carte photoréaliste s'incline avec votre micro:bit. La physique prend vie." }
+      { "icon": "🎭", "h": "13 émotions animées", "p": "Joyeux, farceur, surpris, fête, endormi, robot, nerd, amoureux, cool, fâché, triste, timide, clin d'œil." },
+      { "icon": "🌍", "h": "16 locales vocales", "p": "Anglais, français, arabe — dont 8 variantes arabes (KSA, Égypte, Maroc, Tunisie, Algérie, Levant, Golfe, MSA). Rare." },
+      { "icon": "🤖", "h": "Miroir BLE (option)", "p": "Connecte un micro:bit V2 : commandes EMO:name → miroir émotion 5×5 LEDs. Tokens N_word par syllabe." }
     ],
     "steps": [
-      "Branchez le micro:bit (USB ou pile).",
-      "Ouvrez Chrome ou Edge.",
-      "Visitez l'URL ci-dessous — rien à installer.",
-      "Cliquez Connecter, choisissez votre carte.",
-      "Le point passe au vert. C'est parti."
+      "Ouvre Chrome ou Edge.",
+      "Tape ou parle une phrase.",
+      "Choisis une émotion dans la grille.",
+      "Le visage du robot s'anime et parle.",
+      "(Optionnel) connecte un micro:bit pour le miroir LED."
     ],
     "stepsHeader": "Démarrez en 60 secondes",
     "qrCaption": "Scannez pour la démo en direct",
-    "audienceLine": "Pour les enseignants, les enfants et les makers.",
-    "footerLeft": "Chrome / Edge · Hors ligne · Sans compte",
-    "footerRight": "Firmware MakeCode · Compatible open source",
-    "flyerTagline": "Le navigateur EST l'IDE.",
-    "motto": "Chaque scientifique a commencé par demander « que se passe-t-il si j'appuie ici ? »"
+    "audienceLine": "Pour les enseignants, les enfants et les orthophonistes.",
+    "footerLeft": "Chrome / Edge · PWA installable · Hors ligne",
+    "footerRight": "Web Speech API · Firmware MakeCode · Compatible open source",
+    "flyerTagline": "Le navigateur EST le visage du robot.",
+    "motto": "Un enfant qui fait sourire un robot se souviendra du code."
   },
 
   "ar": {
     "brand": "talking-robot",
-    "posterTitle": "كل حساس،\nمباشرةً في المتصفح.",
-    "posterKicker": "WEB BLUETOOTH · MICRO:BIT V2",
-    "posterSubtitle": "لوحة تحكم جاهزة للقاعة الدراسية. 30 جهازاً. بدون تثبيت.",
+    "posterTitle": "اجعل الروبوتات تتكلم.\n13 تعبيراً. 16 صوتاً.",
+    "posterKicker": "TTS + STT · 8 لهجات عربية · PWA",
+    "posterSubtitle": "اكتب، تكلّم، غيّر الوجه. مرآة عاطفة 5×5 LED على micro:bit (اختيارية).",
     "features": [
-      { "icon": "⚡", "h": "مستشعرات حية", "p": "الحرارة، الصوت، الضوء، التسارع، البوصلة — كلها في الوقت الحقيقي." },
-      { "icon": "🎛️", "h": "تحكم كامل", "p": "ارسم على مصفوفة LED، أدِر السيرفو، قُد المحركات. تصدير CSV للدروس." },
-      { "icon": "🧊", "h": "مرآة ثلاثية الأبعاد", "p": "لوحة واقعية تميل مع micro:bit الفعلي. الفيزياء تصبح مرئية." }
+      { "icon": "🎭", "h": "13 تعبيراً متحركاً", "p": "سعيد، مازح، مندهش، حفلة، نعسان، روبوت، نيرد، عاشق، رائع، غاضب، حزين، خجول، غمزة." },
+      { "icon": "🌍", "h": "16 لهجة صوتية", "p": "إنكليزية، فرنسية، عربية — شاملة 8 لهجات عربية (السعودية، مصر، المغرب، تونس، الجزائر، الشام، الخليج، الفصحى)." },
+      { "icon": "🤖", "h": "مرآة BLE (اختياري)", "p": "اربط micro:bit V2: أوامر EMO:name → مرآة عاطفة 5×5 LED. رموز N_word لكل مقطع." }
     ],
     "steps": [
-      "وصّل micro:bit (USB أو بطارية).",
       "افتح Chrome أو Edge.",
-      "زُر الرابط أدناه — بدون تثبيت.",
-      "اضغط Connect واختر لوحتك.",
-      "تتحول النقطة إلى الأخضر. جاهز."
+      "اكتب أو تكلّم بجملة.",
+      "اختر تعبيراً من الشبكة.",
+      "وجه الروبوت يتحرك ويتكلم.",
+      "(اختياري) اربط micro:bit لمرآة LED."
     ],
     "stepsHeader": "ابدأ خلال 60 ثانية",
     "qrCaption": "امسح لتجربة العرض المباشر",
-    "audienceLine": "للمعلمين والأطفال والمبدعين.",
-    "footerLeft": "Chrome / Edge · يعمل دون اتصال · بدون حساب",
-    "footerRight": "فيرموير MakeCode · متوافق مع المصدر المفتوح",
-    "flyerTagline": "المتصفح هو بيئة التطوير.",
-    "motto": "كل عالِم بدأ بسؤال: «ماذا يحدث لو ضغطت هنا؟»"
+    "audienceLine": "للمعلمين والأطفال وأخصّائيي النطق.",
+    "footerLeft": "Chrome / Edge · قابل للتثبيت كـ PWA · يعمل دون اتصال",
+    "footerRight": "Web Speech API · فيرموير MakeCode · مفتوح المصدر",
+    "flyerTagline": "المتصفح هو وجه الروبوت.",
+    "motto": "الطفل الذي يُضحك روبوتاً سيتذكّر الكود للأبد."
   }
 }

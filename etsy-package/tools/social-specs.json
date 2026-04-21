@@ -1,5 +1,5 @@
 {
-  "_comment": "Social media kit specs — 4 aspect ratios per language, driven by generate-social.mjs. Screenshots resolved from output/<lang>/screenshots/.",
+  "_comment": "Social kit for Talking Robot. TTS+STT · 13 emotions · 16 voices · 8 Arabic regionals.",
 
   "formats": [
     { "name": "ig-post",    "w": 1080, "h": 1080, "label": "Instagram feed",   "layout": "square" },
@@ -12,29 +12,29 @@
 
   "en": {
     "brand": "talking-robot",
-    "kicker": "MICRO:BIT · WEB BLUETOOTH",
-    "title": "Every sensor.\nLive in the browser.",
-    "subtitle": "Chrome / Edge · Zero install · Works offline",
+    "kicker": "TTS + STT · 13 EMOTIONS · 16 VOICES",
+    "title": "Make robots talk.\n13 emotions. 16 voices.",
+    "subtitle": "Chrome / Edge · 8 Arabic regionals · PWA-installable · Offline-capable",
     "cta": "Try the demo →",
     "url": "abourdim.github.io/talking-robot",
-    "hashtags": "#microbit  #STEM  #EdTech"
+    "hashtags": "#TTS  #SpeechTherapy  #EdTech  #STEM  #microbit"
   },
   "fr": {
     "brand": "talking-robot",
-    "kicker": "MICRO:BIT · WEB BLUETOOTH",
-    "title": "Chaque capteur,\nen direct dans le navigateur.",
-    "subtitle": "Chrome / Edge · Zéro installation · Hors ligne",
+    "kicker": "TTS + STT · 13 ÉMOTIONS · 16 VOIX",
+    "title": "Fais parler les robots.\n13 émotions. 16 voix.",
+    "subtitle": "Chrome / Edge · 8 variantes arabes · PWA · Hors ligne",
     "cta": "Essayer la démo →",
     "url": "abourdim.github.io/talking-robot",
-    "hashtags": "#microbit  #STEM  #EdTech"
+    "hashtags": "#TTS  #Orthophonie  #EdTech  #STEM  #microbit"
   },
   "ar": {
     "brand": "talking-robot",
-    "kicker": "MICRO:BIT · WEB BLUETOOTH",
-    "title": "كل حساس،\nمباشرةً في المتصفح.",
-    "subtitle": "Chrome / Edge · بدون تثبيت · يعمل دون اتصال",
+    "kicker": "TTS + STT · 13 تعبيراً · 16 صوتاً",
+    "title": "اجعل الروبوتات تتكلم.\n13 تعبيراً. 16 صوتاً.",
+    "subtitle": "Chrome / Edge · 8 لهجات عربية · PWA · دون اتصال",
     "cta": "← جرّب العرض التوضيحي",
     "url": "abourdim.github.io/talking-robot",
-    "hashtags": "#microbit  #STEM  #EdTech"
+    "hashtags": "#TTS  #نطق  #EdTech  #STEM  #microbit"
   }
 }
