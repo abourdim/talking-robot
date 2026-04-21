@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- REWRITE PER PRODUCT — DO NOT SHIP AS-IS · TRANSLATE TO FRENCH -->
 <html lang="fr" dir="ltr">
 <head>
 <meta charset="utf-8" />
@@ -24,29 +25,58 @@
   body { max-width: 1080px; margin: 0 auto; padding: 24px 18px 80px; }
   a { color: var(--accent); text-decoration: none; border-bottom: 1px dashed rgba(34,197,94,.4); }
   a:hover { color: var(--accent2); border-bottom-color: var(--accent2); }
-  .slate { background: radial-gradient(ellipse at top right, rgba(34,211,238,.14), transparent 60%), linear-gradient(180deg, var(--panel2), var(--panel)); border: 2px solid var(--border); border-radius: 18px; padding: 36px 28px 28px; text-align: center; margin-bottom: 22px; box-shadow: var(--shadow); }
+
+  .slate {
+    background:
+      radial-gradient(ellipse at top right, rgba(34,211,238,.14), transparent 60%),
+      linear-gradient(180deg, var(--panel2), var(--panel));
+    border: 2px solid var(--border);
+    border-radius: 18px; padding: 36px 28px 28px;
+    text-align: center; margin-bottom: 22px; box-shadow: var(--shadow);
+  }
   .slate-clap { font-size: 56px; line-height: 1; margin-bottom: 8px; filter: drop-shadow(0 0 18px rgba(34,197,94,.5)); }
   .slate h1 { font-family: var(--display); font-size: 2rem; letter-spacing: 1.4px; margin: 6px 0 4px; color: var(--accent); font-weight: 900; }
   .slate h1 span { color: var(--accent2); }
   .slate .tag { color: var(--muted); font-size: .92rem; letter-spacing: .8px; text-transform: uppercase; }
   .slate .meta { display: flex; justify-content: center; gap: 24px; margin-top: 16px; font-size: .82rem; color: var(--muted); flex-wrap: wrap; }
   .slate .meta b { color: var(--ink); font-weight: 700; }
-  .toc { position: sticky; top: 0; z-index: 50; background: rgba(11,18,38,.93); backdrop-filter: blur(8px); border: 1px solid var(--border); border-radius: 14px; padding: 8px 12px; margin-bottom: 22px; display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
-  .toc a { background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.25); border-radius: 10px; padding: 6px 12px; font-size: .82rem; font-weight: 600; border-bottom: none; }
+
+  .toc {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11,18,38,.93); backdrop-filter: blur(8px);
+    border: 1px solid var(--border); border-radius: 14px;
+    padding: 8px 12px; margin-bottom: 22px;
+    display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+  }
+  .toc a {
+    background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.25);
+    border-radius: 10px; padding: 6px 12px; font-size: .82rem; font-weight: 600;
+    border-bottom: none;
+  }
   .toc a:hover { background: rgba(34,197,94,.2); color: var(--accent); }
-  .slug { font-family: var(--mono); text-transform: uppercase; letter-spacing: 1.3px; font-size: .78rem; color: var(--accent); background: linear-gradient(90deg, rgba(34,197,94,.15), transparent); border-left: 4px solid var(--accent); padding: 8px 12px; margin: 28px 0 14px; border-radius: 0 8px 8px 0; }
+
+  .slug {
+    font-family: var(--mono); text-transform: uppercase; letter-spacing: 1.3px;
+    font-size: .78rem; color: var(--accent);
+    background: linear-gradient(90deg, rgba(34,197,94,.15), transparent);
+    border-left: 4px solid var(--accent); padding: 8px 12px;
+    margin: 28px 0 14px; border-radius: 0 8px 8px 0;
+  }
   h2 { font-family: var(--display); letter-spacing: 1px; color: var(--accent); margin: 8px 0 12px; font-size: 1.5rem; }
   h3 { color: var(--ink); margin-top: 18px; font-size: 1.12rem; }
   h4 { color: var(--accent2); font-size: 1rem; margin: 14px 0 6px; font-family: var(--display); }
   p { margin: 8px 0; }
+
   .card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; margin: 12px 0; box-shadow: var(--shadow); }
+
   .checklist { list-style: none; padding: 0; margin: 0; }
-  .checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border-radius: 8px; cursor: pointer; user-select: none; }
+  .checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px; border-radius: 8px; transition: background .15s; cursor: pointer; user-select: none; }
   .checklist li:hover { background: rgba(34,197,94,.07); }
   .checklist input[type=checkbox] { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; }
   .checklist li.checked label { color: var(--muted); text-decoration: line-through; opacity: .65; }
   .checklist label { cursor: pointer; flex: 1; }
   .where { color: var(--muted); font-size: .82rem; display: block; margin-top: 2px; }
+
   .scene { background: linear-gradient(180deg, var(--panel2), var(--panel)); border: 1px solid var(--border); border-radius: 14px; margin: 14px 0; overflow: hidden; }
   .scene-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: rgba(0,0,0,.3); border-bottom: 1px solid var(--border); font-family: var(--mono); font-size: .78rem; text-transform: uppercase; letter-spacing: 1.3px; }
   .scene-time { color: var(--accent); font-weight: 700; font-size: 1.05rem; }
@@ -60,18 +90,24 @@
   .say-label { font-family: var(--mono); font-size: .68rem; letter-spacing: 1.4px; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
   .do { background: rgba(34,211,238,.08); border-left: 3px solid var(--accent2); border-radius: 0 10px 10px 0; padding: 12px 14px; font-family: var(--mono); font-size: .85rem; color: var(--ink); }
   .do-label { font-size: .68rem; letter-spacing: 1.4px; color: var(--accent2); font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
+
   .copybox { position: relative; background: #050b18; border: 1px solid var(--border); border-radius: 10px; padding: 12px 44px 12px 14px; font-family: var(--mono); font-size: .86rem; color: var(--accent); white-space: pre-wrap; margin: 8px 0; }
   .copybtn { position: absolute; top: 6px; right: 6px; background: var(--accent); color: #05140a; border: none; border-radius: 6px; padding: 4px 10px; font-size: .7rem; font-weight: 800; cursor: pointer; font-family: var(--display); letter-spacing: .5px; }
   .copybtn:hover { background: var(--accent2); color: #03141a; }
+
   table { width: 100%; border-collapse: collapse; margin: 12px 0; }
   th, td { padding: 9px 12px; border-bottom: 1px solid var(--border); text-align: left; font-size: .9rem; }
   th { color: var(--accent2); font-family: var(--display); font-size: .82rem; text-transform: uppercase; letter-spacing: .8px; }
   tr:hover td { background: rgba(34,197,94,.04); }
+
   code { background: rgba(34,197,94,.12); color: var(--accent); padding: 2px 6px; border-radius: 4px; font-family: var(--mono); font-size: .88em; }
   kbd { background: var(--panel); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-family: var(--mono); font-size: .82em; color: var(--accent); }
+
   .pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
   .pill { background: rgba(34,211,238,.1); border: 1px solid rgba(34,211,238,.3); color: var(--accent2); padding: 4px 10px; border-radius: 999px; font-size: .78rem; font-weight: 600; font-family: var(--mono); }
+
   @media (max-width: 640px) { body { padding: 14px 10px; } .slate h1 { font-size: 1.5rem; } h2 { font-size: 1.2rem; } }
+
   .lang-strip { display: flex; justify-content: center; gap: 8px; margin: 0 0 14px; font-family: var(--mono); font-size: .78rem; }
   .lang-strip a { background: rgba(34,211,238,.08); border: 1px solid rgba(34,211,238,.28); border-radius: 8px; padding: 4px 12px; color: var(--accent2); text-transform: uppercase; letter-spacing: 1.2px; font-weight: 700; border-bottom: 1px solid rgba(34,211,238,.28); }
   .lang-strip a.active { background: rgba(34,197,94,.18); border-color: var(--accent); color: var(--accent); }
@@ -89,253 +125,230 @@
 <div class="slate">
   <div class="slate-clap">🎬</div>
   <div class="tag">— PLAYBOOK ETSY · v1.0.0 —</div>
-  <h1>Talking <span>Robot</span></h1>
-  <div class="tag">La démo de 1 minute · extraits prêts à copier</div>
-  <div class="meta"><span><b>Format :</b> 9:16 portrait</span><span><b>Durée :</b> ≤ 60 s</span><span><b>Objectif :</b> transformer les curieux en acheteurs</span></div>
+  <h1>micro:bit <span>Playground</span></h1>
+  <div class="tag">La démo d'annonce en 1 minute · extraits prêts à copier</div>
+  <div class="meta"><span><b>Format :</b> portrait 9:16</span><span><b>Durée :</b> ≤ 60 s</span><span><b>Objectif :</b> transformer les curieux en acheteurs</span></div>
 </div>
 
 <div class="toc">
-  <a href="#hero">⭐ Accroche</a>
   <a href="#preflight">✅ Préparation</a>
   <a href="#arc">🎬 Arc 60 s</a>
   <a href="#script">📜 Script</a>
-  <a href="#listing">🛒 Fiche produit</a>
-  <a href="#tags">🏷 Tags</a>
+  <a href="#listing">🛒 Texte d'annonce</a>
+  <a href="#tags">🏷 Étiquettes</a>
   <a href="#images">📸 Images</a>
   <a href="#mistakes">⚠️ Erreurs</a>
 </div>
 
-<!-- HERO -->
-<div class="slug" id="hero">SLUG — ACCROCHE PRINCIPALE</div>
-<h2>Phrase d'accroche (superposition miniature)</h2>
-<div class="copybox">Talking Robot — Parle • Écoute • Exprime. Tape pour parler, parle pour écrire, 10 émotions, pont Bluetooth optionnel vers ta micro:bit.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
-
-<!-- PRÉ-VOL -->
-<div class="slug" id="preflight">SLUG — CHECKLIST AVANT TOURNAGE</div>
+<!-- ═══════════ PRÉPARATION ═══════════ -->
+<div class="slug" id="preflight">SLUG — CHECKLIST DE PRÉPARATION · UNE FOIS PAR TOURNAGE</div>
 <h2>Avant d'appuyer sur Rec</h2>
 <div class="card">
   <ul class="checklist" onclick="var li=event.target.closest('li');if(li)li.classList.toggle('checked')">
-    <li><input type="checkbox"><label>Chrome ou Edge ouvert, <code>index.html</code> chargé<span class="where">Safari / Firefox / iOS ne fonctionnent pas — Web Speech nécessite Chromium</span></label></li>
-    <li><input type="checkbox"><label>Voix choisie dans le menu déroulant Voix<span class="where">Teste Parler une fois — vérifie la clarté et le caractère</span></label></li>
-    <li><input type="checkbox"><label>Micro testé — Écouter renvoie une transcription propre<span class="where">Permission du micro accordée au navigateur</span></label></li>
-    <li><input type="checkbox"><label>(Optionnel) BBC micro:bit V2 appairée — le message défile à l'écran<span class="where">Seulement si tu filmes la scène du pont BLE</span></label></li>
-    <li><input type="checkbox"><label>Haut-parleurs / écouteurs assez forts pour que le téléphone capte la voix du robot</label></li>
-    <li><input type="checkbox"><label>Téléphone en 9:16 sur un trépied, éclairage frontal</label></li>
-    <li><input type="checkbox"><label>Bureau dégagé — seul l'ordi (et la micro:bit si utilisée) dans le cadre</label></li>
-    <li><input type="checkbox"><label>Script lu à haute voix une fois — chronométré sous 55 s</label></li>
+    <li><input type="checkbox"><label>micro:bit V2 allumé, icône <kbd>X</kbd> affichée<span class="where">Sinon → reflasher <code>makecode.ts</code></span></label></li>
+    <li><input type="checkbox"><label>Chrome ou Edge ouvert, <code>index.html</code> chargé<span class="where">Safari/Firefox/iOS ne fonctionneront pas</span></label></li>
+    <li><input type="checkbox"><label>BLE connecté — la puce d'état est <strong>verte</strong><span class="where">Cliquez sur 🔗 Connecter, choisissez BBC micro:bit dans la fenêtre</span></label></li>
+    <li><input type="checkbox"><label>Thème choisi — <strong>Neon</strong> rend le mieux à la caméra<span class="where">En-tête → menu rouleau de peinture</span></label></li>
+    <li><input type="checkbox"><label>micro:bit V2 apparié (optionnel)</label></li>
+    <li><input type="checkbox"><label>Onglet Robot Face ouvert, Buggy ou Bras Robot sélectionné<span class="where">Onglet 6 → menu des modèles</span></label></li>
+    <li><input type="checkbox"><label>Téléphone en 9:16 sur trépied, éclairé de face</label></li>
+    <li><input type="checkbox"><label>Bureau dégagé — uniquement la carte et un accessoire dans le cadre</label></li>
+    <li><input type="checkbox"><label>Script lu à voix haute une fois — chronométré sous 55 s</label></li>
   </ul>
 </div>
 
-<!-- ARC -->
+<!-- ═══════════ ARC ═══════════ -->
 <div class="slug" id="arc">SLUG — L'ARC DE 60 SECONDES</div>
 <h2>Structure</h2>
 <div class="card">
   <pre style="color:var(--accent2);font-family:var(--mono);font-size:.9rem;line-height:1.7;margin:0">
- 0–3 s    ACCROCHE   « Regarde-moi faire parler ce robot en 60 secondes. »
- 3–10 s   CONTEXTE   J'ouvre index.html → le visage du robot apparaît.
-10–25 s  DÉMO PARLE  Je tape « Bonjour la classe » → Parler → bouche animée → voix.
-25–35 s  DÉMO ÉMOTION Je clique 😄 → sourire. Je clique 😱 → choc.
-35–48 s  DÉMO ÉCOUTE  Clique Écouter → dis « au revoir » → transcription affichée.
-48–55 s  OPTIONNEL   (Si filmé) Connecter micro:bit → mot tapé envoyé à la carte.
-55–60 s  CTA         « Kit complet en boutique — lien en description. »</pre>
+ 0–3 s   ACCROCHE    « Regardez ce que ce micro:bit fait en 60 secondes. »
+ 3–10 s  CONTEXTE    Carte à l'écran, icône X → le statut passe au vert.
+10–35 s  DÉMO        Inclinez → le modèle 3D suit. Appuyez sur A → cœur LED. Le emotion bouge.
+35–50 s  RÉCOMPENSE  Zoom sur le graphique en direct + modèle 3D qui reflète la carte réelle.
+50–55 s  CTA         « Kit complet dans ma boutique — lien ci-dessous. »
+55–60 s  IMAGE FIN   Logo + pseudo figé pour l'aperçu en boucle.</pre>
 </div>
 
-<!-- SCRIPT -->
+<!-- ═══════════ SCRIPT ═══════════ -->
 <div class="slug" id="script">SLUG — SCRIPT SCÈNE PAR SCÈNE</div>
-<h2>Modèle : « Apprends à un robot à parler, écouter et ressentir »</h2>
+<h2>Modèle : « Le micro:bit devient un terrain de jeu »</h2>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:00–00:03</span><span class="scene-phase phase-hook">ACCROCHE</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div>« En 60 secondes, je vais faire parler ce robot, l'écouter, et changer son humeur — tout dans un navigateur. »</div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div>Gros plan sur le visage du robot à l'écran. Bouche fermée, yeux allumés. Titre superposé : <strong>Parle • Écoute • Exprime</strong>.</div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Votre micro:bit est un terrain de jeu. Aucune installation, aucun compte — juste un navigateur. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Tenez la carte dans le cadre. Gros plan sur l'icône X qui pulse sur la matrice LED.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:03–00:10</span><span class="scene-phase phase-demo">CONTEXTE</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div>« Ouvre un seul fichier HTML dans Chrome — aucune installation, aucun compte — et voici ton robot. »</div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div>Écran : double-clic sur <code>index.html</code>. Le visage du robot apparaît. Panoramique vers le sélecteur de voix / langue.</div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Ouvrez la page, cliquez sur connecter — c'est tout. Capteurs en direct, LED en direct, emotions en direct. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Enregistrement d'écran : cliquez sur <strong>🔗 Connecter au micro:bit</strong>, choisissez la carte, la puce d'état passe au vert.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:10–00:25</span><span class="scene-phase phase-demo">DÉMO · PARLE</span></div>
+  <div class="scene-head"><span class="scene-time">00:10–00:25</span><span class="scene-phase phase-demo">DÉMO · CAPTEURS + 3D</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div>« Tape quelque chose. Clique Parler. Regarde la bouche bouger. »</div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div>Tape <em>« Bonjour la classe, je suis vivant ! »</em> → appuie sur <kbd>Ctrl</kbd>+<kbd>Entrée</kbd>. La bouche s'anime en rythme avec la voix. Son clair et audible.</div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Inclinez-la — le modèle 3D à l'écran s'incline aussi. Touchez le logo — il réagit. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Onglet <kbd>6</kbd> → Robot Face. Inclinez la carte réelle → la virtuelle suit. La main tient le micro:bit à côté de l'écran pour le split.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:25–00:35</span><span class="scene-phase phase-demo">DÉMO · ÉMOTION</span></div>
+  <div class="scene-head"><span class="scene-time">00:25–00:40</span><span class="scene-phase phase-demo">DÉMO · FEATURES</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div>« Dix émotions, un clic. Joyeux, choqué, endormi, robot — choisis une humeur. »</div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div>Clic 😄 → sourire. Clic 😱 → choc. Clic 🤖 → mode robot. Coupes rapides sur le rythme.</div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Bougez un emotion depuis le navigateur. Pilotez un robot avec la manette. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Démontrez les fonctionnalités clés dans le navigateur.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:35–00:48</span><span class="scene-phase phase-demo">DÉMO · ÉCOUTE</span></div>
+  <div class="scene-head"><span class="scene-time">00:40–00:50</span><span class="scene-phase phase-payoff">RÉCOMPENSE · GRAPHIQUE</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div>« Il écoute aussi. Clique Écouter, dis n'importe quoi, lis la transcription. »</div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div>Clic <strong>Écouter</strong>. Dis « au revoir, à bientôt. » La transcription s'affiche en direct. Optionnel : active la réponse automatique et laisse le robot répondre.</div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Enregistrez, rejouez, exportez en CSV. C'est un labo de sciences entier dans un onglet. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Onglet <kbd>5</kbd> → 🎲 Simuler → le graphe en direct danse. Zoom sur les boutons Enregistrer/CSV.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:48–00:55</span><span class="scene-phase phase-payoff">OPTIONNEL · PONT BLE</span></div>
+  <div class="scene-head"><span class="scene-time">00:50–00:60</span><span class="scene-phase phase-cta">CTA + IMAGE DE FIN</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div>« Tu as une BBC micro:bit ? Connecte-toi en Bluetooth — les mots tapés filent vers la carte. »</div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div>Clic <strong>Connecter</strong>, choisis la carte, tape un mot, montre le message qui défile sur la vraie micro:bit.</div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Kit complet, mises à jour à vie — lien en description. Enseignants, mentionnez-moi quand vous l'utilisez. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Passez à un overlay logo + pseudo. Maintenez 3 secondes immobile — ça devient l'image de la boucle.</div>
   </div>
 </div>
 
-<div class="scene">
-  <div class="scene-head"><span class="scene-time">00:55–00:60</span><span class="scene-phase phase-cta">CTA + IMAGE DE FIN</span></div>
-  <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div>« Kit complet, mises à jour à vie — lien ci-dessous. Profs, identifiez-moi quand vos élèves font parler leur robot. »</div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div>Basculer vers l'overlay logo + pseudo. Tenir 3 secondes fixes — devient l'image de la boucle.</div>
-  </div>
-</div>
-
-<!-- FICHE -->
-<div class="slug" id="listing">SLUG — TEXTE FICHE PRÊT À COPIER</div>
+<!-- ═══════════ TEXTE D'ANNONCE ═══════════ -->
+<div class="slug" id="listing">SLUG — TEXTE D'ANNONCE PRÊT À COPIER</div>
 <h2>Titre Etsy (140 caractères max)</h2>
-<div class="copybox">Talking Robot — Synthèse + Reconnaissance Vocale + 10 Émotions · Bluetooth micro:bit en option · Profs &amp; Enfants · Sans install · Chrome / Edge<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
+<div class="copybox">Talking Robot — Panneau de contrôle BLE pour enseignants &amp; enfants · Capteurs · Emotion · Graphique en direct · Modèles 3D · Sans installation · Chrome / Edge<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
 
-<h2>Description courte (160 premiers caractères)</h2>
-<div class="copybox">Robot de navigateur qui parle à voix haute, écoute ton micro et réagit avec 10 visages d'émotion. Pont Bluetooth optionnel vers une BBC micro:bit V2.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
+<h2>Description courte (160 premiers caractères — affichés en recherche)</h2>
+<div class="copybox">Panneau de contrôle BLE dans le navigateur pour le BBC micro:bit V2 (optional). Capteurs, emotions, graphiques en direct, modèles 3D et manette — le tout depuis Chrome. Sans installation, sans compte.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
 
 <h2>Description complète</h2>
-<div class="copybox">🤖 Talking Robot — Parle • Écoute • Exprime. Un robot de navigateur pour les enfants, les classes et les makers curieux.
+<div class="copybox">🎮 Talking Robot — un panneau de contrôle BLE dans le navigateur pour le BBC micro:bit V2 (optional).
 
-Ouvre un seul fichier HTML dans Chrome ou Edge et tu as un robot amical qui dit tes mots à voix haute, t'écoute par le micro, et réagit avec 10 visages d'émotion en un clic. En option : connecte une BBC micro:bit V2 en Web Bluetooth pour envoyer tes mots tapés à la carte.
+Ouvrez un fichier HTML dans Chrome ou Edge, appairez en Bluetooth, et débloquez 8 onglets de STEM interactif — sans installation, sans compte, sans serveur, sans tracking.
 
-CE QUE TU REÇOIS
-• 🗣️ PARLER — tape du texte, choisis une voix / langue, clique Parler. La bouche s'anime avec l'API Speech Synthesis du navigateur.
-• 🎤 ÉCOUTER — clique Écouter, parle au micro, la transcription apparaît via l'API Speech Recognition. Option de réponse automatique.
-• 😄 10 VISAGES D'ÉMOTION — 😐 neutre · 😄 joyeux · 🥺 triste · 😠 fâché · 😂 riant · 😜 bête · 😱 choqué · 🥳 fêtard · 🤖 robot · 😴 endormi.
-• 📡 PONT BLUETOOTH OPTIONNEL — appaire une BBC micro:bit V2 et chaque mot tapé arrive sur la carte en Web Bluetooth.
-• ⌨️ UN SEUL RACCOURCI — Ctrl/Cmd+Entrée dans le champ texte déclenche Parler.
-• 🌐 100 % LOCAL — pas de serveur, pas d'installation, pas de compte. Double-clique index.html et c'est prêt.
+CE QUE VOUS OBTENEZ
+• 🎛 Matrice LED + icônes prédéfinies + texte défilant
+• 📡 Capteurs en direct : température, lumière, son, accéléromètre, boussole, toucher
+• ⚙️ 2 emotions (P1 + P2) avec curseurs, jauges, trim, boutons OFF
+• 🎮 Manette D-pad pour robots et jeux
+• 📈 Graphique en direct (Web Speech API) — enregistrer, rejouer, annoter, exporter PNG + CSV
+• 🎲 5 modèles 3D interactifs (Three.js) : micro:bit, Buggy, Bras, Équilibre, Météo
+• 🎨 4 thèmes (Stealth · Neon · Arctic · Blaze) + 3 langues (EN · FR · AR avec RTL complet)
+• 📱 PWA — installable, utilisable hors ligne
+• 👶 Mode Débutant + 🧙 Mode Expert
 
-CE QU'IL Y A DANS LE ZIP
-• index.html — l'appli
-• app.js, styles.css, logo.svg — l'interface et la logique
-• ble-uart.js — le pont Bluetooth optionnel
-• makecode.ts — le programme micro:bit correspondant
-• README.md + USERGUIDE.html — guides complets
-• etsy-package/ — démarrage imprimable, antisèche des boutons, plan de leçon, poster A3, planche d'autocollants
+CONTENU DU TÉLÉCHARGEMENT
+• index.html — l'application complète
+• makecode.ts — firmware micro:bit (à flasher une fois depuis MakeCode)
+• SETUP.md — démarrage rapide en 5 minutes
+• docs/ — guide illustré, aide-mémoire, FAQ, playbook Etsy
+• LICENSE — licence mono-utilisateur personnelle / classe
 
 PRÉREQUIS
-• Chrome ou Edge (Web Speech API requise — Safari et iOS non supportés)
-• Un micro pour Écouter · des haut-parleurs pour Parler
-• Optionnel : BBC micro:bit V2 (uniquement pour le pont Bluetooth)
+• BBC micro:bit V2 (optional) (V1 fonctionne mais sans capteur de son)
+• Chrome ou Edge sur ordinateur (ou Chrome sur Android)
+• Bluetooth activé
+• HTTPS ou file:// — un double-clic sur le HTML suffit
 
-POUR QUI ?
-Profs qui animent des cours de voix / IA / STIM · familles en école à la maison · pratique parole-langage · enfants qui veulent un robot copain · makers qui ont besoin d'un front-end vocal pour un projet micro:bit.
+POUR QUI
+Enseignants animant des ateliers STEM · familles en école à la maison · clubs de robotique · makers prototypant des projets BLE · toute personne curieuse du micro:bit.
 
-CONFIDENTIALITÉ
-Tout tourne dans ton navigateur. Pas de cloud, pas de compte, pas d'analytique. Ton texte et tes transcriptions ne quittent pas ton appareil.
+CONFIDENTIALITÉ D'ABORD
+Rien ne quitte votre ordinateur. Pas d'analytique, pas de connexion, pas de cloud. Tous les calibrages, enregistrements et préréglages restent dans le localStorage du navigateur et sur votre disque.
 
 MISES À JOUR À VIE
-Toutes les versions 1.x de cette fiche sont à toi pour toujours. Re-télécharge le dernier ZIP depuis la page Achats Etsy.
+Chaque version publiée depuis cette annonce est à vous pour toujours. Retéléchargez le dernier ZIP à tout moment depuis votre page Achats Etsy.
 
-Parle • Écoute • Exprime 🤖<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
+Bon hacking ! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
 
-<h2>Paliers de prix</h2>
+<h2>Tarifs</h2>
 <table>
-  <tr><th>Palier</th><th>Pour qui</th><th>Prix</th></tr>
-  <tr><td>Lancement</td><td>Prévente, 50 premiers acheteurs</td><td><code>12,99 $</code></td></tr>
-  <tr><td>Standard</td><td>Mono-utilisateur</td><td><code>17,99 $</code></td></tr>
-  <tr><td>Bundle</td><td>Appli + pack de leçons étendu</td><td><code>29,99 $</code></td></tr>
-  <tr><td>Tripwire</td><td>Mini-offre post-opt-in</td><td><code>5 $</code></td></tr>
-  <tr><td>Licence site</td><td>Une école, jusqu'à 30 profs</td><td><code>199 $</code></td></tr>
-  <tr><td>Licence district</td><td>Plusieurs écoles</td><td><code>499 $</code></td></tr>
-  <tr><td>Code promo <code>VOICELAUNCH</code></td><td>Code de lancement</td><td><code>7 $</code></td></tr>
+  <tr><th>Niveau</th><th>Pour qui</th><th>Prix</th></tr>
+  <tr><td>Mono-utilisateur</td><td>Un enseignant / famille / maker</td><td><code>{{PRICE}}</code></td></tr>
+  <tr><td>Classe / Site</td><td>Jusqu'à 30 enseignants dans une école, élèves illimités</td><td><code>{{PRICE}}</code></td></tr>
+  <tr><td>District / OEM</td><td>Plusieurs sites — MP via la commande Etsy</td><td>Sur devis</td></tr>
 </table>
 
-<h2>Tableau comparatif — Talking Robot vs la concurrence</h2>
-<table>
-  <tr><th>Fonction</th><th>Talking Robot</th><th>Jouet TTS web classique</th><th>Appli robot store</th></tr>
-  <tr><td>Texte → parole (avec bouche animée)</td><td>✅ Speech Synthesis + animation</td><td>✅ TTS simple</td><td>✅ une seule voix</td></tr>
-  <tr><td>Voix → texte (transcription)</td><td>✅ Speech Recognition</td><td>❌</td><td>Parfois</td></tr>
-  <tr><td>Visages d'émotion</td><td>✅ 10, en un clic</td><td>❌</td><td>2–3, derrière un paywall</td></tr>
-  <tr><td>Bluetooth optionnel vers micro:bit V2</td><td>✅ Web Bluetooth (ouvert)</td><td>❌</td><td>❌</td></tr>
-  <tr><td>Hors ligne / sans compte</td><td>✅ un seul fichier HTML</td><td>Parfois</td><td>❌ login obligatoire</td></tr>
-  <tr><td>Respect de la vie privée</td><td>✅ zéro donnée sort du laptop</td><td>⚠️ pubs / trackers</td><td>⚠️ analytique</td></tr>
-</table>
-
-<!-- TAGS -->
-<div class="slug" id="tags">SLUG — TAGS + MATIÈRES</div>
-<h2>13 tags Etsy (20 caractères max)</h2>
+<!-- ═══════════ ÉTIQUETTES ═══════════ -->
+<div class="slug" id="tags">SLUG — ÉTIQUETTES + MATÉRIAUX</div>
+<h2>13 étiquettes Etsy (20 caractères chacune)</h2>
 <div class="pills">
-  <span class="pill">robot parlant</span>
-  <span class="pill">texte vers voix</span>
-  <span class="pill">voix vers texte</span>
+  <span class="pill">micro:bit</span>
+  <span class="pill">BLE</span>
+  <span class="pill">bluetooth</span>
   <span class="pill">éducation</span>
-  <span class="pill">STIM</span>
+  <span class="pill">STEM</span>
+  <span class="pill">robotique</span>
   <span class="pill">code enfants</span>
   <span class="pill">ressource prof</span>
-  <span class="pill">appli vocale</span>
-  <span class="pill">émotions</span>
+  <span class="pill">capteurs</span>
+  <span class="pill">emotions</span>
   <span class="pill">classe</span>
   <span class="pill">école maison</span>
-  <span class="pill">micro:bit</span>
-  <span class="pill">web bluetooth</span>
+  <span class="pill">makerspace</span>
 </div>
 
-<h2>Matières (ce qui fait tourner l'appli)</h2>
+<h2>Matériaux (ce qui le fait tourner)</h2>
 <div class="pills">
   <span class="pill">HTML5</span>
-  <span class="pill">CSS</span>
   <span class="pill">JavaScript</span>
-  <span class="pill">Web Speech API</span>
   <span class="pill">Web Bluetooth</span>
+  <span class="pill">Web Speech API</span>
+  <span class="pill">Three.js</span>
+  <span class="pill">PWA</span>
   <span class="pill">MakeCode</span>
+  <span class="pill">TypeScript</span>
 </div>
 
 <h2>Mots-clés SEO</h2>
-<p><code>basé navigateur</code> · <code>sans installation</code> · <code>respect vie privée</code> · <code>synthèse vocale</code> · <code>reconnaissance vocale</code> · <code>ressource enseignant</code> · <code>atelier STIM</code> · <code>IA pour enfants</code></p>
+<p><code>dans-le-navigateur</code> · <code>sans-installation</code> · <code>respect-vie-privée</code> · <code>hors-ligne</code> · <code>web bluetooth</code> · <code>ressource enseignant</code> · <code>atelier STEM</code> · <code>micro:bit V2</code></p>
 
-<!-- IMAGES -->
+<!-- ═══════════ IMAGES ═══════════ -->
 <div class="slug" id="images">SLUG — ORDRE DES 7 IMAGES</div>
-<h2>Séquence d'images (Etsy affiche les 1 et 2 en grand)</h2>
+<h2>Séquence d'images (Etsy affiche 1 &amp; 2 en plus grand)</h2>
 <div class="card">
   <ol style="padding-left:22px;line-height:2">
-    <li><strong>Hero</strong> — gros plan du visage du robot sur un laptop avec le bouton Parler qui brille. Titre : <em>Parle • Écoute • Exprime</em>.</li>
-    <li><strong>Grille des 10 émotions</strong> — les dix visages (😐 😄 🥺 😠 😂 😜 😱 🥳 🤖 😴) avec libellés.</li>
-    <li><strong>Interface Taper pour parler</strong> — champ texte « Bonjour la classe ! », bouton Parler, sélecteur de voix, rappel Ctrl+Entrée.</li>
-    <li><strong>Micro en écoute</strong> — icône micro brillante + bulle de transcription en direct.</li>
-    <li><strong>Pont BLE</strong> — laptop → icône Bluetooth → vraie micro:bit qui fait défiler le même mot.</li>
-    <li><strong>Classe</strong> — rangée de laptops, chacun avec une émotion différente.</li>
-    <li><strong>Carte texte</strong> — « Licence mono-utilisateur · Mises à jour à vie · Sans cloud · Chrome / Edge ».</li>
+    <li><strong>Hero</strong> — vrai micro:bit + écran partagé de l'ordinateur montrant le modèle 3D qui reflète l'inclinaison de la carte. Titre en surimpression en Orbitron.</li>
+    <li><strong>Vue des onglets</strong> — capture en grille des 8 onglets avec leurs emojis.</li>
+    <li><strong>Gros plan du graphique</strong> — Web Speech API avec courbes colorées + annotations, bouton Enregistrer rouge vif.</li>
+    <li><strong>Buggy 3D + Bras Robot</strong> — capture partagée montrant deux des cinq modèles Three.js.</li>
+    <li><strong>Main tenant la carte</strong> — vrai emotion branché sur P1, curseurs à l'écran en arrière-plan.</li>
+    <li><strong>Échantillon de thèmes</strong> — grille 2×2 : Stealth · Neon · Arctic · Blaze.</li>
+    <li><strong>Carte texte</strong> — « Licence mono-utilisateur · Mises à jour à vie · Pas de cloud · Chrome / Edge » sur dégradé sombre.</li>
   </ol>
 </div>
 
-<!-- ERREURS -->
+<!-- ═══════════ ERREURS ═══════════ -->
 <div class="slug" id="mistakes">SLUG — À ÉVITER</div>
-<h2>Erreurs courantes</h2>
+<h2>Erreurs fréquentes</h2>
 <table>
   <tr><th>❌ À éviter</th><th>✅ À faire</th></tr>
-  <tr><td>Commencer par « Salut, je suis… » + 10 s d'intro</td><td>Ouvrir avec le robot qui parle dans les 3 premières secondes</td></tr>
+  <tr><td>Commencer par « Bonjour, je suis… » + 10 s d'intro</td><td>Ouvrir avec la vraie carte inclinant un modèle 3D dans les 3 premières secondes</td></tr>
   <tr><td>Filmer en paysage (16:9)</td><td>Portrait 9:16 — Etsy lit en auto sur mobile</td></tr>
-  <tr><td>Parler par-dessus la voix du robot</td><td>Laisser le robot parler, puis narrer dans le silence</td></tr>
-  <tr><td>Oublier les sous-titres (Etsy lit en muet)</td><td>Incruster les sous-titres — surtout sur la scène Écouter</td></tr>
-  <tr><td>Montrer iOS / Safari dans la vidéo</td><td>Toujours démontrer sur Chrome / Edge</td></tr>
-  <tr><td>Zapper l'appel à l'action</td><td>Dire « lien ci-dessous » dans les 5 dernières secondes</td></tr>
+  <tr><td>Parler par-dessus une animation chargée</td><td>Laisser le visuel respirer 1 s, puis expliquer</td></tr>
+  <tr><td>Oublier les sous-titres (Etsy joue muet)</td><td>Incruster des sous-titres ou ajouter un texte à chaque scène</td></tr>
+  <tr><td>Montrer iOS / Safari dans la vidéo</td><td>Toujours démontrer sur Chrome/Edge — les utilisateurs iPhone achèteront puis rendront</td></tr>
+  <tr><td>Sauter le CTA</td><td>Dire « lien ci-dessous » dans les 5 dernières secondes à chaque fois</td></tr>
 </table>
 
-<div class="slug">SLUG — ANTISÈCHE DE POCHE</div>
-<div class="copybox">AVANT    Chrome ouvert · voix choisie · micro testé · téléphone 9:16
-TOURNAGE Accroche 3 s · Taper → Parler · 😄/😱 émotion · Écouter + transcription · CTA
-POST     Couper à 55 s · sous-titres incrustés · 1re image = miniature
-FICHE    Titre · desc 160 car · 13 tags · 7 images · tableau comparatif</div>
+<!-- ═══════════ CARTE RAPIDE ═══════════ -->
+<div class="slug">SLUG — AIDE-MÉMOIRE DE POCHE</div>
+<div class="copybox">PRÉ     V2 allumé (icône X) · Chrome ouvert · BLE vert · téléphone 9:16
+TOURNE  Accroche en 3s · Démo features · CTA
+POST    Coupez à 55 s · sous-titres incrustés · première image = miniature
+ANNONCE Titre · desc 160 car. · 13 étiquettes · 7 images · tarifs</div>
 
 <p style="text-align:center;margin-top:40px;color:var(--muted);font-size:.85rem">
-  Talking Robot v1.0.0 — Playbook Etsy 1 minute · imprime en A4 · plastifie · garde à côté du matos
+  Talking Robot v1.0.0 — Playbook Etsy 1 minute · imprimer en A4 · plastifier · à garder à côté de votre matériel de tournage
 </p>
 
 </body>

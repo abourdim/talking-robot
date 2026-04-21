@@ -1,4 +1,25 @@
 <!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs substituted Talking Robot / v1.0.0 only.
+  The content below was inherited from talking-robot and references
+  product-specific things: BBC micro:bit V2, X icon, BLE, P1, emotions,
+  Tab 3/5/6, Web Speech API, Neon/Arctic themes, etc.
+
+  Before printing:
+    1. Delete this banner.
+    2. Rewrite the Pre-flight checklist (left column) for YOUR product.
+    3. Rewrite the 8-row arc (Say + Do columns) — keep the time
+       boundaries (0-3 / 3-10 / 10-20 / 20-30 / 30-40 / 40-50 / 50-55
+       / 55-60); they are proven pacing.
+    4. Rewrite the Cheat card monospace block (bottom right) as 4 lines:
+       PRE / LAUNCH / DURING / AFTER / UPLOAD.
+    5. Keep the specs table (right column, top) — Etsy specs don't
+       change per product.
+  ═══════════════════════════════════════════════════════════════════════
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -81,18 +102,18 @@
   <div>
     <h2>Pre-flight (90s)</h2>
     <ul>
-      <li>Laptop on, Chrome or Edge open</li>
-      <li><code>index.html</code> loaded, robot face idle</li>
-      <li>Microphone permission <span class="ok">granted</span></li>
-      <li>Speakers on, volume tested (one Speak click)</li>
+      <li>BBC micro:bit V2 on, X icon showing</li>
+      <li>Chrome/Edge open, <code>index.html</code> loaded</li>
+      <li>BLE paired — chip is <span class="ok">green</span></li>
+      <li>Theme: <strong>Neon</strong> (or Arctic for daylight)</li>
       <li>Language matches voiceover (EN / FR / AR)</li>
-      <li>Input field empty, ready to type</li>
-      <li>Optional: micro:bit V2 plugged in via USB, page paired</li>
+      <li>micro:bit V2 paired (optional)</li>
+      <li>Tab 6 (3D) on Buggy or Robot Arm</li>
       <li>Phone in 9:16 on tripod, front-lit</li>
-      <li>Desk cleared — laptop + optional micro:bit only</li>
+      <li>Desk cleared — board + one prop only</li>
       <li>Captions app ready OR overlay plan</li>
       <li>Script read once, under 55s</li>
-      <li>Phone silenced, room quiet (Listen needs clean audio)</li>
+      <li>Phone silenced, kids/dogs warned</li>
     </ul>
   </div>
 
@@ -109,21 +130,11 @@
       <tr><td><strong>Hook</strong></td><td>First 3s decides the scroll</td></tr>
     </table>
 
-    <h2>Props &amp; on-screen overlays</h2>
-    <ul>
-      <li>Laptop (Chrome/Edge), microphone, speakers</li>
-      <li>Optional: BBC micro:bit V2 + USB cable</li>
-      <li>Overlay: "Ctrl/Cmd+Enter = Speak" at 3–10s</li>
-      <li>Overlay: "10 emotions" over the face grid at 20–30s</li>
-      <li>Overlay: transcript highlight at 30–40s</li>
-      <li>Price chip ($12.99 / $17.99 / $29.99) bottom corner</li>
-    </ul>
-
     <h2>During recording</h2>
     <ul>
       <li>One scene per phase — don't cut every 2s</li>
       <li>Switch on words, not mid-sentence</li>
-      <li>1s pause after clicking Speak / Listen</li>
+      <li>1s pause on Record button</li>
       <li>Eye contact with lens on CTA</li>
       <li>Smile for final 3s — loop frame</li>
       <li>If &gt; 55s, re-cut</li>
@@ -137,14 +148,14 @@
     <tr><th>Time</th><th>Say</th><th>Do / Click</th></tr>
   </thead>
   <tbody>
-    <tr><td class="t">0–3s</td>   <td class="say">"A robot that talks, listens, and shows how it feels — right in your browser."</td> <td class="do">Open page. Close-up of robot face blinking. No install.</td></tr>
-    <tr><td class="t">3–10s</td>  <td class="say">"Type any sentence. Your robot speaks it out loud."</td>                              <td class="do">Type "Hello class". Click <strong>Speak</strong> (or Ctrl/Cmd+Enter).</td></tr>
-    <tr><td class="t">10–20s</td> <td class="say">"Watch — the mouth animates while it speaks."</td>                                   <td class="do">Voice plays. Mouth animates in sync. Hold the frame.</td></tr>
-    <tr><td class="t">20–30s</td> <td class="say">"Ten emotions, one click. Tap a face and the robot shows it."</td>                   <td class="do">Click 😄. Face smiles. Cycle 🥺 → 😠 → 🥳. Land on 😄.</td></tr>
-    <tr><td class="t">30–40s</td> <td class="say">"Now it listens. Speak — your voice becomes text."</td>                              <td class="do">Click <strong>Listen</strong>. Say "goodbye". Transcript appears.</td></tr>
-    <tr><td class="t">40–50s</td> <td class="say">"Optional: pair a micro:bit V2 and your typed words stream to its LEDs."</td>        <td class="do">Click Connect micro:bit. Type a word → shows on real board.</td></tr>
-    <tr><td class="t">50–55s</td> <td class="say">"Link below — one page, Chrome and Edge, lifetime updates."</td>                     <td class="do">Face-cam. Eye contact with lens.</td></tr>
-    <tr><td class="t">55–60s</td> <td class="say">"Talk. Listen. Emote."</td>                                                           <td class="do">Hold still on 🤖. Logo + handle freeze. Loop frame.</td></tr>
+    <tr><td class="t">0–3s</td>   <td class="say">"Your micro:bit becomes a playground — in the browser, in 60 seconds."</td> <td class="do">Close-up real board with X icon. Hand holds it.</td></tr>
+    <tr><td class="t">3–10s</td>  <td class="say">"One page, one click, paired."</td>                                          <td class="do">Cut to laptop. Click Connect → pick board → chip <span class="ok">green</span>.</td></tr>
+    <tr><td class="t">10–20s</td> <td class="say">"Sensors live — tilt it, the 3D model tilts too."</td>                      <td class="do">Tab 6 · Robot Face. Tilt real board. Virtual mirrors.</td></tr>
+    <tr><td class="t">20–30s</td> <td class="say">"Click through the live demo — features run in the browser."</td>          <td class="do">Click through the live demo; features run in the browser.</td></tr>
+    <tr><td class="t">30–40s</td> <td class="say">"Live graph with record, replay, CSV. A lab in a browser tab."</td>         <td class="do">Tab 5 · Graph → Simulate → hover Record and CSV.</td></tr>
+    <tr><td class="t">40–50s</td> <td class="say">"4 themes, 3 languages, works offline, no install, no account."</td>        <td class="do">Theme dropdown → Neon → Arctic. Quick swap.</td></tr>
+    <tr><td class="t">50–55s</td> <td class="say">"Link below — lifetime updates, teachers and kids welcome."</td>            <td class="do">Face-cam. Eye contact with lens.</td></tr>
+    <tr><td class="t">55–60s</td> <td class="say">"Happy hacking."</td>                                                       <td class="do">Hold still. Logo + handle freeze. Loop frame.</td></tr>
   </tbody>
 </table>
 
@@ -155,21 +166,21 @@
       <li>Watch once, eyes off script</li>
       <li>Trim to 55s (iMovie / CapCut / DaVinci)</li>
       <li>Burn in captions — centered below subject</li>
-      <li>Set first frame = strong still visual (robot face)</li>
+      <li>Set first frame = strong still visual</li>
       <li>Export MP4/H.264, &lt; 100 MB</li>
       <li>Upload · verify autoplay · phone + sound off</li>
     </ul>
   </div>
   <div>
     <h2>Cheat card</h2>
-<div class="cheat">PRE     Chrome/Edge · mic OK · speakers on
-        9:16 phone · desk clean · quiet room
-LAUNCH  "talks, listens, feels" in first 3s
-DURING  type→Speak · face→emotion
-        Listen→transcript · (optional micro:bit)
-AFTER   Stop → trim 55s → burn captions
-        first frame = robot face thumbnail
-UPLOAD  echo "Talk · Listen · Emote" in title</div>
+<div class="cheat">PRE     V2=X · Chrome · BLE green
+        9:16 phone · Neon · desk clean
+LAUNCH  first words land in first 3s
+DURING  tilt→3D · A→LED · slider→emotion
+        Simulate→graph
+AFTER   Stop → trim 55s → captions
+        first frame = thumbnail
+UPLOAD  echo first words in title</div>
   </div>
 </div>
 

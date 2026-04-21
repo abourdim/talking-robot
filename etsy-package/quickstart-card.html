@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs only substituted identifiers (Talking Robot,
+  v1.0.0, https://abourdim.github.io/talking-robot/, etc.). The feature content, steps,
+  shortcuts, and examples below were inherited from the template's
+  source product (talking-robot) and WILL BE WRONG for your product
+  unless you rewrite them.
+  
+  Before including this file in a buyer ZIP:
+    1. Delete this banner.
+    2. Rewrite every mention of specific features, shortcuts,
+       tab names, hardware interactions, etc. to match your product.
+    3. Verify with: grep -iE "emotion|chart\.js|3d board|gamepad|
+       voice rate|mouth anim|led matrix|13 emotions|sensors tab" this-file.
+  ═══════════════════════════════════════════════════════════════════════
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -41,17 +59,17 @@
   .section-title { font-family: 'Righteous', sans-serif; font-size: 20px; color: #22d3ee; margin: 6mm 0 4mm; display: flex; align-items: center; gap: 8px; }
   .section-title::after { content: ''; flex: 1; height: 1px; background: rgba(34,211,238,.18); }
 
-  .buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 6mm; }
-  .btn-card {
+  .shortcuts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 6mm; }
+  .shortcut {
     background: rgba(15,23,42,.5); border: 1px solid rgba(34,197,94,.08);
     border-radius: 10px; padding: 8px 10px; text-align: center;
   }
-  .btn-card .lbl {
+  .shortcut kbd {
     display: inline-block; background: rgba(0,0,0,.5); border: 1px solid rgba(34,197,94,.3);
-    border-radius: 6px; padding: 3px 10px; font-family: 'Orbitron', monospace; font-size: 13px;
+    border-radius: 6px; padding: 3px 10px; font-family: 'Orbitron', monospace; font-size: 14px;
     color: #22c55e; box-shadow: 0 2px 4px rgba(0,0,0,.4); margin-bottom: 3px;
   }
-  .btn-card span.hint { display: block; font-size: 10px; color: #64748b; }
+  .shortcut span { display: block; font-size: 10px; color: #64748b; }
 
   .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 6mm; }
   .feat {
@@ -79,67 +97,69 @@
 
   <div class="header">
     <h1>Talking Robot</h1>
-    <div class="sub">Talk • Listen • Emote — a browser robot that talks back</div>
-    <div class="tagline">No install &bull; No account &bull; 100% local &bull; Chrome / Edge</div>
+    <div class="sub">Browser BLE Control Panel for the BBC micro:bit V2 (optional)</div>
+    <div class="tagline">No install &bull; No account &bull; 100% local &bull; EN / FR / AR</div>
     <div class="line"></div>
   </div>
 
   <div class="steps">
     <div class="step">
       <div class="step-num">1</div>
-      <div class="icon">🌐</div>
-      <h3>Open the App</h3>
-      <p>Double-click <code class="code">index.html</code> in <strong style="color:#fff;">Chrome</strong> or <strong style="color:#fff;">Edge</strong>. The robot face appears instantly. No server, no install.</p>
+      <div class="icon">🤖</div>
+      <h3>Flash the Firmware</h3>
+      <p>Open <a style="color:#22d3ee;">makecode.microbit.org</a>, switch to JavaScript, paste <code class="code">makecode.ts</code>, hit <strong style="color:#22c55e;">Download</strong> and drag to your micro:bit V2.</p>
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <div class="icon">🎙️</div>
-      <h3>Pick a Voice</h3>
-      <p>Open the voice / language dropdown, choose one of your system voices (deep, bright, British, robotic…). This is how your robot will sound.</p>
+      <div class="icon">🌐</div>
+      <h3>Open the App</h3>
+      <p>Double-click <code class="code">index.html</code> in <strong style="color:#fff;">Chrome</strong> or <strong style="color:#fff;">Edge</strong>. No server, no install. Works offline as a PWA.</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <div class="icon">💬</div>
-      <h3>Type &amp; Speak</h3>
-      <p>Type into the text box, click <span class="pill pg">Speak</span> (or press <strong style="color:#22c55e;">Ctrl/Cmd+Enter</strong>). The mouth animates in sync with the speech.</p>
+      <div class="icon">📡</div>
+      <h3>Pair over BLE</h3>
+      <p>Click <span class="pill pg">Connect</span>, pick <strong style="color:#fff;">BBC micro:bit [xxxxx]</strong> in the browser prompt. The board LEDs flash a tick.</p>
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <div class="icon">🎤</div>
-      <h3>Listen &amp; Transcribe</h3>
-      <p>Click <span class="pill pb">Listen</span>, speak into your mic. Your words appear as a transcript. Enable <strong style="color:#22d3ee;">auto-reply</strong> to make the robot respond out loud.</p>
+      <div class="icon">🎛️</div>
+      <h3>Play with the Tabs</h3>
+      <p>LEDs, Sensors, Emotion, Voice Input, Graph, robot face, Bench, About. Press <kbd style="background:rgba(0,0,0,.5);border:1px solid rgba(34,197,94,.25);border-radius:5px;padding:1px 6px;font-size:11px;font-family:'Orbitron',monospace;color:#22c55e;">1</kbd>–<kbd style="background:rgba(0,0,0,.5);border:1px solid rgba(34,197,94,.25);border-radius:5px;padding:1px 6px;font-size:11px;font-family:'Orbitron',monospace;color:#22c55e;">8</kbd> to jump.</p>
     </div>
     <div class="step step-full">
       <div class="step-num">5</div>
-      <div class="icon">📡</div>
-      <h3>Optional — Bridge to a micro:bit</h3>
-      <p>Have a BBC micro:bit V2? Click <span class="pill pg">Connect</span>, choose the board in the browser prompt, and every word you type streams over Web Bluetooth. Pick any of the <strong style="color:#22c55e;">10 emotion faces</strong> (😐 😄 🥺 😠 😂 😜 😱 🥳 🤖 😴) to change the mood instantly.</p>
+      <div class="icon">📈</div>
+      <h3>Graph It &amp; Save</h3>
+      <p>Open the <strong style="color:#22c55e;">Graph</strong> tab to see live temperature, light, sound and motion rolling across Web Speech API. Press <kbd style="background:rgba(0,0,0,.5);border:1px solid rgba(34,197,94,.2);border-radius:4px;padding:0 6px;font-family:'Orbitron',monospace;font-size:11px;color:#22c55e;">F</kbd> for fullscreen, tap <span class="pill pb">Record</span> to capture a session and export it as JSON. No micro:bit? Try <strong style="color:#22d3ee;">Simulate Mode</strong>.</p>
     </div>
   </div>
 
-  <div class="section-title">Buttons &amp; Keys</div>
-  <div class="buttons">
-    <div class="btn-card"><span class="lbl">Speak</span><span class="hint">Say the text out loud</span></div>
-    <div class="btn-card"><span class="lbl">Listen</span><span class="hint">Mic → transcript</span></div>
-    <div class="btn-card"><span class="lbl">Connect</span><span class="hint">Pair a micro:bit (optional)</span></div>
-    <div class="btn-card"><span class="lbl">😐–😴</span><span class="hint">10 emotion faces</span></div>
-    <div class="btn-card"><span class="lbl">Voice ▾</span><span class="hint">Voice / language picker</span></div>
-    <div class="btn-card"><span class="lbl">Ctrl/Cmd+Enter</span><span class="hint">Speak shortcut</span></div>
+  <div class="section-title">Essential Shortcuts</div>
+  <div class="shortcuts">
+    <div class="shortcut"><kbd>Space</kbd><span>Pause stream</span></div>
+    <div class="shortcut"><kbd>1-8</kbd><span>Switch tab</span></div>
+    <div class="shortcut"><kbd>P</kbd><span>LED presets</span></div>
+    <div class="shortcut"><kbd>F</kbd><span>Fullscreen graph</span></div>
+    <div class="shortcut"><kbd>K</kbd><span>Clear graph</span></div>
+    <div class="shortcut"><kbd>Esc</kbd><span>Close overlay</span></div>
+    <div class="shortcut"><kbd>?</kbd><span>Shortcuts help</span></div>
+    <div class="shortcut"><kbd>T</kbd><span>Cycle themes</span></div>
   </div>
 
-  <div class="section-title">What's Inside</div>
+  <div class="section-title">Highlights</div>
   <div class="features">
-    <div class="feat"><strong>Text → Voice</strong>Browser Speech Synthesis</div>
-    <div class="feat"><strong>Voice → Text</strong>Browser Speech Recognition</div>
-    <div class="feat"><strong>10 Emotions</strong>Click to change face</div>
-    <div class="feat"><strong>Mouth Animation</strong>Syncs with speech</div>
-    <div class="feat"><strong>Optional BLE</strong>Stream text to micro:bit V2</div>
-    <div class="feat"><strong>English</strong>Monolingual app, offline</div>
+    <div class="feat"><strong>5&times;5 LED Matrix</strong>Draw, presets, hex patterns</div>
+    <div class="feat"><strong>Live Sensors</strong>Temp, light, sound, accel, mouth anim</div>
+    <div class="feat"><strong>Dual Emotion P1/P2</strong>Sliders, gauges, OFF buttons</div>
+    <div class="feat"><strong>Robot Face View</strong>micro:bit, Buggy, Arm, Balance, Weather</div>
+    <div class="feat"><strong>4 Themes</strong>Stealth, Neon, Arctic, Blaze</div>
+    <div class="feat"><strong>Trilingual</strong>English, Français, العربية</div>
   </div>
 
   <div class="footer">
     <div class="url">Talking Robot v1.0.0</div>
-    <div class="copy">Chrome or Edge &bull; Microphone &amp; speakers &bull; BBC micro:bit V2 optional</div>
+    <div class="copy">For BBC micro:bit V2 (optional) &bull; Web Bluetooth required &bull; Chrome / Edge</div>
   </div>
 
 </div>

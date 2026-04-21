@@ -1,8 +1,26 @@
 <!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs only substituted identifiers (Talking Robot,
+  v1.0.0, https://abourdim.github.io/talking-robot/, etc.). The feature content, steps,
+  shortcuts, and examples below were inherited from the template's
+  source product (talking-robot) and WILL BE WRONG for your product
+  unless you rewrite them.
+  
+  Before including this file in a buyer ZIP:
+    1. Delete this banner.
+    2. Rewrite every mention of specific features, shortcuts,
+       tab names, hardware interactions, etc. to match your product.
+    3. Verify with: grep -iE "emotion|chart\.js|3d board|gamepad|
+       voice rate|mouth anim|led matrix|13 emotions|sensors tab" this-file.
+  ═══════════════════════════════════════════════════════════════════════
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Talking Robot — Buttons & Voice Commands Cheat Sheet</title>
+<title>Talking Robot Keyboard Shortcuts Cheat Sheet</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Orbitron:wght@500&family=Tajawal:wght@400;500;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -20,9 +38,9 @@
   .header h1 { font-family: 'Righteous', sans-serif; font-size: 32px; color: #22c55e; display: inline; }
   .header span { font-size: 16px; color: #64748b; margin-left: 12px; }
 
-  .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
 
-  .group { margin-bottom: 8px; }
+  .group { margin-bottom: 6px; }
   .group-title {
     font-family: 'Righteous', sans-serif; font-size: 14px; color: #22d3ee;
     padding: 4px 10px; background: rgba(34,211,238,.06); border-radius: 8px;
@@ -35,20 +53,6 @@
   }
   .row:nth-child(even) { background: rgba(34,197,94,.02); }
 
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    min-width: 64px; height: 26px; padding: 0 10px;
-    background: rgba(34,197,94,.14); border: 1px solid rgba(34,197,94,.4);
-    border-radius: 6px; font-family: 'Orbitron', monospace; font-size: 11px;
-    color: #22c55e; white-space: nowrap;
-  }
-  .btn.blue { background: rgba(34,211,238,.12); border-color: rgba(34,211,238,.4); color: #22d3ee; }
-  .emoji-btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    min-width: 30px; height: 26px; font-size: 16px;
-    background: rgba(15,23,42,.7); border: 1px solid rgba(34,197,94,.2);
-    border-radius: 6px;
-  }
   kbd {
     display: inline-flex; align-items: center; justify-content: center;
     min-width: 30px; height: 26px; padding: 0 8px;
@@ -73,96 +77,102 @@
     border: 1px solid rgba(34,197,94,.12); border-radius: 8px; padding: 3px 10px;
   }
 
-  .emoji-grid {
-    display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;
-    padding: 6px 4px;
-  }
-  .emoji-cell {
-    display: flex; flex-direction: column; align-items: center; gap: 2px;
-    padding: 4px; background: rgba(15,23,42,.5);
-    border: 1px solid rgba(34,197,94,.1); border-radius: 8px;
-  }
-  .emoji-cell .e { font-size: 20px; }
-  .emoji-cell .n { font-size: 9px; color: #94a3b8; text-transform: uppercase; letter-spacing: .5px; }
-
-  .tip-box {
-    padding: 6px 10px; background: rgba(34,211,238,.05);
-    border: 1px solid rgba(34,211,238,.18); border-radius: 8px;
-    font-size: 11px; color: #94a3b8; line-height: 1.5;
-  }
-  .tip-box strong { color: #22d3ee; }
+  .ble-row { display: flex; align-items: center; gap: 8px; padding: 4px 8px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .d-green { background: #22c55e; box-shadow: 0 0 8px rgba(34,197,94,.6); }
+  .d-amber { background: #fbbf24; box-shadow: 0 0 8px rgba(251,191,36,.6); }
+  .d-red { background: #ef4444; box-shadow: 0 0 8px rgba(239,68,68,.6); }
+  .d-blue { background: #22d3ee; box-shadow: 0 0 8px rgba(34,211,238,.6); }
+  .d-gray { background: #475569; }
 </style>
 </head>
 <body>
 <div class="page">
 
   <div class="header">
-    <h1>Talking Robot — Buttons &amp; Voice Controls</h1>
+    <h1>Talking Robot Shortcuts</h1>
     <span>Cheat Sheet &mdash; Laminate Me!</span>
   </div>
-  <div class="laminate-tip">Print &rarr; Laminate &rarr; Stick near the keyboard</div>
+  <div class="laminate-tip">Print &rarr; Laminate &rarr; Stick near your micro:bit</div>
 
   <div class="cols">
 
     <!-- Column 1 -->
     <div>
       <div class="group">
-        <div class="group-title">Main Buttons</div>
-        <div class="row"><span class="btn">Speak</span><span class="label">Reads the text out loud (mouth animates)</span></div>
-        <div class="row"><span class="btn">Listen</span><span class="label">Mic on &rarr; speech becomes transcript</span></div>
-        <div class="row"><span class="btn">Stop</span><span class="label">Cancels the current speech</span></div>
-        <div class="row"><span class="btn blue">Connect</span><span class="label">Pair a BBC micro:bit V2 over Bluetooth</span></div>
-        <div class="row"><span class="btn blue">Disconnect</span><span class="label">Release the micro:bit bridge</span></div>
+        <div class="group-title">Streaming &amp; Data</div>
+        <div class="row"><kbd>Space</kbd><span class="label">Pause / Resume sensor stream</span></div>
+        <div class="row"><kbd>K</kbd><span class="label">Clear graph buffer</span></div>
+        <div class="row"><kbd>F</kbd><span class="label">Toggle fullscreen graph</span></div>
+        <div class="row"><kbd>R</kbd><span class="label">Start / Stop session recording</span></div>
       </div>
 
       <div class="group">
-        <div class="group-title">Voice &amp; Language Picker</div>
-        <div class="row"><span class="btn" style="min-width:90px;">Voice ▾</span><span class="label">Pick any system voice (deep, bright, etc.)</span></div>
-        <div class="row"><span class="btn" style="min-width:90px;">Language ▾</span><span class="label">Match the voice to its language tag</span></div>
-        <div class="row"><span class="btn" style="min-width:90px;">Rate / Pitch</span><span class="label">Slow the robot down, pitch it up or down</span></div>
-        <div class="row"><span class="btn" style="min-width:90px;">Auto-reply</span><span class="label">Toggle: after Listen, robot speaks back</span></div>
+        <div class="group-title">Tabs (1&ndash;8)</div>
+        <div class="row"><kbd>1</kbd><span class="label">LEDs &mdash; 5&times;5 matrix</span></div>
+        <div class="row"><kbd>2</kbd><span class="label">Sensors &mdash; live readings</span></div>
+        <div class="row"><kbd>3</kbd><span class="label">Emotion &mdash; P1 &amp; P2</span></div>
+        <div class="row"><kbd>4</kbd><span class="label">Voice Input &mdash; D-pad + Fire</span></div>
+        <div class="row"><kbd>5</kbd><span class="label">Graph &mdash; Web Speech API live plot</span></div>
+        <div class="row"><kbd>6</kbd><span class="label">Robot Face &mdash; Three.js view</span></div>
+        <div class="row"><kbd>7</kbd><span class="label">Bench &mdash; raw JSON console</span></div>
+        <div class="row"><kbd>8</kbd><span class="label">About &mdash; version &amp; credits</span></div>
       </div>
     </div>
 
     <!-- Column 2 -->
     <div>
       <div class="group">
-        <div class="group-title">The 10 Emotion Faces</div>
-        <div class="emoji-grid">
-          <div class="emoji-cell"><span class="e">😐</span><span class="n">Neutral</span></div>
-          <div class="emoji-cell"><span class="e">😄</span><span class="n">Happy</span></div>
-          <div class="emoji-cell"><span class="e">🥺</span><span class="n">Sad</span></div>
-          <div class="emoji-cell"><span class="e">😠</span><span class="n">Angry</span></div>
-          <div class="emoji-cell"><span class="e">😂</span><span class="n">Laughing</span></div>
-          <div class="emoji-cell"><span class="e">😜</span><span class="n">Silly</span></div>
-          <div class="emoji-cell"><span class="e">😱</span><span class="n">Shocked</span></div>
-          <div class="emoji-cell"><span class="e">🥳</span><span class="n">Party</span></div>
-          <div class="emoji-cell"><span class="e">🤖</span><span class="n">Robot</span></div>
-          <div class="emoji-cell"><span class="e">😴</span><span class="n">Sleepy</span></div>
-        </div>
-        <div class="row" style="padding-top:2px;"><span class="label" style="color:#64748b;font-size:11px;">Click any emoji in the app &rarr; the robot face swaps instantly.</span></div>
+        <div class="group-title">LEDs &amp; Overlays</div>
+        <div class="row"><kbd>P</kbd><span class="label">Open LED preset picker</span></div>
+        <div class="row"><kbd>C</kbd><span class="label">Clear LED matrix</span></div>
+        <div class="row"><kbd>H</kbd><span class="label">Heart preset</span></div>
+        <div class="row"><kbd>S</kbd><span class="label">Smile preset</span></div>
+        <div class="row"><kbd>Esc</kbd><span class="label">Close any overlay / fullscreen</span></div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">Robot Face Models</div>
+        <div class="row"><kbd>M</kbd><span class="label">Switch model (cycle)</span></div>
+        <div class="row"><span style="font-size:14px;">🔲</span><span class="label">micro:bit V2 board</span></div>
+        <div class="row"><span style="font-size:14px;">🚗</span><span class="label">Buggy robot</span></div>
+        <div class="row"><span style="font-size:14px;">🦾</span><span class="label">Robot Arm</span></div>
+        <div class="row"><span style="font-size:14px;">🎯</span><span class="label">Balance game</span></div>
+        <div class="row"><span style="font-size:14px;">🌦️</span><span class="label">Weather station</span></div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">Themes &amp; View</div>
+        <div class="row"><kbd>T</kbd><span class="label">Cycle theme (Stealth &rarr; Neon &rarr; Arctic &rarr; Blaze)</span></div>
+        <div class="row"><kbd>L</kbd><span class="label">Cycle language (EN &rarr; FR &rarr; AR)</span></div>
+        <div class="row"><kbd>?</kbd><span class="label">Show shortcuts help overlay</span></div>
       </div>
     </div>
 
     <!-- Column 3 -->
     <div>
       <div class="group">
-        <div class="group-title">Keyboard Shortcut</div>
-        <div class="row"><kbd>Ctrl</kbd><span style="color:#475569;">+</span><kbd>Enter</kbd><span class="label">In the text field &rarr; <strong style="color:#22c55e;">Speak</strong></span></div>
-        <div class="row"><kbd>Cmd</kbd><span style="color:#475569;">+</span><kbd>Enter</kbd><span class="label">macOS equivalent of the above</span></div>
-        <div class="row"><span class="label" style="color:#64748b;font-size:11px;padding-left:6px;">That's the only built-in shortcut — everything else is a button you click.</span></div>
+        <div class="group-title">BLE State Cheat Sheet</div>
+        <div class="ble-row"><span class="dot d-gray"></span><span class="label"><strong style="color:#cbd5e1;">Disconnected</strong> &mdash; click Connect to pair</span></div>
+        <div class="ble-row"><span class="dot d-amber"></span><span class="label"><strong style="color:#fbbf24;">Pairing</strong> &mdash; choose "BBC micro:bit [xxxxx]"</span></div>
+        <div class="ble-row"><span class="dot d-green"></span><span class="label"><strong style="color:#22c55e;">Connected</strong> &mdash; data is streaming live</span></div>
+        <div class="ble-row"><span class="dot d-blue"></span><span class="label"><strong style="color:#22d3ee;">Simulate</strong> &mdash; fake data, no board needed</span></div>
+        <div class="ble-row"><span class="dot d-red"></span><span class="label"><strong style="color:#ef4444;">Error</strong> &mdash; auto-retry 3x, then prompt</span></div>
       </div>
 
       <div class="group">
-        <div class="group-title">Optional micro:bit Bridge</div>
-        <div class="row"><span class="btn blue">Send</span><span class="label">Push current text to the paired micro:bit</span></div>
-        <div class="row"><span class="label" style="font-size:11px;color:#94a3b8;">Once connected, typed words can auto-stream to the board — great for wearables, badges, or room displays.</span></div>
+        <div class="group-title">Emotion (P1 / P2)</div>
+        <div class="row"><kbd>Q</kbd> / <kbd>A</kbd><span class="label">P1 emotion +/- 10&deg;</span></div>
+        <div class="row"><kbd>W</kbd> / <kbd>S</kbd><span class="label">P2 emotion +/- 10&deg;</span></div>
+        <div class="row"><kbd>0</kbd><span class="label">Center both emotions (90&deg;)</span></div>
+        <div class="row"><kbd>O</kbd><span class="label">Emotion OFF (detach PWM)</span></div>
       </div>
 
       <div class="group">
         <div class="group-title">Pro Tips</div>
-        <div class="tip-box">
-          <strong>Browser support:</strong> Chrome or Edge only (desktop or Android). Microphone permission needed for <em>Listen</em>; Bluetooth only if you use the optional micro:bit bridge.
+        <div class="row" style="flex-direction:column;align-items:start;">
+          <span class="label" style="color:#22d3ee;">No board? Turn on <strong>Simulate Mode</strong> in Settings for Sine/Random/Ramp data.</span>
+          <span class="label" style="color:#64748b;font-size:11px;">Only <strong>Chrome</strong> / <strong>Edge</strong> (desktop or Android) support Web Bluetooth.</span>
         </div>
       </div>
     </div>
@@ -170,8 +180,8 @@
   </div>
 
   <div class="footer">
-    <span>Talking Robot v1.0.0 &bull; Talk • Listen • Emote &bull; Print on A4 landscape, laminate, love.</span>
-    <span class="brand">Chrome / Edge &bull; mic &bull; speakers</span>
+    <span>Talking Robot v1.0.0 &bull; Print on A4 landscape, laminate, love.</span>
+    <span class="brand">For the BBC micro:bit V2 (optional)</span>
   </div>
 
 </div>

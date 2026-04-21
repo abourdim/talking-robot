@@ -1,4 +1,23 @@
 <!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs substituted Talking Robot / v1.0.0 only.
+  The SCENES array below (SAY + DO lines) was inherited from
+  talking-robot and references product-specific things: BLE, LEDs,
+  emotions, Tab 3/5/6, "Robot Face", "Motors", "Graph", "Neon theme", etc.
+  Rewrite each scene to match YOUR product's 60-second arc.
+
+  Before using:
+    1. Delete this banner.
+    2. Rewrite every scene in the SCENES array (keep the 8-scene shape
+       and the time boundaries — hook / context / 2-3 demos / payoff /
+       style / CTA / end — these are proven pacing).
+    3. Update the idle pre-flight line near the bottom of the body.
+    4. Keep keyboard controls (Space / R / F) as-is.
+  ═══════════════════════════════════════════════════════════════════════
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -141,7 +160,7 @@
 
   <main>
     <div class="say" id="say">Press <span style="color: var(--accent)">Space</span> to start</div>
-    <div class="do" id="do">Pre-flight: Chrome/Edge open · mic allowed · speakers on · 9:16 phone · desk clean</div>
+    <div class="do" id="do">Pre-flight: BLE green · Neon theme · 9:16 phone · desk clean</div>
   </main>
 
   <footer>
@@ -156,15 +175,15 @@
 
 <script>
 const SCENES = [
-  { t: 0,  phase: 'HOOK',     say: '"A robot that talks, listens, and shows how it feels — right in your browser."', do: 'Open the page. Close-up of the <strong>robot face</strong> blinking. No install, just a URL.' },
-  { t: 3,  phase: 'CONTEXT',  say: '"Type any sentence. Your robot speaks it out loud."',                             do: 'Type <strong>"Hello class"</strong> in the input. Click <strong>Speak</strong> (or press <strong>Ctrl/Cmd+Enter</strong>).' },
-  { t: 10, phase: 'DEMO 1',   say: '"Watch — the mouth animates while it speaks."',                                  do: 'Voice plays. <strong>Mouth animates</strong> in sync with the synthesized voice. Hold the frame.' },
-  { t: 20, phase: 'DEMO 2',   say: '"Ten emotions, one click. Tap a face and the robot shows it."',                  do: 'Click <strong>😄</strong>. Face smiles. Cycle once: <strong>🥺 → 😠 → 🥳</strong>. Land on 😄.' },
-  { t: 30, phase: 'PAYOFF',   say: '"Now it listens. Speak — your voice becomes text."',                             do: 'Click <strong>Listen</strong>. Say clearly <strong>"goodbye"</strong>. Transcript appears on screen.' },
-  { t: 40, phase: 'STYLE',    say: '"Optional: pair a micro:bit V2 and your typed words stream to its LEDs."',       do: 'Click <strong>Connect micro:bit</strong>. Type a word → shows on the <strong>real board</strong>. Optional shot.' },
-  { t: 50, phase: 'CTA',      say: '"Link below — one page, works in Chrome and Edge, lifetime updates."',           do: 'Face-cam. <strong>Eye contact with the lens</strong>, not the screen.' },
-  { t: 55, phase: 'END',      say: '"Talk. Listen. Emote."',                                                          do: 'Hold still on 🤖. Logo + handle overlay freezes. This becomes the <strong>loop frame</strong>.' },
-  { t: 60, phase: 'CUT',      say: 'CUT',                                                                             do: 'Watch playback once. Aim for under 55s. Trim if needed.' },
+  { t: 0,  phase: 'HOOK',     say: '"Your micro:bit becomes a playground — in the browser, in 60 seconds."', do: 'Close-up of the <strong>real board</strong> with the X icon on the LEDs. Your hand holds it.' },
+  { t: 3,  phase: 'CONTEXT',  say: '"One page, one click, paired."',                                         do: 'Cut to laptop. Click <strong>🔗 Connect</strong> → pick board → chip turns <strong>green</strong>.' },
+  { t: 10, phase: 'DEMO 1',   say: '"Sensors live — tilt it, the 3D model tilts too."',                    do: 'Tab <strong>6 · Robot Face</strong>. Tilt real board. Virtual mirrors. Both in frame.' },
+  { t: 20, phase: 'DEMO 2',   say: '"Click through the live demo — features run in the browser."',         do: 'Click through the live demo; features run in the browser.' },
+  { t: 30, phase: 'PAYOFF',   say: '"Live graph with record, replay, CSV. A lab in a browser tab."',       do: 'Tab <strong>5 · Graph</strong> → <strong>🎲 Simulate</strong> → hover <strong>⏺ Record</strong> and <strong>📄 CSV</strong>.' },
+  { t: 40, phase: 'STYLE',    say: '"4 themes, 3 languages, works offline, no install, no account."',       do: 'Theme dropdown → <strong>Neon</strong> → <strong>Arctic</strong>. Quick swap.' },
+  { t: 50, phase: 'CTA',      say: '"Link below — lifetime updates, teachers and kids welcome."',           do: 'Face-cam. <strong>Eye contact with the lens</strong>, not the screen.' },
+  { t: 55, phase: 'END',      say: '"Happy hacking."',                                                       do: 'Hold still. Logo + handle overlay freezes. This becomes the <strong>loop frame</strong>.' },
+  { t: 60, phase: 'CUT',      say: 'CUT',                                                                    do: 'Watch playback once. Aim for under 55s. Trim if needed.' },
 ];
 
 const clock = document.getElementById('clock');
@@ -236,7 +255,7 @@ function reset() {
   document.body.classList.add('idle');
   phase.textContent = 'READY';
   say.innerHTML = 'Press <span style="color: var(--accent)">Space</span> to start';
-  doEl.textContent = 'Pre-flight: Chrome/Edge open · mic allowed · speakers on · 9:16 phone · desk clean';
+  doEl.textContent = 'Pre-flight: BLE green · Neon theme · 9:16 phone · desk clean';
   clock.textContent = '0:00';
   clock.classList.remove('over');
   bar.style.width = '0%';
