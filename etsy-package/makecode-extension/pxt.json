@@ -1,7 +1,7 @@
 {
     "name": "talking-robot-companion",
     "version": "0.1.0",
-    "description": "Companion firmware blocks for the talking-robot browser app — pairs any micro:bit V2 with the Etsy-distributed BLE Control Panel (https://abourdim.github.io/talking-robot/). Adds one-click streaming of temperature, light, sound, accel, mouth anim, buttons, and touch pins, plus receives LED pattern / emotion / sound commands.",
+    "description": "Companion firmware blocks for the talking-robot browser app — pairs any micro:bit V2 with the Etsy-distributed BLE Control Panel (https://abourdim.github.io/talking-robot/). Adds one-click streaming of Pick an emotion, accel, mouth anim, buttons, and touch pins, plus receives LED pattern / emotion / sound commands.",
     "license": "MIT",
     "dependencies": {
         "core": "*",
