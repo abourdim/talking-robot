@@ -1142,20 +1142,13 @@ button {
     color: #fff !important;
 }
 
-.servo-gauge {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
 .gauge-value {
     font-size: 0.9rem;
     margin-top: 4px;
     color: #e5e7eb;
 }
 /* ======================
-   GamePad Button Styling
+   Button Styling
    ====================== */
 
 .gp-btn {

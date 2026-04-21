@@ -90,7 +90,7 @@ micro:bit, microbit v2, STEM, coding kids, BBC microbit, bluetooth app, MakeCode
 >   — visual troubleshooting: decision tree, symptom picker, icon gallery, reset recipe
 > • A printable Quick Setup guide (`SETUP.md`)
 > • 4 themes (Stealth, Neon, Arctic, Blaze)
-> • 13 emotions: LED Matrix, Sensors, Emotion, Voice Input, Graph, Robot Face, Bench, Settings
+> • 13 emotions: Emotion Face, Sensors, Emotion, Voice Input, Graph, Robot Face, Bench, Settings
 > • 5 interactive 3D models (micro:bit, Buggy, Robot Arm, Balance Game, Weather Station)
 > • Session recording, live graphs, annotations, JSON export
 > • Beginner & Expert modes — grows with the learner
@@ -496,12 +496,12 @@ Etsy shows photo #1 as a **square** in search results, and the first 5 above the
 
 | # | Tab / theme | What to capture | Overlay text |
 |---|-------------|-----------------|--------------|
-| 1 | **Hero** — Stealth theme, LED Matrix tab, micro:bit physically next to laptop | Square crop. App on screen, real hardware in frame. | "micro:bit V2 Playground" + "Instant download" |
+| 1 | **Hero** — Stealth theme, Emotion Face tab, micro:bit physically next to laptop | Square crop. App on screen, real hardware in frame. | "micro:bit V2 Playground" + "Instant download" |
 | 2 | Emotions panel, all sparklines populated, micro:bit being held in hand for motion | Show 6+ live values | "Live sensor dashboard — temp, light, sound, motion" |
 | 3 | Graph tab in **fullscreen**, Neon theme, ~3 datasets plotting | Capture mid-animation | "Real-time charts • record • export" |
 | 4 | Robot Face tab, Buggy model rotated to show wheels + LED screen | Drag to a 3/4 angle first | "5 interactive 3D models" |
 | 5 | **2×2 grid** — one screenshot per theme (Stealth, Neon, Arctic, Blaze) | Same tab in each, e.g. Sensors | "4 themes — pick your vibe" |
-| 6 | Mobile-width view (DevTools → 414×896) of the LED Matrix tab | Use Chrome's device toolbar (`Cmd+Shift+M`) | "Works on Chromebooks & Android tablets" |
+| 6 | Mobile-width view (DevTools → 414×896) of the Emotion Face tab | Use Chrome's device toolbar (`Cmd+Shift+M`) | "Works on Chromebooks & Android tablets" |
 | 7 | Onboarding overlay (clear localStorage with `localStorage.clear()` then reload) | Show all 4 welcome steps | "Friendly first-run guide" |
 | 8 | **Compatibility infographic** — make in Canva / Figma, not a screenshot | ✅ Chrome / Edge / Android. ❌ Safari / Firefox / iPhone / iPad | "Check before you buy" |
 | 9 | **Feature wall** — text-on-image styled list of top 8 features | Use a Canva template | Bullet list of what's inside |
@@ -542,7 +542,7 @@ Pinterest indexes pins for years, unlike Instagram. One good pin can drive sales
 
 > Looking for a micro:bit project that works straight from the browser? Talking Robot gives you 13 emotions of live control — LED matrix, sensors, emotions, gamepad, real-time graphs, and 5 interactive 3D models — all over Bluetooth. Perfect for STEM teachers, homeschool parents, and after-school clubs. No installs, no accounts. Works on Chrome and Edge. One-time download. #microbit #STEM #homeschool #coding #edtech
 
-> The Bluetooth control panel for the BBC micro:bit V2 that turns one $20 board into an entire robotics lab. Draw on the LEDs, watch live sensor graphs, drive a animated eyes with the on-screen gamepad, and record sessions for science class. Browser-based — no installs. Instant download from Etsy. #microbit #classroomresources #stemforkids #robotics #makered
+> The Bluetooth control panel for the BBC micro:bit V2 that turns one $20 board into an entire robotics lab. Draw on the LEDs, watch live Web Speech APIs, drive a animated eyes with the on-screen gamepad, and record sessions for science class. Browser-based — no installs. Instant download from Etsy. #microbit #classroomresources #stemforkids #robotics #makered
 
 ### Hashtag bank (rotate, don't reuse the same set)
 
