@@ -46,7 +46,7 @@
 
 ## Title (140 char max — pack it with searchable keywords)
 
-Bluetooth Web App for BBC micro:bit V2 + Illustrated Guide | Features, 13 Emotions, Live Graphs | STEM Classroom | Digital Download
+Talking Robot Web App — 13 Emotions, Voice In + Out, Trilingual | Optional BBC micro:bit V2 Face Mirror | Kids STEM Digital Download
 
 > Product name in your Etsy shop is **"Talking Robot"** — use the phrase **"for the BBC micro:bit V2"** everywhere else to stay within the Micro:bit Educational Foundation's trademark-use guidelines.
 
@@ -57,7 +57,7 @@ Digital Downloads → Educational Resources
 
 ## Tags (13 max — Etsy lets you use all 13, use them)
 
-micro:bit, microbit v2, STEM, coding kids, BBC microbit, bluetooth app, MakeCode, classroom resource, homeschool STEM, robotics, web bluetooth, coding club, chromebook stem
+talking robot, text to speech kids, voice app kids, STEM classroom, ai robot toy, speech therapy, emotion toy, microbit v2, bluetooth robot, trilingual app, homeschool STEM, coding club, chromebook app
 
 > Replaced the two weakest tags (`edtech` — corporate, not what teachers search; `sensor playground` — zero search volume) with `coding club` and `chromebook stem` (both strong long-tail teacher queries).
 
@@ -82,18 +82,17 @@ micro:bit, microbit v2, STEM, coding kids, BBC microbit, bluetooth app, MakeCode
 > 🧪 **Try it now** (Simulate mode, no micro:bit needed): <https://abourdim.github.io/talking-robot/>
 >
 > ✨ **What you get** (instant download):
-> • A complete web app (HTML, CSS, JS) you run locally in Chrome or Edge
-> • Ready-to-flash micro:bit firmware (`makecode.ts`)
-> • **Illustrated trilingual user guide (EN/FR/AR) with built-in diagrams:**
->   — architecture diagram • micro:bit V2 pin-out • firmware flow storyboard
->   — interactive LED playground inside the guide (click cells, copy hex commands)
->   — visual troubleshooting: decision tree, symptom picker, icon gallery, reset recipe
-> • A printable Quick Setup guide (`SETUP.md`)
-> • 4 themes (Stealth, Neon, Arctic, Blaze)
-> • 13 emotions: Emotion Face, Sensors, Emotion, Voice Input, Graph, Robot Face, Bench, Settings
-> • 5 interactive 3D models (micro:bit, Buggy, Robot Arm, Balance Game, Weather Station)
-> • Session recording, live graphs, annotations, JSON export
-> • Beginner & Expert modes — grows with the learner
+> • Complete web app (HTML, CSS, JS) you run locally in Chrome or Edge — no install, no account
+> • **Type + Speak** — use the Web Speech API to read any text out loud with adjustable rate / pitch / voice
+> • **Listen mode** — speech recognition for voice input (hands-free kids)
+> • **13 animated emotions** on an expressive CSS robot face: neutral, happy, sad, angry, angry+, surprised, laugh, silly, scared, party, robot, nerdy, sleepy
+> • **Eyes-follow-mouse** option (creepy-good) + animated mouth driven by the speech amplitude
+> • **Auto-speak / auto-listen / random voice** toggles for free-play sessions
+> • **16 spoken-language locales**: en-US, en-GB, fr-FR, es-ES, de-DE, it-IT, 8 Arabic regionals, ja-JP, ko-KR, zh-CN
+> • **Optional BBC micro:bit V2 bridge** — the micro:bit's 5×5 LED display mirrors the robot's emotion (heart, smile, frown, ZZZ, etc.)
+> • Sends per-syllable `N_word` tokens + `EMO:<name>` commands over BLE UART — a lightweight protocol you can re-use in your own projects
+> • Ready-to-flash firmware (`makecode.ts`) — paste into makecode.microbit.org, flash once, done
+> • PWA — installable on Chromebooks and Android home screens, works offline after first load
 >
 > 🧒 **Perfect for**: classrooms, homeschool, after-school clubs, makerspaces, STEM camps, robotics enthusiasts, parents teaching kids to code.
 >
@@ -130,18 +129,20 @@ Paste this block into the listing just above the FAQ. No fabricated reviews — 
 
 ## Compare table for the description
 
-**What makes Talking Robot different?** Side-by-side with the two free alternatives most teachers try first:
+**What makes Talking Robot different?** Side-by-side with the free options most parents try first:
 
-| Feature | Talking Robot | MakeCode Editor | Raw Web Bluetooth demos |
+| Feature | Talking Robot | Browser SpeechSynthesis demo | Text-to-speech app |
 |---|:---:|:---:|:---:|
-| Works in-browser, zero install | ✅ | ✅ | ✅ |
-| Ready-to-use sensor dashboard (temp, light, sound, accel, mouth anim, touch) | ✅ | ❌ | ❌ |
-| Live graph + CSV / PNG export + session record & replay | ✅ | ❌ | ❌ |
-| Dual emotion control UI with gauges and trim | ✅ | ❌ | Build it yourself |
-| 5 interactive 3D models (micro:bit, Buggy, Arm, Balance, Weather) | ✅ | ❌ | ❌ |
-| Trilingual EN/FR/AR with full RTL support | ✅ | Partial | ❌ |
-| Classroom lesson plan + printable stickers & A3 poster | ✅ | ❌ | ❌ |
-| Works offline after first load (installable PWA) | ✅ | ❌ | ❌ |
+| 13 distinct animated emotions | ✅ | ❌ | ❌ |
+| Eyes + mouth respond to the voice + the cursor | ✅ | ❌ | ❌ |
+| 16 voice locales incl. 8 Arabic regionals | ✅ | Browser default | ~4 |
+| Voice **in** (speech recognition) + Voice **out** | ✅ | Out only | Out only |
+| Optional BBC micro:bit V2 face mirror | ✅ | ❌ | ❌ |
+| Runs 100% locally, no sign-in, no telemetry | ✅ | ✅ | ❌ |
+| Trilingual UI — EN/FR/AR with RTL | ✅ | English | English |
+| Installable PWA (Chromebook + Android home screen) | ✅ | ❌ | ❌ |
+| Classroom lesson plan + printable stickers + A3 poster | ✅ | ❌ | ❌ |
+| Open BLE protocol you can fork for your own projects | ✅ | ❌ | ❌ |
 
 ---
 
