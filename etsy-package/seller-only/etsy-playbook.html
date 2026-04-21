@@ -1,5 +1,4 @@
 <!doctype html>
-<!-- REWRITE PER PRODUCT — DO NOT SHIP AS-IS -->
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8" />
@@ -123,10 +122,10 @@
 </div>
 
 <div class="slate">
-  <div class="slate-clap">🎬</div>
+  <div class="slate-clap">🤖</div>
   <div class="tag">— ETSY PLAYBOOK · v1.0.0 —</div>
   <h1>Talking Robot</h1>
-  <div class="tag">The 1-minute listing demo · copy-ready snippets</div>
+  <div class="tag">Talk · Listen · Feel · Connect — 1-minute listing demo</div>
   <div class="meta"><span><b>Format:</b> 9:16 portrait</span><span><b>Length:</b> ≤ 60 s</span><span><b>Goal:</b> turn scrollers into buyers</span></div>
 </div>
 
@@ -145,14 +144,14 @@
 <h2>Before you press Record</h2>
 <div class="card">
   <ul class="checklist" onclick="var li=event.target.closest('li');if(li)li.classList.toggle('checked')">
-    <li><input type="checkbox"><label>micro:bit V2 powered on, showing <kbd>X</kbd> icon<span class="where">If not → reflash <code>makecode.ts</code></span></label></li>
-    <li><input type="checkbox"><label>Chrome or Edge open, <code>index.html</code> loaded<span class="where">Safari/Firefox/iOS will not work</span></label></li>
-    <li><input type="checkbox"><label>BLE connected — status chip is <strong>green</strong><span class="where">Click 🔗 Connect, pick BBC micro:bit from picker</span></label></li>
-    <li><input type="checkbox"><label>Theme picked — <strong>Neon</strong> looks best on camera<span class="where">Header → paint-roller dropdown</span></label></li>
-    <li><input type="checkbox"><label>Servo plugged into P1 (if showing Robot Arm / Buggy)</label></li>
-    <li><input type="checkbox"><label>3D Board tab open, Buggy or Robot Arm selected<span class="where">Tab 6 → model dropdown</span></label></li>
+    <li><input type="checkbox"><label>Chrome or Edge open, <code>index.html</code> loaded<span class="where">Safari/Firefox/iOS will not work — Web Speech API + Web Bluetooth required</span></label></li>
+    <li><input type="checkbox"><label>Computer mic tested — Listen mode picks up your voice clearly<span class="where">Click 🎙 Listen, say "hello", confirm transcript appears</span></label></li>
+    <li><input type="checkbox"><label>System volume up — TTS voice audible at ~70%<span class="where">Earbuds off for filming, use the laptop speakers</span></label></li>
+    <li><input type="checkbox"><label>Voice locale chosen and previewed<span class="where">Settings → Voice dropdown — test en-US or one Arabic regional</span></label></li>
+    <li><input type="checkbox"><label>Rate ≈ 1.0 · Pitch ≈ 1.0 · Mouth sensitivity ≈ medium<span class="where">Extreme values sound robotic — keep them balanced on camera</span></label></li>
+    <li><input type="checkbox"><label>Optional: micro:bit V2 paired over BLE, status chip <strong>green</strong><span class="where">Product works without micro:bit — only needed for Scene 4</span></label></li>
     <li><input type="checkbox"><label>Phone in 9:16 mode on a tripod, lit from the front</label></li>
-    <li><input type="checkbox"><label>Desk cleared — only the board and one prop in frame</label></li>
+    <li><input type="checkbox"><label>Desk cleared — only the laptop (and micro:bit if used) in frame</label></li>
     <li><input type="checkbox"><label>Script read aloud once — timed under 55 s</label></li>
   </ul>
 </div>
@@ -162,116 +161,118 @@
 <h2>Structure</h2>
 <div class="card">
   <pre style="color:var(--accent2);font-family:var(--mono);font-size:.9rem;line-height:1.7;margin:0">
- 0–3 s   HOOK        "Watch what this micro:bit does in 60 seconds."
- 3–10 s  CONTEXT     Board on-screen, X icon → status turns green.
-10–35 s  DEMO        Tilt → 3D model follows. Press A → LED heart. Servo swings.
-35–50 s  PAYOFF      Zoom on live graph + 3D model mirroring real board.
-50–55 s  CTA         "Full kit in my shop — link below."
-55–60 s  END FRAME   Logo + handle frozen for the loop preview.</pre>
+ 0–3 s   HOOK        "Make your micro:bit talk. In 16 languages."
+ 3–10 s  CONTEXT     13 emotions · 16 voices · 8 Arabic regional variants.
+10–25 s  DEMO 1      Listen mode: kid says "I'm happy!" → face turns happy → speaks back.
+25–40 s  DEMO 2      Optional micro:bit: emotion on-screen → heart on 5×5 LEDs in sync.
+40–50 s  PAYOFF      Multilingual cycle: en-US → fr-FR → ar-SA, one tab.
+50–55 s  CTA         "Voice in, voice out, 13 emotions — link below."
+55–60 s  END FRAME   Robot face + handle frozen for the loop preview.</pre>
 </div>
 
 <!-- ═══════════ SCRIPT ═══════════ -->
 <div class="slug" id="script">SLUG — SCENE-BY-SCENE SCRIPT</div>
-<!-- REWRITE PER PRODUCT — THE 6 SCENES BELOW ARE EMPTY SHELLS.
-     Fill each SAY/DO with a product-specific line BEFORE shooting.
-     Never ship this file with the placeholder italics still in place. -->
 
-<h2>6-scene template — Talking Robot</h2>
-<p class="aka" style="color:#f59e0b;font-weight:700;">⚠️ The 6 scenes below are shells. Replace every line with a filmable action specific to Talking Robot before you shoot.</p>
+<h2>6-scene script — Talking Robot</h2>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:00–00:03</span><span class="scene-phase phase-hook">HOOK</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[Hook line — 1-second promise, the reason a scroller stops]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[The hook shot — what the viewer sees during the line]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Make your micro:bit talk. In 16 languages."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Type "Hello world" into the textbox → hit Speak → robot face smiles, mouth animates with speech amplitude, voice plays from the laptop.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:03–00:10</span><span class="scene-phase phase-demo">CONTEXT</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[Who this is for, what problem it solves]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[Setup shot — connecting, first meaningful screen]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"13 emotions. 16 voices. Arabic regionals from Saudi to Morocco."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Show the 13-emotion grid lighting up (neutral → happy → silly → party) then open the voice dropdown so viewers see en-US, fr-FR, and the 8 ar-* regional lines.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:10–00:25</span><span class="scene-phase phase-demo">DEMO 1</span></div>
+  <div class="scene-head"><span class="scene-time">00:10–00:25</span><span class="scene-phase phase-demo">DEMO 1 — LISTEN</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[First wow-moment — a marquee feature of Talking Robot]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[The 15-second action shot]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Press Listen. It hears you, it shows you how it feels, it answers back."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Click 🎙 Listen → a kid (or you) says "I'm happy!" → transcript appears → robot face switches to <em>happy</em>, eyes follow the mouse, mouth animates while the voice speaks the reply.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:25–00:40</span><span class="scene-phase phase-demo">DEMO 2</span></div>
+  <div class="scene-head"><span class="scene-time">00:25–00:40</span><span class="scene-phase phase-demo">DEMO 2 — MICRO:BIT MIRROR</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[Second wow-moment — second feature / use case]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[The 15-second action shot]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Pair a BBC micro:bit and the emotions jump onto the real LEDs."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Tap Connect, pick BBC micro:bit. Cycle emotions on screen — heart (happy), ZZZ (sleepy), angry face — and the 5×5 LED matrix mirrors each one in real time over BLE UART.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:40–00:50</span><span class="scene-phase phase-payoff">PAYOFF</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[The "why it matters" — time saved, skill acquired, safety]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[The screen that carries the message — export, capture, result]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Speech therapy, language practice, storytelling — one tab."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>A multilingual student types the same phrase three times and cycles the voice: en-US → fr-FR → ar-SA. Robot face speaks each in turn, mouth amplitude following the waveform.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:50–00:60</span><span class="scene-phase phase-cta">CTA + END FRAME</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[Call to action — full kit + link in description]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[Logo overlay, 3-second still for the loop]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Voice in, voice out, 13 emotions. Optional micro:bit. Link below."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Pull back to show the full robot face (party emotion) + handle overlay. Freeze 3 s for the loop thumbnail.</div>
   </div>
 </div>
 
 <!-- ═══════════ LISTING COPY ═══════════ -->
 <div class="slug" id="listing">SLUG — COPY-READY LISTING TEXT</div>
 <h2>Etsy title (140 chars max)</h2>
-<div class="copybox">[TODO — 140-char Etsy title, see ETSY_LISTING.md]<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
+<div class="copybox">Talking Robot — Make Your micro:bit Talk &amp; Listen · 13 Emotions · 16 Voices (8 Arabic Regionals) · Chrome / Edge · No Install<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
 
 <h2>Short description (first 160 chars — shown in search)</h2>
-<div class="copybox">[TODO — 160-char short description, see ETSY_LISTING.md]<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
+<div class="copybox">Browser robot that talks, listens, and shows 13 emotions in 16 voices including 8 Arabic regionals. Optional BBC micro:bit mirrors the emotion on its 5×5 LEDs.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
 
 <h2>Full description</h2>
-<div class="copybox">🎮 Talking Robot — a browser-based BLE control panel for the BBC micro:bit V2.
+<div class="copybox">🤖 Talking Robot — a browser-based voice robot that talks, listens, and feels.
 
-[TODO — 1-sentence pitch of what the product does when opened]
+Open one HTML file in Chrome or Edge. Type a sentence, press Speak — the robot face speaks it with an animated mouth driven by real speech amplitude. Press Listen and it transcribes what you say, then answers back. 13 emotions, 16 voice locales, and an optional BBC micro:bit V2 that mirrors the emotion on its 5×5 LEDs.
+
 WHAT YOU GET
-• [TODO — product-specific feature 1]• [TODO — your live signal list]• [TODO — your control surface if any]• [TODO — your interactive surface]
-• [TODO — your record/replay/export feature]• [TODO — your visualization feature if any]• [TODO — your themes / UI variety + languages]• 📱 PWA — installable, offline-capable
-• 👶 Beginner mode + 🧙 Expert mode
+• 🗣 Type + Speak — Web Speech TTS with adjustable rate, pitch, and voice
+• 🎙 Listen mode — Web Speech recognition captures your voice and routes it through the robot's pipeline
+• 😄 13 animated emotions on an expressive CSS robot face (neutral, happy, sad, angry, angry+, surprised, laugh, silly, scared, party, robot, nerdy, sleepy)
+• 👀 Eyes-follow-mouse + mouth animation amplitude-driven by the TTS waveform
+• 🌍 16 voice locales: en-US, en-GB, fr-FR, es-ES, de-DE, it-IT, ja-JP, ko-KR, zh-CN, plus 8 Arabic regionals (ar-SA, ar-EG, ar-MA, ar-TN, ar-DZ, ar-IQ, ar-JO, ar-LB)
+• 🔧 Toggles: auto-speak, auto-send to micro:bit, continuous listening, random voice, mouth sensitivity slider
+• 📡 Optional BBC micro:bit V2 bridge over BLE UART — per-syllable N_word tokens + EMO:&lt;name&gt; commands make the LED matrix show the matching emotion (heart for happy, ZZZ for sleepy, angry face, etc.)
+• 📱 PWA — installable, runs offline in typed mode
 
 WHAT'S IN YOUR DOWNLOAD
 • index.html — the full app
-• makecode.ts — micro:bit firmware (flash once from MakeCode)
+• makecode.ts — optional micro:bit firmware (flash once from MakeCode)
 • SETUP.md — 5-minute quick-start
 • docs/ — illustrated guide, cheat sheet, FAQ, Etsy playbook
 • LICENSE — personal / classroom single-user license
 
 REQUIREMENTS
-• BBC micro:bit V2 (V1 works but has no sound sensor)
-• Chrome or Edge on desktop (or Chrome on Android)
-• Bluetooth enabled
-• HTTPS or file:// — double-clicking the HTML works
+• Chrome or Edge on desktop or Android (Web Speech API required)
+• Microphone for Listen mode
+• Optional: BBC micro:bit V2 + Bluetooth for the LED mirror (voice + face work without it)
 
 WHO IT'S FOR
-Teachers running STEM workshops · home-schooling families · robotics clubs · makers prototyping BLE projects · anyone curious about the micro:bit.
+Speech therapists · language teachers · storytelling classrooms · parents of multilingual kids · Arabic-speaking schools looking for regional voices · STEM clubs wanting a friendly micro:bit face.
 
 PRIVACY FIRST
-Nothing leaves your computer. No analytics, no logins, no cloud. All calibrations, recordings, and presets live in your browser's localStorage and on your disk.
+Nothing leaves your computer. No analytics, no logins, no cloud. Speech recognition runs through the browser's Web Speech API; settings live in localStorage.
 
 LIFETIME UPDATES
 Every version shipped from this listing is yours forever. Re-download the latest ZIP anytime from your Etsy Purchases page.
 
-Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
+Talk · Listen · Feel · Connect. 🤖🗣🎙<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
 
 <h2>Price tiers</h2>
 <table>
   <tr><th>Tier</th><th>Who</th><th>Price</th></tr>
-  <tr><td>Single user</td><td>One teacher / family / maker</td><td><code>{{PRICE}}</code></td></tr>
+  <tr><td>Single user</td><td>One teacher / therapist / family / maker</td><td><code>{{PRICE}}</code></td></tr>
   <tr><td>Classroom / Site</td><td>Up to 30 teachers at one school, unlimited students</td><td><code>{{PRICE}}</code></td></tr>
   <tr><td>District / OEM</td><td>Multiple sites — DM through the Etsy order</td><td>Custom</td></tr>
 </table>
@@ -281,47 +282,47 @@ Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.
 <h2>13 Etsy tags (20 chars each)</h2>
 <div class="pills">
   <span class="pill">micro:bit</span>
-  <span class="pill">BLE</span>
-  <span class="pill">bluetooth</span>
-  <span class="pill">education</span>
+  <span class="pill">text to speech</span>
+  <span class="pill">speech to text</span>
+  <span class="pill">talking robot</span>
+  <span class="pill">arabic voice</span>
+  <span class="pill">language learning</span>
   <span class="pill">STEM</span>
-  <span class="pill">robotics</span>
+  <span class="pill">speech therapy</span>
   <span class="pill">kids coding</span>
   <span class="pill">teacher resource</span>
-  <span class="pill">sensors</span>
-  <span class="pill">[product tag]</span>
+  <span class="pill">emotions</span>
   <span class="pill">classroom</span>
   <span class="pill">home school</span>
-  <span class="pill">makerspace</span>
 </div>
 
 <h2>Materials (what powers it)</h2>
 <div class="pills">
   <span class="pill">HTML5</span>
   <span class="pill">JavaScript</span>
+  <span class="pill">Web Speech API</span>
   <span class="pill">Web Bluetooth</span>
-  <span class="pill">[render lib]</span>
-  <span class="pill">[3D lib if any]</span>
+  <span class="pill">CSS animation</span>
   <span class="pill">PWA</span>
   <span class="pill">MakeCode</span>
   <span class="pill">TypeScript</span>
 </div>
 
 <h2>SEO keywords</h2>
-<p><code>browser-based</code> · <code>no-install</code> · <code>privacy-first</code> · <code>offline-capable</code> · <code>web bluetooth</code> · <code>teacher resource</code> · <code>STEM workshop</code> · <code>micro:bit V2</code></p>
+<p><code>browser-based</code> · <code>no-install</code> · <code>privacy-first</code> · <code>web speech</code> · <code>text to speech robot</code> · <code>arabic tts</code> · <code>multilingual robot</code> · <code>micro:bit V2</code></p>
 
 <!-- ═══════════ IMAGES ═══════════ -->
 <div class="slug" id="images">SLUG — 7-IMAGE LISTING ORDER</div>
 <h2>Image sequence (Etsy shows 1 &amp; 2 largest)</h2>
 <div class="card">
   <ol style="padding-left:22px;line-height:2">
-    <li><strong>[TODO — Hero shot: hardware + computer screen showing the marquee product state]</strong></li>
-    <li><strong>[TODO — grid screenshot of your main screens or features]</strong></li>
-    <li><strong>[TODO — close-up of your marquee feature]</strong></li>
-    <li><strong>[TODO — split screenshot showing two product features]</strong></li>
-    <li><strong>[TODO — shot showing hardware in-use or hand-to-screen reference]</strong></li>
-    <li><strong>[TODO — styling / variety grid].</li>
-    <li><strong>Text card</strong> — "Single-user license · Lifetime updates · No cloud · Chrome / Edge" on a dark gradient.</li>
+    <li><strong>Hero</strong> — robot face mid-expression (silly or party) with visible mouth animation + voice sound-waves overlay. Orbitron title on top.</li>
+    <li><strong>13 emotions grid</strong> — all faces side by side with their labels (neutral, happy, sad, angry, angry+, surprised, laugh, silly, scared, party, robot, nerdy, sleepy).</li>
+    <li><strong>16 voice locales</strong> — the voice dropdown expanded, with the 8 Arabic regionals (ar-SA, ar-EG, ar-MA, ar-TN, ar-DZ, ar-IQ, ar-JO, ar-LB) highlighted.</li>
+    <li><strong>Listen mode UI</strong> — mic active, live transcribed text visible inside the input, robot face reacting.</li>
+    <li><strong>micro:bit mirror</strong> — photo of a real BBC micro:bit V2 showing the ❤ LED pattern next to the screen's <em>happy</em> face.</li>
+    <li><strong>Settings panel</strong> — rate / pitch / mouth-sensitivity sliders plus the auto-speak, continuous listening, and random voice toggles.</li>
+    <li><strong>PWA install prompt</strong> — Chromebook showing the "Install Talking Robot" browser prompt, plus the dark-gradient text card: "Single-user license · Lifetime updates · No cloud · Chrome / Edge".</li>
   </ol>
 </div>
 
@@ -330,19 +331,20 @@ Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.
 <h2>Common mistakes</h2>
 <table>
   <tr><th>❌ Don't</th><th>✅ Do</th></tr>
-  <tr><td>Start with "Hi, I'm…" + 10s of intro</td><td>Open with the real board tilting a 3D model in the first 3 s</td></tr>
+  <tr><td>Start with "Hi, I'm…" + 10s of intro</td><td>Open with the robot speaking "Hello world" in the first 3 s</td></tr>
   <tr><td>Film landscape (16:9)</td><td>9:16 portrait — Etsy autoplays on mobile</td></tr>
-  <tr><td>Talk over busy on-screen animation</td><td>Let the visual breathe for 1s, then explain</td></tr>
-  <tr><td>Forget captions (Etsy plays muted)</td><td>Burn in captions or add a text overlay every scene</td></tr>
-  <tr><td>Show iOS / Safari in the video</td><td>Always demo on Chrome/Edge — iPhone users will buy and return</td></tr>
+  <tr><td>Film with TTS volume too low to hear</td><td>Record the laptop's audio output — viewers must hear the voice</td></tr>
+  <tr><td>Forget captions (Etsy plays muted)</td><td>Burn in captions showing the spoken phrase in each scene</td></tr>
+  <tr><td>Show iOS / Safari in the video</td><td>Always demo on Chrome/Edge — Web Speech is required</td></tr>
+  <tr><td>Promise AI chat or personalities</td><td>Be clear: this is TTS + STT + emotions, not an AI chatbot</td></tr>
   <tr><td>Skip the CTA</td><td>Say "link below" in the last 5 seconds every single time</td></tr>
 </table>
 
 <!-- ═══════════ QUICK CARD ═══════════ -->
 <div class="slug">SLUG — POCKET CHEAT CARD</div>
-<div class="copybox">PRE    V2 powered (X icon) · Chrome open · BLE green · 9:16 phone
-SHOOT  Hook in 3 s · [TODO — 3 verbs for your product] · CTA
-POST   Trim to 55 s · captions burn-in · first frame = thumbnail
+<div class="copybox">PRE    Chrome open · mic tested · volume up · voice picked · 9:16 phone
+SHOOT  Hook in 3 s · Speak · Listen · Mirror · Multilingual · CTA
+POST   Trim to 55 s · captions burn-in · first frame = robot face
 LIST   Title · 160-char desc · 13 tags · 7 images · price tiers</div>
 
 <p style="text-align:center;margin-top:40px;color:var(--muted);font-size:.85rem">
