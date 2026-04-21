@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs only substituted identifiers (Talking Robot,
+  v1.0.0, https://abourdim.github.io/talking-robot/, etc.). The feature content, steps,
+  shortcuts, and examples below were inherited from the template's
+  source product (talking-robot) and WILL BE WRONG for your product
+  unless you rewrite them.
+  
+  Before including this file in a buyer ZIP:
+    1. Delete this banner.
+    2. Rewrite every mention of specific features, shortcuts,
+       tab names, hardware interactions, etc. to match your product.
+    3. Verify with: grep -iE "emotion|chart\.js|3d board|gamepad|
+       voice rate|mouth anim|led matrix|13 emotions|sensors tab" this-file.
+  ═══════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Talking Robot — We Control Robots with Code!</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Orbitron:wght@500&family=Tajawal:wght@400;500;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A3 portrait; margin: 0; }
+  body { width: 297mm; height: 420mm; font-family: 'Tajawal', sans-serif; background: #020617; color: #cbd5e1; overflow: hidden; }
+
+  .page { width: 297mm; height: 420mm; padding: 18mm 22mm; position: relative; overflow: hidden; }
+  .page::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(34,197,94,.014) 4px, rgba(34,197,94,.014) 8px);
+    pointer-events: none;
+  }
+  .page::after {
+    content: ''; position: absolute; inset: 10mm;
+    border: 2px solid rgba(34,197,94,.15); border-radius: 20px;
+    pointer-events: none;
+  }
+
+  .header { text-align: center; margin-bottom: 12mm; position: relative; }
+  .header .icon { font-size: 56px; margin-bottom: 4px; }
+  .header h1 { font-family: 'Righteous', sans-serif; font-size: 58px; color: #22c55e; letter-spacing: 2px; text-shadow: 0 0 40px rgba(34,197,94,.2); line-height: 1.05; }
+  .header h2 { font-family: 'Righteous', sans-serif; font-size: 28px; color: #22d3ee; margin-top: 6px; }
+  .header .line { width: 60%; height: 3px; background: linear-gradient(90deg, transparent, rgba(34,197,94,.5), transparent); margin: 10px auto 0; }
+
+  .rules { display: flex; flex-direction: column; gap: 11px; margin-bottom: 10mm; }
+  .rule {
+    display: flex; align-items: center; gap: 18px;
+    background: rgba(15,23,42,.55); border: 1px solid rgba(34,197,94,.12);
+    border-radius: 18px; padding: 16px 22px;
+  }
+  .rule-num {
+    width: 54px; height: 54px; flex-shrink: 0;
+    background: linear-gradient(135deg, #22c55e, #15803d); color: #020617;
+    border-radius: 50%; font-family: 'Orbitron', monospace; font-size: 22px;
+    display: flex; align-items: center; justify-content: center; font-weight: 700;
+    box-shadow: 0 4px 16px rgba(34,197,94,.25);
+  }
+  .rule-icon { font-size: 40px; flex-shrink: 0; width: 52px; text-align: center; }
+  .rule-text { flex: 1; }
+  .rule-text h3 { font-family: 'Righteous', sans-serif; font-size: 22px; color: #22c55e; }
+  .rule-text p { font-size: 15px; color: #94a3b8; margin-top: 2px; }
+
+  .motto-wrap { text-align: center; margin-top: 4mm; }
+  .motto {
+    display: inline-block; padding: 14px 30px;
+    background: rgba(34,211,238,.05); border: 1px solid rgba(34,211,238,.18);
+    border-radius: 16px;
+  }
+  .motto h3 { font-family: 'Righteous', sans-serif; font-size: 24px; color: #22d3ee; }
+  .motto p { font-size: 14px; color: #64748b; margin-top: 4px; }
+
+  .corner-tl, .corner-br { position: absolute; font-size: 60px; opacity: .15; }
+  .corner-tl { top: 16mm; left: 20mm; transform: rotate(-15deg); }
+  .corner-br { bottom: 16mm; right: 20mm; transform: rotate(15deg); }
+
+  .footer {
+    position: absolute; bottom: 14mm; left: 22mm; right: 22mm;
+    text-align: center;
+  }
+  .footer span { font-size: 11px; color: #64748b; }
+  .footer .brand { font-family: 'Orbitron', monospace; font-size: 12px; color: #22c55e; }
+
+  .led-row { display: flex; gap: 4px; justify-content: center; margin-top: 4px; }
+  .led { width: 10px; height: 10px; border-radius: 2px; background: #22c55e; box-shadow: 0 0 6px rgba(34,197,94,.7); }
+  .led.off { background: #1e293b; box-shadow: none; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="corner-tl">🤖</div>
+  <div class="corner-br">🚀</div>
+
+  <div class="header">
+    <div class="icon">🎮</div>
+    <h1>We Control Robots<br>with Code!</h1>
+    <h2>Talking Robot &bull; Classroom Guide</h2>
+    <div class="led-row">
+      <div class="led off"></div><div class="led"></div><div class="led"></div><div class="led"></div><div class="led off"></div>
+    </div>
+    <div class="line"></div>
+  </div>
+
+  <div class="rules">
+    <div class="rule">
+      <div class="rule-num">1</div>
+      <div class="rule-icon">🔌</div>
+      <div class="rule-text">
+        <h3>Power Up Your micro:bit</h3>
+        <p>Plug in the USB cable or snap in fresh batteries. You should see a friendly <strong style="color:#22c55e;">X</strong> on the LED grid &mdash; that means "ready to pair!"</p>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-num">2</div>
+      <div class="rule-icon">🌐</div>
+      <div class="rule-text">
+        <h3>Open Playground in Chrome</h3>
+        <p>Double-click <strong style="color:#22d3ee;">index.html</strong>. Our control panel loads. No internet, no login, no waiting.</p>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-num">3</div>
+      <div class="rule-icon">📡</div>
+      <div class="rule-text">
+        <h3>Click Connect, Choose Your Board</h3>
+        <p>A window pops up with a list. Pick <strong style="color:#22c55e;">BBC micro:bit [xxxxx]</strong>. The dot turns green &mdash; you are live over Bluetooth!</p>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-num">4</div>
+      <div class="rule-icon">🎛️</div>
+      <div class="rule-text">
+        <h3>Explore Every Tab</h3>
+        <p>Paint the LEDs. Watch live temperature and sound. Spin emotions. Drive the animated eyes. Press keys <strong style="color:#22c55e;">1</strong> through <strong style="color:#22c55e;">8</strong> to jump between tools.</p>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-num">5</div>
+      <div class="rule-icon">📈</div>
+      <div class="rule-text">
+        <h3>Graph It, Record It, Share It</h3>
+        <p>Open the <strong style="color:#22c55e;">Graph</strong> tab. Watch sensor lines dance. Hit <strong style="color:#22d3ee;">Record</strong> to save a session as JSON &mdash; then show a friend what you discovered!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="motto-wrap">
+    <div class="motto">
+      <h3>Every scientist started by asking "what happens if I press this?"</h3>
+      <p>Your micro:bit is a tiny computer. Today, you are its boss.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="brand">Talking Robot v1.0.0</span>
+    <span> &bull; Print on A3, hang it proud in the lab!</span>
+  </div>
+
+</div>
+<!-- QR-BLOCK-START -->
+<div style="position:fixed;right:12mm;bottom:12mm;display:flex;gap:8mm;align-items:center;
+  background:rgba(10,14,18,0.92);color:#e8ffe8;padding:4mm 5mm;border-radius:3mm;
+  box-shadow:0 2mm 6mm rgba(0,0,0,0.35);font-family:-apple-system,Segoe UI,sans-serif;
+  max-width:80mm;z-index:9999;">
+  <img src="data:image/png;base64,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" alt="QR code — scan to open live demo" style="width:24mm;height:24mm;background:#fff;padding:1mm;border-radius:1.5mm;display:block;"/>
+  <div style="display:flex;flex-direction:column;gap:1mm;min-width:0;">
+    <div style="font-weight:700;font-size:9pt;color:#00ff88;line-height:1.2;">Scan to try the live demo</div>
+    <div style="font-size:7pt;opacity:0.75;line-height:1.3;word-break:break-all;">abourdim.github.io/talking-robot/</div>
+  </div>
+</div>
+<!-- QR-BLOCK-END -->
+</body>
+</html>
