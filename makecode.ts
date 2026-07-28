@@ -1,10 +1,16 @@
-// micro:bit v2 — MakeCode JavaScript
-// BLE UART receiver with:
-// - EMO:happy commands (UNCHANGED)
-// - Emotion detection in normal sentences (EN + FR, no accents)
-// - Direction detection in normal sentences (EN + FR, no accents)
-// - Fun extra commands (banana / dance / boom)
-// - ACK replies preserved: "OK " + original line
+/**
+ * Talking Robot — micro:bit v2 MakeCode firmware
+ * Version: v1.0.0
+ * Date: 2026-07-28
+ * By: Workshop-DIY (github.com/abourdim) — workshop-diy.org
+ *
+ * BLE UART receiver with:
+ * - EMO:happy commands (UNCHANGED)
+ * - Emotion detection in normal sentences (EN + FR, no accents)
+ * - Direction detection in normal sentences (EN + FR, no accents)
+ * - Fun extra commands (banana / dance / boom)
+ * - ACK replies preserved: "OK " + original line
+ */
 
 bluetooth.startUartService()
 
