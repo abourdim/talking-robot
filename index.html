@@ -16,6 +16,36 @@
     .lang-flag-btn svg { display:block; border-radius:3px; }
     .lang-flag-btn:hover { background:rgba(255,255,255,0.1); }
     .lang-flag-btn.active { border-color:#22c55e; background:rgba(34,197,94,0.15); }
+    .help-btn {
+      display:flex; align-items:center; justify-content:center;
+      width:32px; height:32px; border-radius:999px;
+      border:1px solid rgba(34,197,94,0.4); background:rgba(15,23,42,0.9);
+      color:#bbf7d0; font-size:1rem; font-weight:800; cursor:pointer;
+      transition:border-color .15s, background .15s;
+    }
+    .help-btn:hover { background:rgba(34,197,94,0.15); }
+    .help-overlay {
+      display:none; position:fixed; inset:0; z-index:200;
+      background:rgba(2,6,23,0.75); backdrop-filter:blur(2px);
+      align-items:flex-start; justify-content:center; padding:24px 16px;
+      overflow-y:auto;
+    }
+    .help-overlay.open { display:flex; }
+    .help-card {
+      width:100%; max-width:560px; background:#0f172a;
+      border:1px solid rgba(34,197,94,0.3); border-radius:16px;
+      box-shadow:0 12px 32px rgba(0,0,0,0.5); padding:20px;
+    }
+    .help-card-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+    .help-card-header h2 { font-size:1.1rem; margin:0; color:#f9fafb; }
+    .help-close-btn {
+      width:28px; height:28px; border-radius:8px; border:1px solid rgba(255,255,255,0.15);
+      background:transparent; color:#f9fafb; cursor:pointer; font-size:1rem;
+    }
+    .help-close-btn:hover { background:rgba(255,255,255,0.08); }
+    .help-section { margin-bottom:14px; }
+    .help-section-title { font-weight:700; color:#bbf7d0; margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+    .help-section-body { font-size:0.9rem; color:#cbd5e1; line-height:1.5; }
   </style>
 </head>
 
@@ -39,6 +69,43 @@
         <div class="chip">
           <span class="chip-dot" id="chipDot"></span>
           <span id="status" data-i18n="status_idle">Idle</span>
+        </div>
+
+        <button class="help-btn" onclick="toggleHelp(true)" aria-label="Help" title="Help">❓</button>
+      </div>
+    </div>
+
+    <!-- HELP MODAL -->
+    <div class="help-overlay" id="helpOverlay" onclick="if(event.target===this) toggleHelp(false)">
+      <div class="help-card">
+        <div class="help-card-header">
+          <h2 data-i18n="help_title">❓ How to use Talking Robot</h2>
+          <button class="help-close-btn" onclick="toggleHelp(false)" aria-label="Close">✕</button>
+        </div>
+
+        <div class="help-section">
+          <div class="help-section-title">🗣️ <span data-i18n="help_speak_title">Make it talk</span></div>
+          <div class="help-section-body" data-i18n="help_speak_body">Type text in the box, pick a language & voice below, then click Speak.</div>
+        </div>
+
+        <div class="help-section">
+          <div class="help-section-title">🎤 <span data-i18n="help_listen_title">Make it listen</span></div>
+          <div class="help-section-body" data-i18n="help_listen_body">Click Listen and allow the microphone, then speak clearly. Turn on Auto Speak to have it answer automatically, or Continuous for hands-free mode.</div>
+        </div>
+
+        <div class="help-section">
+          <div class="help-section-title">😄 <span data-i18n="help_emotions_title">Change emotions</span></div>
+          <div class="help-section-body" data-i18n="help_emotions_body">Click any emotion button under the robot to instantly change its face.</div>
+        </div>
+
+        <div class="help-section">
+          <div class="help-section-title">📡 <span data-i18n="help_ble_title">Connect a micro:bit</span></div>
+          <div class="help-section-body" data-i18n="help_ble_body">Click Connect and pick your BBC micro:bit. Once connected, your words and emotions are sent to it automatically. Use the "Get Firmware Code" button to flash your micro:bit first.</div>
+        </div>
+
+        <div class="help-section">
+          <div class="help-section-title">💡 <span data-i18n="help_tips_title">Tips</span></div>
+          <div class="help-section-body" data-i18n="help_tips_body">Use Chrome or Edge. Listen and BLE need http://localhost or https:// (not file:///). If a voice for your language is missing, install it in your device's system settings.</div>
         </div>
       </div>
     </div>
@@ -477,7 +544,18 @@
       log_webble_supported: "Web Bluetooth supported", log_webble_unsupported: "Web Bluetooth NOT supported (use Chrome/Edge).",
       env_info_file: "Use http://localhost for Listen/BLE", env_info_mode: "{protocol} mode",
       log_ar_voices_detected: "Arabic voices detected: {count}",
-      log_fix_install_ar_voice: "Fix: Install Arabic Speech voice in OS settings, then restart browser."
+      log_fix_install_ar_voice: "Fix: Install Arabic Speech voice in OS settings, then restart browser.",
+      help_title: "❓ How to use Talking Robot",
+      help_speak_title: "Make it talk",
+      help_speak_body: "Type text in the box, pick a language & voice below, then click Speak.",
+      help_listen_title: "Make it listen",
+      help_listen_body: "Click Listen and allow the microphone, then speak clearly. Turn on Auto Speak to have it answer automatically, or Continuous for hands-free mode.",
+      help_emotions_title: "Change emotions",
+      help_emotions_body: "Click any emotion button under the robot to instantly change its face.",
+      help_ble_title: "Connect a micro:bit",
+      help_ble_body: 'Click Connect and pick your BBC micro:bit. Once connected, your words and emotions are sent to it automatically. Use the "Get Firmware Code" button to flash your micro:bit first.',
+      help_tips_title: "Tips",
+      help_tips_body: "Use Chrome or Edge. Listen and BLE need http://localhost or https:// (not file:///). If a voice for your language is missing, install it in your device's system settings."
     },
     fr: {
       app_title: "ROBOT PARLANT",
@@ -569,7 +647,18 @@
       log_webble_supported: "Bluetooth Web pris en charge", log_webble_unsupported: "Bluetooth Web NON pris en charge (utilise Chrome/Edge).",
       env_info_file: "Utilise http://localhost pour Écouter/BLE", env_info_mode: "mode {protocol}",
       log_ar_voices_detected: "Voix arabes détectées : {count}",
-      log_fix_install_ar_voice: "Correctif : installe une voix arabe dans les réglages du système, puis redémarre le navigateur."
+      log_fix_install_ar_voice: "Correctif : installe une voix arabe dans les réglages du système, puis redémarre le navigateur.",
+      help_title: "❓ Comment utiliser Talking Robot",
+      help_speak_title: "Le faire parler",
+      help_speak_body: "Écris un texte dans la zone, choisis une langue et une voix ci-dessous, puis clique sur Parler.",
+      help_listen_title: "Le faire écouter",
+      help_listen_body: "Clique sur Écouter et autorise le microphone, puis parle clairement. Active « Parler automatiquement » pour qu'il réponde tout seul, ou « Écoute continue » pour un mode mains libres.",
+      help_emotions_title: "Changer d'émotion",
+      help_emotions_body: "Clique sur un bouton d'émotion sous le robot pour changer son visage instantanément.",
+      help_ble_title: "Connecter un micro:bit",
+      help_ble_body: "Clique sur Connecter et choisis ton micro:bit BBC. Une fois connecté, tes mots et tes émotions lui sont envoyés automatiquement. Utilise le bouton « Obtenir le code » pour flasher ton micro:bit d'abord.",
+      help_tips_title: "Astuces",
+      help_tips_body: "Utilise Chrome ou Edge. Écouter et BLE nécessitent http://localhost ou https:// (pas file:///). Si une voix manque pour ta langue, installe-la dans les réglages système de ton appareil."
     },
     ar: {
       app_title: "الروبوت المتحدث",
@@ -661,7 +750,18 @@
       log_webble_supported: "بلوتوث الويب مدعوم", log_webble_unsupported: "بلوتوث الويب غير مدعوم (استخدم Chrome/Edge).",
       env_info_file: "استخدم http://localhost للاستماع/بلوتوث", env_info_mode: "وضع {protocol}",
       log_ar_voices_detected: "الأصوات العربية المكتشفة: {count}",
-      log_fix_install_ar_voice: "الحل: ثبّت صوتاً عربياً في إعدادات النظام، ثم أعد تشغيل المتصفح."
+      log_fix_install_ar_voice: "الحل: ثبّت صوتاً عربياً في إعدادات النظام، ثم أعد تشغيل المتصفح.",
+      help_title: "❓ كيفية استخدام الروبوت المتحدث",
+      help_speak_title: "اجعله يتحدث",
+      help_speak_body: "اكتب نصاً في المربع، اختر لغة وصوتاً أدناه، ثم اضغط تحدث.",
+      help_listen_title: "اجعله يستمع",
+      help_listen_body: "اضغط استمع واسمح باستخدام الميكروفون، ثم تحدث بوضوح. فعّل «التحدث تلقائياً» ليجيب بنفسه، أو «الاستماع المستمر» للوضع بدون يدين.",
+      help_emotions_title: "تغيير المشاعر",
+      help_emotions_body: "اضغط أي زر مشاعر تحت الروبوت لتغيير وجهه فوراً.",
+      help_ble_title: "توصيل المايكروبِت",
+      help_ble_body: "اضغط اتصال واختر جهاز المايكروبِت الخاص بك. بعد الاتصال، تُرسل كلماتك ومشاعرك إليه تلقائياً. استخدم زر «احصل على الكود» لبرمجة المايكروبِت أولاً.",
+      help_tips_title: "نصائح",
+      help_tips_body: "استخدم Chrome أو Edge. يحتاج الاستماع والبلوتوث إلى http://localhost أو https:// (وليس file:///). إذا كان الصوت المطلوب للغتك غير متوفر، ثبّته في إعدادات النظام."
     }
   };
 
@@ -1295,6 +1395,16 @@
   bleConnectBtn.addEventListener("click", bleConnect);
   bleDisconnectBtn.addEventListener("click", bleDisconnect);
   bleSendBtn.addEventListener("click", bleSendSyllables_LineByLine);
+
+  // ---------- Help modal
+  const helpOverlay = document.getElementById("helpOverlay");
+  function toggleHelp(open){
+    helpOverlay.classList.toggle("open", open);
+  }
+  document.addEventListener("keydown", (e)=>{
+    if(e.key === "Escape" && helpOverlay.classList.contains("open")) toggleHelp(false);
+  });
+  window.toggleHelp = toggleHelp;
 
   // ---------- Init language
   window.setUILanguage = setUILanguage;
